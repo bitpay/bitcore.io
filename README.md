@@ -8,16 +8,10 @@ The Bitcore website, hosted via GitHub Pages.
 The website is build using Hexo, and hexo commands can be used directly if globally installed. There are also gulp tasks to update the website:
 
 ```
-// update developer guide
-$ gulp copy-docs
-
-// generate api reference docs
-$ gulp generate-api-docs
-
 // generate the public website
 $ gulp generate-public
 
-// update all documentation
+// update all documentation from bitcore
 $ gulp update
 
 // start development server
