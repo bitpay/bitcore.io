@@ -85,4 +85,6 @@ exclude_generator:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: github
+  repo: git@github.com:bitpay/bitcore.git
+  branch: gh-pages
