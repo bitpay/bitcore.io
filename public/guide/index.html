@@ -26,48 +26,32 @@
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
   <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
-  <meta name="description" content="Bitcore v0.8
-Addresses and Key Management
+  <meta name="description" content="Bitcore
 
-Addresses
-Using different networks
-Private Keys and Public Keys
-Hierarchically-derived Private and Public Keys
-
-Payment handling
-
-Using different Units
-Ackno">
+A pure and simple javascript bitcoin API.
+Principles
+Bitcoin is a powerful new peer-to-peer platform for the next generation of financial technology. The decentralized nature of the Bitcoin n">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bitcore">
 <meta property="og:url" content="http://bitcore.io/guide/index.html">
 <meta property="og:site_name" content="Bitcore">
-<meta property="og:description" content="Bitcore v0.8
-Addresses and Key Management
+<meta property="og:description" content="Bitcore
 
-Addresses
-Using different networks
-Private Keys and Public Keys
-Hierarchically-derived Private and Public Keys
-
-Payment handling
-
-Using different Units
-Ackno">
+A pure and simple javascript bitcoin API.
+Principles
+Bitcoin is a powerful new peer-to-peer platform for the next generation of financial technology. The decentralized nature of the Bitcoin n">
+<meta property="og:image" content="https://img.shields.io/npm/v/bitcore.svg?style=flat-square">
+<meta property="og:image" content="https://img.shields.io/travis/bitpay/bitcore.svg?branch=master&style=flat-square">
+<meta property="og:image" content="https://img.shields.io/coveralls/bitpay/bitcore.svg?style=flat-square">
+<meta property="og:image" content="http://bitpay.github.io/bitcore/images/read-the-developer-guide-btn.png">
+<meta property="og:image" content="http://bitpay.github.io/bitcore/images/read-the-api-reference-btn.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bitcore">
-<meta name="twitter:description" content="Bitcore v0.8
-Addresses and Key Management
+<meta name="twitter:description" content="Bitcore
 
-Addresses
-Using different networks
-Private Keys and Public Keys
-Hierarchically-derived Private and Public Keys
-
-Payment handling
-
-Using different Units
-Ackno">
+A pure and simple javascript bitcoin API.
+Principles
+Bitcoin is a powerful new peer-to-peer platform for the next generation of financial technology. The decentralized nature of the Bitcoin n">
 <meta name="twitter:site" content="@bitpay">
 
   
@@ -117,45 +101,54 @@ Ackno">
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Bitcore_v0-8"><span class="toc-number">1.</span> <span class="toc-text">Bitcore v0.8</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Addresses_and_Key_Management"><span class="toc-number">1.1.</span> <span class="toc-text">Addresses and Key Management</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Payment_handling"><span class="toc-number">1.2.</span> <span class="toc-text">Payment handling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bitcoin_internals"><span class="toc-number">1.3.</span> <span class="toc-text">Bitcoin internals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Networking"><span class="toc-number">1.4.</span> <span class="toc-text">Networking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Extra"><span class="toc-number">1.5.</span> <span class="toc-text">Extra</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Bitcore"><span class="toc-number">1.</span> <span class="toc-text">Bitcore</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Principles"><span class="toc-number">1.1.</span> <span class="toc-text">Principles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Get_Started"><span class="toc-number">1.2.</span> <span class="toc-text">Get Started</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Documentation"><span class="toc-number">1.3.</span> <span class="toc-text">Documentation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Security"><span class="toc-number">1.4.</span> <span class="toc-text">Security</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contributing"><span class="toc-number">1.5.</span> <span class="toc-text">Contributing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Building_the_browser_bundle"><span class="toc-number">1.6.</span> <span class="toc-text">Building the browser bundle</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tests"><span class="toc-number">1.7.</span> <span class="toc-text">Tests</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#License"><span class="toc-number">1.8.</span> <span class="toc-text">License</span></a></li></ol></li></ol>
       </div>
       <div class="page-entry" itemprop="articleBody">
-        <h1 id="Bitcore_v0-8">Bitcore v0.8</h1>
-<h2 id="Addresses_and_Key_Management">Addresses and Key Management</h2>
-<ul>
-<li><a href="models/Address.md">Addresses</a></li>
-<li><a href="helpers/Networks.md">Using different networks</a></li>
-<li><a href="models/PrivateKey.md">Private Keys</a> and <a href="models/PublicKey.md">Public Keys</a></li>
-<li><a href="models/Hierarchical.md">Hierarchically-derived Private and Public Keys</a></li>
-</ul>
-<h2 id="Payment_handling">Payment handling</h2>
-<ul>
-<li><a href="helpers/Unit.md">Using different Units</a></li>
-<li><a href="helpers/URI.md">Acknowledging and Requesting payments: Bitcoin URIs</a></li>
-<li><a href="helpers/PaymentProtocol.md">Payment Protocol Support</a></li>
-<li><a href="models/Transaction.md">The Transaction Class</a></li>
-</ul>
-<h2 id="Bitcoin_internals">Bitcoin internals</h2>
-<ul>
-<li><a href="models/Script.md">Scripts</a></li>
-<li><a href="models/Block.md">Block</a></li>
-</ul>
-<h2 id="Networking">Networking</h2>
-<ul>
-<li><a href="networking/Peer.md">Interface to the Bitcoin P2P network</a></li>
-<li><a href="networking/Pool.md">Managing a pool of peers</a></li>
-<li><a href="networking/JSONRPC.md">Connecting to a bitcoind instance through JSON-RPC</a></li>
-</ul>
-<h2 id="Extra">Extra</h2>
-<ul>
-<li><a href="helpers/Crypto.md">Crypto</a></li>
-<li><a href="helpers/Encoding.md">Encoding</a></li>
-<li><a href="helpers/ECIES.md">ECIES</a></li>
-</ul>
+        <h1 id="Bitcore">Bitcore</h1>
+<p><a href="https://www.npmjs.org/package/bitcore" target="_blank" rel="external"><img src="https://img.shields.io/npm/v/bitcore.svg?style=flat-square" alt="NPM Package"></a><br><a href="https://travis-ci.org/bitpay/bitcore" target="_blank" rel="external"><img src="https://img.shields.io/travis/bitpay/bitcore.svg?branch=master&amp;style=flat-square" alt="Build Status"></a><br><a href="https://coveralls.io/r/bitpay/bitcore" target="_blank" rel="external"><img src="https://img.shields.io/coveralls/bitpay/bitcore.svg?style=flat-square" alt="Coverage Status"></a></p>
+<p>A pure and simple javascript bitcoin API.</p>
+<h2 id="Principles">Principles</h2>
+<p>Bitcoin is a powerful new peer-to-peer platform for the next generation of financial technology. The decentralized nature of the Bitcoin network allows for highly resilient bitcoin infrastructure, and the developer community needs reliable, open-source tools to implement bitcoin apps and services.</p>
+<h2 id="Get_Started">Get Started</h2>
+<p>You can run bitcore on any javascript engine. It’s distributed through npm, and you can also find compiled single files here: <a href="https://bitcore.io/bitcore/dist/bitcore.js" target="_blank" rel="external">bitcore.js</a> and <a href="https://bitcore.io/bitcore/dist/bitcore.min.js" target="_blank" rel="external">bitcore.min.js</a>.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> bitcore</span></div></pre></td></tr></table></figure>
+
+<p>Using it on node.js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bitcore = <span class="built_in">require</span>(<span class="string">'bitcore'</span>);</div><div class="line"></div><div class="line">assert(bitcore.Address.isValid(address));</div><div class="line"><span class="keyword">var</span> simpleTx = <span class="keyword">new</span> bitcore.Transaction();</div><div class="line"><span class="keyword">var</span> simpleTx.from(unspent).to(address, amount);</div><div class="line">simpleTx.sign(privateKey);</div></pre></td></tr></table></figure>
+
+<h2 id="Documentation">Documentation</h2>
+<p>The complete docs are hosted here: <a href="https://bitpay.github.io/bitcore/docs/#!index.md" target="_blank" rel="external">bitcore documentation</a>. There’s also a <a href="https://bitpay.github.io/bitcore/apiref" target="_blank" rel="external">bitcore API reference</a> available generated from the JSDocs of the project, but we’re still working on the quality and design of this API reference.</p>
+<p><a href="https://bitpay.github.io/bitcore/docs/#!index.md" target="_blank" rel="external"><img src="http://bitpay.github.io/bitcore/images/read-the-developer-guide-btn.png" alt="Read the Developer Guide"></a>  <a href="https://bitpay.github.io/bitcore/apiref" target="_blank" rel="external"><img src="http://bitpay.github.io/bitcore/images/read-the-api-reference-btn.png" alt="Read the API Reference"></a></p>
+<h2 id="Security">Security</h2>
+<p>Please use at your own risk.</p>
+<p>Bitcore is still under heavy development and not quite ready for “drop-in” production use. If you find a security issue, please email security@bitcore.io.</p>
+<h2 id="Contributing">Contributing</h2>
+<p>Please send pull requests for bug fixes, code optimization, and ideas for improvement.</p>
+<h2 id="Building_the_browser_bundle">Building the browser bundle</h2>
+<p>To build bitcore full bundle for the browser:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp browser</div></pre></td></tr></table></figure>
+
+<p>This will generate files named <code>browser/bitcore.js</code> and <code>browser/bitcore.min.js</code>.</p>
+<h2 id="Tests">Tests</h2>
+<p>Run all the tests:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp test</div></pre></td></tr></table></figure>
+
+<p>Run the tests with mocha:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp test:node</div></pre></td></tr></table></figure>
+
+<p>Run the tests with karma (uses firefox and chrome):</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp test:browser</div></pre></td></tr></table></figure>
+
+<p>Create a coverage report (you can open <code>coverage/lcov-report/index.html</code> to visualize it):</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp coverage</div></pre></td></tr></table></figure>
+
+<h2 id="License">License</h2>
+<p>Code released under <a href="https://github.com/bitpay/bitcore/blob/master/LICENSE" target="_blank" rel="external">the MIT license</a>.</p>
+<p>Copyright 2013-2014 BitPay, Inc. Bitcore is a trademark maintained by BitPay, Inc.</p>
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2014-12-19T19:19:22.000Z" itemprop="dateModified">Last updated: Dec 19 2014</time>
+        <time id="page-footer-updated" datetime="2014-12-19T19:33:13.000Z" itemprop="dateModified">Last updated: Dec 19 2014</time>
         <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
       </footer>
       
