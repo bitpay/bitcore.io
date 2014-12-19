@@ -43,7 +43,6 @@
 
   // Main navigation menu for mobile devices
   $('#main-nav-toggle').on('click', function(){
-    console.log('hello');
     $('#main-nav').toggleClass('on');
   });
 /*
