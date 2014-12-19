@@ -26,21 +26,21 @@
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
   <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
-  <meta name="description" content="Script
+  <meta name="description" content="&gt; bitcore.Script
 Description
-All bitcoin transactions have scripts embedded into its inputs and outputs.  The scripts use a very simple programming language, which is evaluated from left to right using a stack.">
+All bitcoin transactions have scripts embedded into its inputs and outputs.  The scripts use a very simple programming language, which is evaluated from left to right u">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bitcore">
 <meta property="og:url" content="http://bitcore.io/guide/script.html">
 <meta property="og:site_name" content="Bitcore">
-<meta property="og:description" content="Script
+<meta property="og:description" content="&gt; bitcore.Script
 Description
-All bitcoin transactions have scripts embedded into its inputs and outputs.  The scripts use a very simple programming language, which is evaluated from left to right using a stack.">
+All bitcoin transactions have scripts embedded into its inputs and outputs.  The scripts use a very simple programming language, which is evaluated from left to right u">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bitcore">
-<meta name="twitter:description" content="Script
+<meta name="twitter:description" content="&gt; bitcore.Script
 Description
-All bitcoin transactions have scripts embedded into its inputs and outputs.  The scripts use a very simple programming language, which is evaluated from left to right using a stack.">
+All bitcoin transactions have scripts embedded into its inputs and outputs.  The scripts use a very simple programming language, which is evaluated from left to right u">
 <meta name="twitter:site" content="@bitpay">
 
   
@@ -90,10 +90,10 @@ All bitcoin transactions have scripts embedded into its inputs and outputs.  The
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Script"><span class="toc-number">1.</span> <span class="toc-text">Script</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Script_creation"><span class="toc-number">1.2.</span> <span class="toc-text">Script creation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pay_to_Public_Key_Hash_(p2pkh)"><span class="toc-number">1.2.1.</span> <span class="toc-text">Pay to Public Key Hash (p2pkh)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pay_to_Public_Key_(p2pk)"><span class="toc-number">1.2.2.</span> <span class="toc-text">Pay to Public Key (p2pk)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pay_to_Multisig_(p2ms)"><span class="toc-number">1.2.3.</span> <span class="toc-text">Pay to Multisig (p2ms)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pay_to_Script_Hash_(p2sh)"><span class="toc-number">1.2.4.</span> <span class="toc-text">Pay to Script Hash (p2sh)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data_output"><span class="toc-number">1.2.5.</span> <span class="toc-text">Data output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Custom_scripts"><span class="toc-number">1.2.6.</span> <span class="toc-text">Custom scripts</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Script_parsing_and_identification"><span class="toc-number">1.3.</span> <span class="toc-text">Script parsing and identification</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Script_interpreting_and_validation"><span class="toc-number">1.4.</span> <span class="toc-text">Script interpreting and validation</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#>_bitcore-Script"><span class="toc-number">1.</span> <span class="toc-text">> bitcore.Script</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Script_creation"><span class="toc-number">1.2.</span> <span class="toc-text">Script creation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pay_to_Public_Key_Hash_(p2pkh)"><span class="toc-number">1.2.1.</span> <span class="toc-text">Pay to Public Key Hash (p2pkh)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pay_to_Public_Key_(p2pk)"><span class="toc-number">1.2.2.</span> <span class="toc-text">Pay to Public Key (p2pk)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pay_to_Multisig_(p2ms)"><span class="toc-number">1.2.3.</span> <span class="toc-text">Pay to Multisig (p2ms)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pay_to_Script_Hash_(p2sh)"><span class="toc-number">1.2.4.</span> <span class="toc-text">Pay to Script Hash (p2sh)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data_output"><span class="toc-number">1.2.5.</span> <span class="toc-text">Data output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Custom_scripts"><span class="toc-number">1.2.6.</span> <span class="toc-text">Custom scripts</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Script_parsing_and_identification"><span class="toc-number">1.3.</span> <span class="toc-text">Script parsing and identification</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Script_interpreting_and_validation"><span class="toc-number">1.4.</span> <span class="toc-text">Script interpreting and validation</span></a></li></ol></li></ol>
       </div>
       <div class="page-entry" itemprop="articleBody">
-        <h1 id="Script">Script</h1>
+        <h1 id="&gt;_bitcore-Script">&gt; <code>bitcore.Script</code></h1>
 <h2 id="Description">Description</h2>
 <p>All bitcoin transactions have scripts embedded into its inputs and outputs.  The scripts use a very simple programming language, which is evaluated from left to right using a stack. The language is designed such that it guarantees all scripts will execute in a limited amount of time (it is not Turing-Complete).</p>
 <p>When a transaction is validated, the input scripts are concatenated with the output scripts and evaluated. To be valid, all transaction scripts must evaluate to true.  A good analogy for how this works is that the output scripts are puzzles that specify in which conditions can those bitcoins be spent. The input scripts provide the correct data to make those output scripts evaluate to true.</p>
@@ -143,7 +143,7 @@ All bitcoin transactions have scripts embedded into its inputs and outputs.  The
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2014-12-19T16:41:06.000Z" itemprop="dateModified">Last updated: Dec 19 2014</time>
+        <time id="page-footer-updated" datetime="2014-12-19T19:19:23.000Z" itemprop="dateModified">Last updated: Dec 19 2014</time>
         <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
       </footer>
       

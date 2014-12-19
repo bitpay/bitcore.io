@@ -26,24 +26,24 @@
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
   <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
-  <meta name="description" content="Pool
+  <meta name="description" content="&gt; bitcore.transport.Pool
 Pool
 A pool maintains a connection of Peers. A pool will discover peers via DNS seeds, as well as when peer addresses are announced through the network.
-The quickest way to get connected is to ru">
+The quickest way to">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bitcore">
 <meta property="og:url" content="http://bitcore.io/guide/pool.html">
 <meta property="og:site_name" content="Bitcore">
-<meta property="og:description" content="Pool
+<meta property="og:description" content="&gt; bitcore.transport.Pool
 Pool
 A pool maintains a connection of Peers. A pool will discover peers via DNS seeds, as well as when peer addresses are announced through the network.
-The quickest way to get connected is to ru">
+The quickest way to">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bitcore">
-<meta name="twitter:description" content="Pool
+<meta name="twitter:description" content="&gt; bitcore.transport.Pool
 Pool
 A pool maintains a connection of Peers. A pool will discover peers via DNS seeds, as well as when peer addresses are announced through the network.
-The quickest way to get connected is to ru">
+The quickest way to">
 <meta name="twitter:site" content="@bitpay">
 
   
@@ -93,11 +93,11 @@ The quickest way to get connected is to ru">
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Pool"><span class="toc-number">1.</span> <span class="toc-text">Pool</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pool-1"><span class="toc-number">1.1.</span> <span class="toc-text">Pool</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#>_bitcore-transport-Pool"><span class="toc-number">1.</span> <span class="toc-text">> bitcore.transport.Pool</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pool"><span class="toc-number">1.1.</span> <span class="toc-text">Pool</span></a></li></ol></li></ol>
       </div>
       <div class="page-entry" itemprop="articleBody">
-        <h1 id="Pool">Pool</h1>
-<h2 id="Pool-1">Pool</h2>
+        <h1 id="&gt;_bitcore-transport-Pool">&gt; <code>bitcore.transport.Pool</code></h1>
+<h2 id="Pool">Pool</h2>
 <p>A pool maintains a connection of <a href="Peer.md">Peers</a>. A pool will discover peers via DNS seeds, as well as when peer addresses are announced through the network.</p>
 <p>The quickest way to get connected is to run the following:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> bitcore = <span class="built_in">require</span>(<span class="string">'bitcore'</span>);</div><div class="line"><span class="keyword">var</span> Pool = bitcore.transport.Pool;</div><div class="line"><span class="keyword">var</span> Networks = bitcore.Networks;</div><div class="line"></div><div class="line"><span class="keyword">var</span> pool = <span class="keyword">new</span> Pool(Networks.livenet);</div><div class="line"></div><div class="line"><span class="comment">// connect to the network</span></div><div class="line">pool.connect();</div><div class="line"></div><div class="line"><span class="comment">// attach peer events</span></div><div class="line">pool.on(<span class="string">'peerinv'</span>, <span class="function"><span class="keyword">function</span><span class="params">(peer, message)</span> </span>{</div><div class="line">  <span class="comment">// a new peer message has arrived</span></div><div class="line">});</div><div class="line"></div><div class="line"><span class="comment">// will disconnect all peers</span></div><div class="line">pool.disconnect()</div></pre></td></tr></table></figure>
@@ -106,7 +106,7 @@ The quickest way to get connected is to ru">
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2014-12-19T16:41:06.000Z" itemprop="dateModified">Last updated: Dec 19 2014</time>
+        <time id="page-footer-updated" datetime="2014-12-19T19:19:23.000Z" itemprop="dateModified">Last updated: Dec 19 2014</time>
         <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
       </footer>
       

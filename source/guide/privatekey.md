@@ -1,4 +1,4 @@
-# PrivateKey
+# > `bitcore.PrivateKey`
 
 ## Description
 

@@ -4,10 +4,12 @@
 
 * [class: Transaction](#Transaction)
   * [new Transaction(serialized)](#new_Transaction)
-  * [transaction.serialize](#Transaction#serialize)
   * [Transaction.shallowCopy(transaction)](#Transaction.shallowCopy)
   * [transaction._getHash()](#Transaction#_getHash)
+  * [transaction.serialize([unsafe])](#Transaction#serialize)
   * [transaction.from(utxo, [pubkeys], [threshold])](#Transaction#from)
+  * [transaction.addInput(input, outputScript, satoshis)](#Transaction#addInput)
+  * [transaction.uncheckedAddInput(input)](#Transaction#uncheckedAddInput)
   * [transaction.hasAllUtxoInfo()](#Transaction#hasAllUtxoInfo)
   * [transaction.fee(amount)](#Transaction#fee)
   * [transaction.change(amount)](#Transaction#change)
@@ -27,12 +29,6 @@ Represents a transaction, a set of inputs and outputs to change ownership of tok
 
 - serialized `*`  
 
-<a name="Transaction#serialize"></a>
-##transaction.serialize
-Retrieve a hexa string that can be used with bitcoind's CLI interface
-(decoderawtransaction, sendrawtransaction)
-
-**Returns**: `string`  
 <a name="Transaction.shallowCopy"></a>
 ##Transaction.shallowCopy(transaction)
 Create a 'shallow' copy of the transaction, by serializing and deserializing
@@ -48,6 +44,16 @@ it dropping any additional information that inputs and outputs may have hold
 Retrieve the little endian hash of the transaction (used for serialization)
 
 **Returns**: `Buffer`  
+<a name="Transaction#serialize"></a>
+##transaction.serialize([unsafe])
+Retrieve a hexa string that can be used with bitcoind's CLI interface
+(decoderawtransaction, sendrawtransaction)
+
+**Params**
+
+- \[unsafe\] `boolean` - if true, skip testing for fees that are too high  
+
+**Returns**: `string`  
 <a name="Transaction#from"></a>
 ##transaction.from(utxo, [pubkeys], [threshold])
 Add an input to this transaction. This is a high level interface
@@ -92,6 +98,29 @@ transaction.from({'txId': '0000...', inputIndex: 0, satoshis: 1000, script: '...
                  ['03000...', '02000...'], 2);
 ```
 
+<a name="Transaction#addInput"></a>
+##transaction.addInput(input, outputScript, satoshis)
+Add an input to this transaction. The input must be an instance of the `Input` class.
+It should have information about the Output that it's spending, but if it's not already
+set, two additional parameters, `outputScript` and `satoshis` can be provided.
+
+**Params**
+
+- input `Input`  
+- outputScript `String` | `Script`  
+- satoshis `number`  
+
+**Returns**:  - Transaction this, for chaining  
+<a name="Transaction#uncheckedAddInput"></a>
+##transaction.uncheckedAddInput(input)
+Add an input to this transaction, without checking that the input has information about
+the output that it's spending.
+
+**Params**
+
+- input `Input`  
+
+**Returns**:  - Transaction this, for chaining  
 <a name="Transaction#hasAllUtxoInfo"></a>
 ##transaction.hasAllUtxoInfo()
 Returns true if the transaction has enough info on all inputs to be correctly validated

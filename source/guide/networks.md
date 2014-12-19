@@ -1,4 +1,4 @@
-# Networks
+# > `bitcore.Networks`
 
 ## Description
 

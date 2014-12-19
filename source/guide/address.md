@@ -1,4 +1,4 @@
-# Address
+# > `bitcore.Address`
 
 ## Description
 

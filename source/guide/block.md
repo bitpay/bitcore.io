@@ -1,4 +1,4 @@
-# Block
+# > `bitcore.Block`
 
 ## Description
 

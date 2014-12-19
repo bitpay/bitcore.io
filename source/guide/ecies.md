@@ -1,4 +1,4 @@
-# ECIES
+# > `bitcore-ecies`
 
 ## Description
 

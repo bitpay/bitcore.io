@@ -1,4 +1,4 @@
-# Transaction
+# > `bitcore.Transaction`
 
 ## Description
 

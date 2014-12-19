@@ -1,4 +1,4 @@
-# Pool
+# > `bitcore.transport.Pool`
 
 ## Pool
 

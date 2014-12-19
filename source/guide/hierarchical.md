@@ -1,4 +1,4 @@
-# HDKeys
+# > `bitcore.HDKeys`
 
 ## Hierarichically Derived Keys
 

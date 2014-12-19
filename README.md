@@ -3,17 +3,30 @@ Bitcore.io
 
 The Bitcore website, hosted via GitHub Pages. 
 
-#Running
+#Updating
+
+The website is build using Hexo, and hexo commands can be used directly if globally installed. There are also gulp tasks to update the website:
 
 ```
-$ npm install
-$ npm install hexo -g
-$ hexo generate
-$ hexo server
+// update developer guide
+$ gulp copy-docs
+
+// generate api reference docs
+$ gulp generate-api-docs
+
+// generate the public website
+$ gulp generate-public
+
+// update all documentation
+$ gulp update
+
+// start development server
+$ gulp server
+
 ```
 
 #Assets
-Bitcore brand assets are available in the `images` directory.
+Bitcore static files, theme and brand assets are in the `source` directory, and is built into the `public` directory.
 
 #Contributing
 Please open a new issue or send pull requests with ideas or suggestions.

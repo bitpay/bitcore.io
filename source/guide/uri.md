@@ -1,4 +1,4 @@
-# URI
+# > `bitcore.URI`
 
 ## Description
 

@@ -1,4 +1,4 @@
-# PaymentProtocol
+# > `bitcore.PaymentProtocol`
 
 ## Description
 

@@ -1,4 +1,4 @@
-# PublicKey
+# > `bitcore.PublicKey`
 
 ## Description
 

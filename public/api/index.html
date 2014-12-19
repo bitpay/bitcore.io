@@ -26,39 +26,15 @@
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
   <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
-  <meta name="description" content="Examples
-Create a private key
-1var privKey = new bitcore.PrivateKey();
-
-Create an Address
-12var privKey = new bitcore.PrivateKey();var address = privKey.toAddress();
-
-Create a Multisig Address
-12// Bu">
+  <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bitcore">
 <meta property="og:url" content="http://bitcore.io/api/index.html">
 <meta property="og:site_name" content="Bitcore">
-<meta property="og:description" content="Examples
-Create a private key
-1var privKey = new bitcore.PrivateKey();
-
-Create an Address
-12var privKey = new bitcore.PrivateKey();var address = privKey.toAddress();
-
-Create a Multisig Address
-12// Bu">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bitcore">
-<meta name="twitter:description" content="Examples
-Create a private key
-1var privKey = new bitcore.PrivateKey();
-
-Create an Address
-12var privKey = new bitcore.PrivateKey();var address = privKey.toAddress();
-
-Create a Multisig Address
-12// Bu">
+<meta name="twitter:description">
 <meta name="twitter:site" content="@bitpay">
 
   
@@ -108,32 +84,13 @@ Create a Multisig Address
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Examples"><span class="toc-number">1.</span> <span class="toc-text">Examples</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_a_private_key"><span class="toc-number">1.1.</span> <span class="toc-text">Create a private key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_an_Address"><span class="toc-number">1.2.</span> <span class="toc-text">Create an Address</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_a_Multisig_Address"><span class="toc-number">1.3.</span> <span class="toc-text">Create a Multisig Address</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Request_a_Payment"><span class="toc-number">1.4.</span> <span class="toc-text">Request a Payment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_a_transaction"><span class="toc-number">1.5.</span> <span class="toc-text">Create a transaction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Connect_to_the_network"><span class="toc-number">1.6.</span> <span class="toc-text">Connect to the network</span></a></li></ol></li></ol>
+        
       </div>
       <div class="page-entry" itemprop="articleBody">
-        <h1 id="Examples">Examples</h1>
-<h2 id="Create_a_private_key">Create a private key</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> privKey = <span class="keyword">new</span> bitcore.PrivateKey();</div></pre></td></tr></table></figure>
-
-<h2 id="Create_an_Address">Create an Address</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> privKey = <span class="keyword">new</span> bitcore.PrivateKey();</div><div class="line"><span class="keyword">var</span> address = privKey.toAddress();</div></pre></td></tr></table></figure>
-
-<h2 id="Create_a_Multisig_Address">Create a Multisig Address</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Build a 2-of-3 address from public keys</span></div><div class="line"><span class="keyword">var</span> P2SHAddress = <span class="keyword">new</span> bitcore.Address([publicKey1, publicKey2, publicKey3], <span class="number">2</span>);</div></pre></td></tr></table></figure>
-
-<h2 id="Request_a_Payment">Request a Payment</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> paymentInfo = {</div><div class="line">  address: <span class="string">'1DNtTk4PUCGAdiNETAzQFWZiy2fCHtGnPx'</span>,</div><div class="line">  amount: <span class="number">120000</span> <span class="comment">//satoshis</span></div><div class="line">};</div><div class="line"><span class="keyword">var</span> uri = <span class="keyword">new</span> bitcore.URI(paymentInfo).toString();</div></pre></td></tr></table></figure>
-
-<h2 id="Create_a_transaction">Create a transaction</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> transaction = <span class="keyword">new</span> Transaction()</div><div class="line">    .<span class="keyword">from</span>(utxos)          <span class="comment">// Feed information about what unspend outputs one can use</span></div><div class="line">    .<span class="keyword">to</span>(address, amount)  <span class="comment">// Add an output with the given amount of satoshis</span></div><div class="line">    .change(address)      <span class="comment">// Sets up a change address where the rest of the funds will go</span></div><div class="line">    .sign(privkeySet)     <span class="comment">// Signs all the inputs it can</span></div></pre></td></tr></table></figure>
-
-<h2 id="Connect_to_the_network">Connect to the network</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> peer = <span class="keyword">new</span> Peer(<span class="string">'5.9.85.34'</span>);</div><div class="line"></div><div class="line">peer.on(<span class="string">'inv'</span>, <span class="function"><span class="keyword">function</span><span class="params">(message)</span> </span>{</div><div class="line">  <span class="comment">// new invetory</span></div><div class="line">});</div><div class="line"></div><div class="line">peer.connect();</div></pre></td></tr></table></figure>
-
-
+        
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2014-12-19T16:41:06.000Z" itemprop="dateModified">Last updated: Dec 19 2014</time>
+        <time id="page-footer-updated" datetime="2014-12-19T19:19:24.000Z" itemprop="dateModified">Last updated: Dec 19 2014</time>
         <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
       </footer>
       

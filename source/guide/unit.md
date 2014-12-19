@@ -1,4 +1,4 @@
-# Unit
+# > `bitcore.Unit`
 
 ## Description
 

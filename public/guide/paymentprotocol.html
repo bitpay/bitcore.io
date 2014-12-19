@@ -26,21 +26,21 @@
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
   <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
-  <meta name="description" content="PaymentProtocol
+  <meta name="description" content="&gt; bitcore.PaymentProtocol
 Description
-PaymentProtocol and associated functions and methods will serialize, deserialize, sign and verify payment protocol messages both in Node.js and web browsers. Both X.509 and">
+PaymentProtocol and associated functions and methods will serialize, deserialize, sign and verify payment protocol messages both in Node.js and web browsers. B">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bitcore">
 <meta property="og:url" content="http://bitcore.io/guide/paymentprotocol.html">
 <meta property="og:site_name" content="Bitcore">
-<meta property="og:description" content="PaymentProtocol
+<meta property="og:description" content="&gt; bitcore.PaymentProtocol
 Description
-PaymentProtocol and associated functions and methods will serialize, deserialize, sign and verify payment protocol messages both in Node.js and web browsers. Both X.509 and">
+PaymentProtocol and associated functions and methods will serialize, deserialize, sign and verify payment protocol messages both in Node.js and web browsers. B">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bitcore">
-<meta name="twitter:description" content="PaymentProtocol
+<meta name="twitter:description" content="&gt; bitcore.PaymentProtocol
 Description
-PaymentProtocol and associated functions and methods will serialize, deserialize, sign and verify payment protocol messages both in Node.js and web browsers. Both X.509 and">
+PaymentProtocol and associated functions and methods will serialize, deserialize, sign and verify payment protocol messages both in Node.js and web browsers. B">
 <meta name="twitter:site" content="@bitpay">
 
   
@@ -90,10 +90,10 @@ PaymentProtocol and associated functions and methods will serialize, deserialize
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PaymentProtocol"><span class="toc-number">1.</span> <span class="toc-text">PaymentProtocol</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Make_Payment_Details"><span class="toc-number">1.2.</span> <span class="toc-text">Make Payment Details</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sign_a_Payment_Request"><span class="toc-number">1.3.</span> <span class="toc-text">Sign a Payment Request</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Verify_a_Payment_Request"><span class="toc-number">1.4.</span> <span class="toc-text">Verify a Payment Request</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Send_a_Payment"><span class="toc-number">1.5.</span> <span class="toc-text">Send a Payment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Receive_a_Payment"><span class="toc-number">1.6.</span> <span class="toc-text">Receive a Payment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Send_a_Payment_Acknowledgement"><span class="toc-number">1.7.</span> <span class="toc-text">Send a Payment Acknowledgement</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Receive_an_Acknowledgement"><span class="toc-number">1.8.</span> <span class="toc-text">Receive an Acknowledgement</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#>_bitcore-PaymentProtocol"><span class="toc-number">1.</span> <span class="toc-text">> bitcore.PaymentProtocol</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Make_Payment_Details"><span class="toc-number">1.2.</span> <span class="toc-text">Make Payment Details</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sign_a_Payment_Request"><span class="toc-number">1.3.</span> <span class="toc-text">Sign a Payment Request</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Verify_a_Payment_Request"><span class="toc-number">1.4.</span> <span class="toc-text">Verify a Payment Request</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Send_a_Payment"><span class="toc-number">1.5.</span> <span class="toc-text">Send a Payment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Receive_a_Payment"><span class="toc-number">1.6.</span> <span class="toc-text">Receive a Payment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Send_a_Payment_Acknowledgement"><span class="toc-number">1.7.</span> <span class="toc-text">Send a Payment Acknowledgement</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Receive_an_Acknowledgement"><span class="toc-number">1.8.</span> <span class="toc-text">Receive an Acknowledgement</span></a></li></ol></li></ol>
       </div>
       <div class="page-entry" itemprop="articleBody">
-        <h1 id="PaymentProtocol">PaymentProtocol</h1>
+        <h1 id="&gt;_bitcore-PaymentProtocol">&gt; <code>bitcore.PaymentProtocol</code></h1>
 <h2 id="Description">Description</h2>
 <p><code>PaymentProtocol</code> and associated functions and methods will serialize, deserialize, sign and verify payment protocol messages both in Node.js and web browsers. Both X.509 and <a href="https://en.bitcoin.it/wiki/Identity_protocol_v1" target="_blank" rel="external">bitcoin identity protocol</a> are supported. For detailed technical information, please view <a href="https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki" target="_blank" rel="external">BIP70</a>.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bitcore = <span class="built_in">require</span>(<span class="string">'bitcore'</span>);</div><div class="line"><span class="keyword">var</span> PaymentProtocol = bitcore.PaymentProtocol;</div></pre></td></tr></table></figure>
@@ -131,7 +131,7 @@ PaymentProtocol and associated functions and methods will serialize, deserialize
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2014-12-19T16:41:06.000Z" itemprop="dateModified">Last updated: Dec 19 2014</time>
+        <time id="page-footer-updated" datetime="2014-12-19T19:19:22.000Z" itemprop="dateModified">Last updated: Dec 19 2014</time>
         <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
       </footer>
       

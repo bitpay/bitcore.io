@@ -1,4 +1,4 @@
-# Crypto
+# > `bitcore.crypto`
 
 ## Description
 

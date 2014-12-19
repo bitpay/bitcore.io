@@ -31,10 +31,10 @@ Members
 
 class: Transaction
 new Transaction(serialized)
-transaction.serialize
 Transaction.shallowCopy(transaction)
 transaction._getHash()
-transaction.from(utxo, [pubkeys], [thresho">
+transaction.serialize([unsafe])
+transaction.from(utxo, [pubkeys]">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bitcore">
 <meta property="og:url" content="http://bitcore.io/api/transaction/transaction.html">
@@ -44,10 +44,10 @@ Members
 
 class: Transaction
 new Transaction(serialized)
-transaction.serialize
 Transaction.shallowCopy(transaction)
 transaction._getHash()
-transaction.from(utxo, [pubkeys], [thresho">
+transaction.serialize([unsafe])
+transaction.from(utxo, [pubkeys]">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bitcore">
 <meta name="twitter:description" content="class: Transaction
@@ -55,10 +55,10 @@ Members
 
 class: Transaction
 new Transaction(serialized)
-transaction.serialize
 Transaction.shallowCopy(transaction)
 transaction._getHash()
-transaction.from(utxo, [pubkeys], [thresho">
+transaction.serialize([unsafe])
+transaction.from(utxo, [pubkeys]">
 <meta name="twitter:site" content="@bitpay">
 
   
@@ -108,7 +108,7 @@ transaction.from(utxo, [pubkeys], [thresho">
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#class:_Transaction"><span class="toc-number">1.</span> <span class="toc-text">class: Transaction</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#new_Transaction(serialized)"><span class="toc-number">1.1.</span> <span class="toc-text">new Transaction(serialized)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-serialize"><span class="toc-number">1.2.</span> <span class="toc-text">transaction.serialize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transaction-shallowCopy(transaction)"><span class="toc-number">1.3.</span> <span class="toc-text">Transaction.shallowCopy(transaction)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-_getHash()"><span class="toc-number">1.4.</span> <span class="toc-text">transaction._getHash()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-from(utxo,_[pubkeys],_[threshold])"><span class="toc-number">1.5.</span> <span class="toc-text">transaction.from(utxo, [pubkeys], [threshold])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-hasAllUtxoInfo()"><span class="toc-number">1.6.</span> <span class="toc-text">transaction.hasAllUtxoInfo()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-fee(amount)"><span class="toc-number">1.7.</span> <span class="toc-text">transaction.fee(amount)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-change(amount)"><span class="toc-number">1.8.</span> <span class="toc-text">transaction.change(amount)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-to(address,_amount)"><span class="toc-number">1.9.</span> <span class="toc-text">transaction.to(address, amount)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-addData(value)"><span class="toc-number">1.10.</span> <span class="toc-text">transaction.addData(value)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-sign(privateKey,_sigtype)"><span class="toc-number">1.11.</span> <span class="toc-text">transaction.sign(privateKey, sigtype)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-applySignature(signature)"><span class="toc-number">1.12.</span> <span class="toc-text">transaction.applySignature(signature)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-verifySignature()"><span class="toc-number">1.13.</span> <span class="toc-text">transaction.verifySignature()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-verify()"><span class="toc-number">1.14.</span> <span class="toc-text">transaction.verify()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-isCoinbase()"><span class="toc-number">1.15.</span> <span class="toc-text">transaction.isCoinbase()</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#class:_Transaction"><span class="toc-number">1.</span> <span class="toc-text">class: Transaction</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#new_Transaction(serialized)"><span class="toc-number">1.1.</span> <span class="toc-text">new Transaction(serialized)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transaction-shallowCopy(transaction)"><span class="toc-number">1.2.</span> <span class="toc-text">Transaction.shallowCopy(transaction)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-_getHash()"><span class="toc-number">1.3.</span> <span class="toc-text">transaction._getHash()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-serialize([unsafe])"><span class="toc-number">1.4.</span> <span class="toc-text">transaction.serialize([unsafe])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-from(utxo,_[pubkeys],_[threshold])"><span class="toc-number">1.5.</span> <span class="toc-text">transaction.from(utxo, [pubkeys], [threshold])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-addInput(input,_outputScript,_satoshis)"><span class="toc-number">1.6.</span> <span class="toc-text">transaction.addInput(input, outputScript, satoshis)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-uncheckedAddInput(input)"><span class="toc-number">1.7.</span> <span class="toc-text">transaction.uncheckedAddInput(input)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-hasAllUtxoInfo()"><span class="toc-number">1.8.</span> <span class="toc-text">transaction.hasAllUtxoInfo()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-fee(amount)"><span class="toc-number">1.9.</span> <span class="toc-text">transaction.fee(amount)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-change(amount)"><span class="toc-number">1.10.</span> <span class="toc-text">transaction.change(amount)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-to(address,_amount)"><span class="toc-number">1.11.</span> <span class="toc-text">transaction.to(address, amount)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-addData(value)"><span class="toc-number">1.12.</span> <span class="toc-text">transaction.addData(value)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-sign(privateKey,_sigtype)"><span class="toc-number">1.13.</span> <span class="toc-text">transaction.sign(privateKey, sigtype)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-applySignature(signature)"><span class="toc-number">1.14.</span> <span class="toc-text">transaction.applySignature(signature)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-verifySignature()"><span class="toc-number">1.15.</span> <span class="toc-text">transaction.verifySignature()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-verify()"><span class="toc-number">1.16.</span> <span class="toc-text">transaction.verify()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-isCoinbase()"><span class="toc-number">1.17.</span> <span class="toc-text">transaction.isCoinbase()</span></a></li></ol></li></ol>
       </div>
       <div class="page-entry" itemprop="articleBody">
         <p><a name="Transaction"></a></p>
@@ -117,10 +117,12 @@ transaction.from(utxo, [pubkeys], [thresho">
 <ul>
 <li><a href="#Transaction">class: Transaction</a><ul>
 <li><a href="#new_Transaction">new Transaction(serialized)</a></li>
-<li><a href="#Transaction#serialize">transaction.serialize</a></li>
 <li><a href="#Transaction.shallowCopy">Transaction.shallowCopy(transaction)</a></li>
 <li><a href="#Transaction#_getHash">transaction._getHash()</a></li>
+<li><a href="#Transaction#serialize">transaction.serialize([unsafe])</a></li>
 <li><a href="#Transaction#from">transaction.from(utxo, [pubkeys], [threshold])</a></li>
+<li><a href="#Transaction#addInput">transaction.addInput(input, outputScript, satoshis)</a></li>
+<li><a href="#Transaction#uncheckedAddInput">transaction.uncheckedAddInput(input)</a></li>
 <li><a href="#Transaction#hasAllUtxoInfo">transaction.hasAllUtxoInfo()</a></li>
 <li><a href="#Transaction#fee">transaction.fee(amount)</a></li>
 <li><a href="#Transaction#change">transaction.change(amount)</a></li>
@@ -141,10 +143,7 @@ transaction.from(utxo, [pubkeys], [thresho">
 <ul>
 <li>serialized <code>*</code>  </li>
 </ul>
-<p><a name="Transaction#serialize"></a></p>
-<h2 id="transaction-serialize">transaction.serialize</h2>
-<p>Retrieve a hexa string that can be used with bitcoind’s CLI interface<br>(decoderawtransaction, sendrawtransaction)</p>
-<p><strong>Returns</strong>: <code>string</code><br><a name="Transaction.shallowCopy"></a></p>
+<p><a name="Transaction.shallowCopy"></a></p>
 <h2 id="Transaction-shallowCopy(transaction)">Transaction.shallowCopy(transaction)</h2>
 <p>Create a ‘shallow’ copy of the transaction, by serializing and deserializing<br>it dropping any additional information that inputs and outputs may have hold</p>
 <p><strong>Params</strong></p>
@@ -154,7 +153,14 @@ transaction.from(utxo, [pubkeys], [thresho">
 <p><strong>Returns</strong>: <a href="#Transaction">Transaction</a><br><a name="Transaction#_getHash"></a></p>
 <h2 id="transaction-_getHash()">transaction._getHash()</h2>
 <p>Retrieve the little endian hash of the transaction (used for serialization)</p>
-<p><strong>Returns</strong>: <code>Buffer</code><br><a name="Transaction#from"></a></p>
+<p><strong>Returns</strong>: <code>Buffer</code><br><a name="Transaction#serialize"></a></p>
+<h2 id="transaction-serialize([unsafe])">transaction.serialize([unsafe])</h2>
+<p>Retrieve a hexa string that can be used with bitcoind’s CLI interface<br>(decoderawtransaction, sendrawtransaction)</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>[unsafe] <code>boolean</code> - if true, skip testing for fees that are too high  </li>
+</ul>
+<p><strong>Returns</strong>: <code>string</code><br><a name="Transaction#from"></a></p>
 <h2 id="transaction-from(utxo,_[pubkeys],_[threshold])">transaction.from(utxo, [pubkeys], [threshold])</h2>
 <p>Add an input to this transaction. This is a high level interface<br>to add an input, for more control, use @{link Transaction#addInput}.</p>
 <p>Can receive, as output information, the output of bitcoind’s <code>listunspent</code> command,<br>and a slightly fancier format recognized by bitcore:</p>
@@ -171,7 +177,23 @@ transaction.from(utxo, [pubkeys], [thresho">
 <p><strong>Example</strong>  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> transaction = <span class="keyword">new</span> Transaction();</div><div class="line"></div><div class="line"><span class="comment">// From a pay to public key hash output from bitcoind's listunspent</span></div><div class="line">transaction.from({<span class="string">'txid'</span>: <span class="string">'0000...'</span>, vout: <span class="number">0</span>, amount: <span class="number">0.1</span>, scriptPubKey: <span class="string">'OP_DUP ...'</span>});</div><div class="line"></div><div class="line"><span class="comment">// From a pay to public key hash output</span></div><div class="line">transaction.from({<span class="string">'txId'</span>: <span class="string">'0000...'</span>, outputIndex: <span class="number">0</span>, satoshis: <span class="number">1000</span>, script: <span class="string">'OP_DUP ...'</span>});</div><div class="line"></div><div class="line"><span class="comment">// From a multisig P2SH output</span></div><div class="line">transaction.from({<span class="string">'txId'</span>: <span class="string">'0000...'</span>, inputIndex: <span class="number">0</span>, satoshis: <span class="number">1000</span>, script: <span class="string">'... OP_HASH'</span>},</div><div class="line">                 [<span class="string">'03000...'</span>, <span class="string">'02000...'</span>], <span class="number">2</span>);</div></pre></td></tr></table></figure>
 
-<p><a name="Transaction#hasAllUtxoInfo"></a></p>
+<p><a name="Transaction#addInput"></a></p>
+<h2 id="transaction-addInput(input,_outputScript,_satoshis)">transaction.addInput(input, outputScript, satoshis)</h2>
+<p>Add an input to this transaction. The input must be an instance of the <code>Input</code> class.<br>It should have information about the Output that it’s spending, but if it’s not already<br>set, two additional parameters, <code>outputScript</code> and <code>satoshis</code> can be provided.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>input <code>Input</code>  </li>
+<li>outputScript <code>String</code> | <code>Script</code>  </li>
+<li>satoshis <code>number</code>  </li>
+</ul>
+<p><strong>Returns</strong>:  - Transaction this, for chaining<br><a name="Transaction#uncheckedAddInput"></a></p>
+<h2 id="transaction-uncheckedAddInput(input)">transaction.uncheckedAddInput(input)</h2>
+<p>Add an input to this transaction, without checking that the input has information about<br>the output that it’s spending.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>input <code>Input</code>  </li>
+</ul>
+<p><strong>Returns</strong>:  - Transaction this, for chaining<br><a name="Transaction#hasAllUtxoInfo"></a></p>
 <h2 id="transaction-hasAllUtxoInfo()">transaction.hasAllUtxoInfo()</h2>
 <p>Returns true if the transaction has enough info on all inputs to be correctly validated</p>
 <p><strong>Returns</strong>: <code>boolean</code><br><a name="Transaction#fee"></a></p>
@@ -239,7 +261,7 @@ transaction.from(utxo, [pubkeys], [thresho">
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2014-12-19T16:41:06.000Z" itemprop="dateModified">Last updated: Dec 19 2014</time>
+        <time id="page-footer-updated" datetime="2014-12-19T19:19:24.000Z" itemprop="dateModified">Last updated: Dec 19 2014</time>
         <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
       </footer>
       
