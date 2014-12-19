@@ -11,7 +11,10 @@ The website is build using Hexo, and hexo commands can be used directly if globa
 // generate the public website
 $ gulp generate-public
 
-// update all documentation from bitcore
+// update bitcore dependency
+$ npm install
+
+// update bitcore documentation
 $ gulp update
 
 // start development server
