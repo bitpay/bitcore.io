@@ -1,6 +1,9 @@
 *.swp
 browser/
 build/
+source/guide/
+source/api/
+public/
 node_modules/
 README.html
 
