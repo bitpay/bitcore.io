@@ -67,9 +67,13 @@ gulp.task('generate-public', shell.task([
   './node_modules/.bin/hexo generate'
 ]));
 
-gulp.task('server', shell.task([
+gulp.task('run-server', shell.task([
   './node_modules/.bin/hexo server'
 ]));
+
+gulp.task('server', function(callback){
+  runSequence(['generate'], ['run-server'], callback);
+});
 
 gulp.task('generate', function(callback){
   runSequence(['copy-docs'], ['generate-api-docs'], ['copy-api-index'], ['copy-readme'], ['copy-contributing'], ['generate-public'], callback);
