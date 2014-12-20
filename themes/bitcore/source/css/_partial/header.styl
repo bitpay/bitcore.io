@@ -1,5 +1,10 @@
 logo-width = 178px
 logo-height = 52px
+logo-small-width = 107px
+logo-small-height = 32px
+logo-medium-width = 142px
+logo-medium-height = 41px
+
 
 #header.invert
   background: color-black2
@@ -8,7 +13,17 @@ logo-height = 52px
 #header.invert #logo
   width: logo-width
   height: logo-height
-  image: "images/logo-invert.png" @width @height
+  background-image: url("images/logo-invert.png")
+  background-size: logo-width logo-height
+  @media mq-mobile
+    background-size: logo-medium-width logo-medium-height
+    width: logo-medium-width
+    height: logo-medium-height
+  @media mq-small
+    background-size: logo-small-width logo-small-height
+    width: logo-small-width
+    height: logo-small-height
+
 
 #header
   background: #fff
@@ -17,6 +32,9 @@ logo-height = 52px
   padding-top: 30px
   padding-bottom: 30px
   position: relative
+  @media mq-small
+    padding-top: 20px
+    padding-bottom: 20px
 
 #logo-wrap
   text-align: center
@@ -28,8 +46,9 @@ logo-height = 52px
   hide-text()
   width: logo-width
   height: logo-height
-  image: "images/logo.png" @width @height
+  background-image: url("images/logo.png")
   display: block
+  transition:0.5s
 
 #main-nav-toggle
   float: right
@@ -54,6 +73,9 @@ logo-height = 52px
     color: #555
   @media mq-normal
     display: none
+  @media mq-small
+    width: logo-small-height
+    line-height:8px
 
 #main-nav
   &.on
@@ -72,6 +94,7 @@ logo-height = 52px
     float: right
     display: block
     margin: 0
+    margin-top:12px
 
 #main-nav-list
   @media mq-normal
