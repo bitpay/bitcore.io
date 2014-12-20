@@ -71,6 +71,6 @@ gulp.task('server', shell.task([
   './node_modules/.bin/hexo server'
 ]));
 
-gulp.task('update', function(callback){
+gulp.task('generate', function(callback){
   runSequence(['copy-docs'], ['generate-api-docs'], ['copy-api-index'], ['copy-readme'], ['copy-contributing'], ['generate-public'], callback);
 });
