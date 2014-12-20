@@ -14,8 +14,8 @@ $ gulp generate-public
 // update bitcore dependency
 $ npm install
 
-// update bitcore documentation
-$ gulp update
+// update bitcore documentation and generate site
+$ gulp generate
 
 // start development server
 $ gulp server
