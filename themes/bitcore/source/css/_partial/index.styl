@@ -26,9 +26,9 @@ intro-quick-start-column = 2
   background-size: 160px 150px
   background-image: url("images/lava-ball.png")
   @media mq-mobile
-    background-size: 120px 112px
+    background-size: 110px 105px
     width:120px
-    top:30px
+    top:40px
     height:112px
   @media mq-small
     top:20px
@@ -57,19 +57,23 @@ intro-quick-start-column = 2
     background-size:80px 10px
 
 #terminal
-  width: 350px;
-  margin-bottom: 25px;
+  position:absolute
+  width: 350px
+  margin-bottom: 25px
   background-image: url("images/terminal-bg.svg")
   background-repeat: no-repeat
   height:147px
   background-position: center center
-  line-height: 1.6;
+  line-height: 1.6
   text-align:center
   list-style: outside none none
   margin: 0px auto
+  z-index:100
   color: #FFF
   padding: 20px 0px 0px
   font-size: 1.2em
+  @media mq-half4
+    width:87%
 
 .browser-icon
   position:relative
@@ -79,6 +83,8 @@ intro-quick-start-column = 2
   background-image: url("images/browser-icon.svg")
   margin: 20px 0px 10px
   height: 34px
+  @media mq-half4
+    background-image:none
 
 #terminal li
   margin:10px 0
@@ -90,11 +96,16 @@ intro-quick-start-column = 2
   height: 34px
   background-repeat: no-repeat
   background-image: url("images/nodejs-icon.svg")
+  @media mq-half4
+    background-image:none
+
+#getting-started a
+  color:#000
 
 #getting-started
   clear:both;
   padding-top:50px
-  padding-bottom:80px
+  padding-bottom:110px
   background-color:color-black4
 
 #projects
@@ -229,23 +240,62 @@ intro-quick-start-column = 2
   margin-bottom:40px
   margin-top:40px
 
+#read-docs-wrapper
+  float:left
+  margin-top:70px
+  text-align:center
+  @media mq-half3
+    width:120px
+
+#read-api-wrapper
+  float:right
+  margin-top:70px
+  text-align:center
+  @media mq-half3
+    width:120px
+
+#getting-started-secondary
+  z-index: 8
+  position:absolute
+  top:0
+  width:100%
+  @media mq-reg
+    width:450px
+    margin: 0 auto
+    position:relative
+    top:0px
+  @media mq-half3
+    width:350px
+  @media mq-half4
+    width:280px
+
 #read-docs
   background-image: url("images/doc-illustration.png")
   background-size:85px 88px
+  background-repeat:no-repeat
   margin:0 auto
   width:85px
   margin-top:18px
   margin-bottom:18px
   height:88px
+  @media mq-half3
+    background-size: 65px 68px
+    width: 65px
+    height: 68px
 
 #read-api
   background-image: url("images/api-illustration.png")
   background-size: 85px 88px
+  background-repeat:no-repeat
   margin:0 auto
   margin-top:18px
   margin-bottom:18px
   width:85px
   height:88px
+  @media mq-half3
+    background-size: 65px 68px
+    width: 65px
+    height: 68px
   
 #features .item p.headline
   margin-top:150px
@@ -298,6 +348,8 @@ intro-quick-start-column = 2
     width:115px
     margin:0 10px 40px 10px;
     background-size:115px 85px
+  @media mq-small
+    margin:0 5px 30px 5px;
 
 
 #features .inneritem
@@ -318,11 +370,25 @@ intro-quick-start-column = 2
 #keys
   background-image: url("images/keys-illustration.png")
 
+#getting-started .outer
+  position:relative
+  width:800px
+  @media mq-reg
+    width:85%
+
 #features
   vertical-align:top
   clear:both;
   padding-top:10px
   padding-bottom:10px
+
+#getting-started-main
+  z-index:10
+  width:360px
+  height:140px
+  margin:0 auto
+  @media mq-half4
+    width:100%
 
 #start-option a 
   color:#000
@@ -365,7 +431,6 @@ intro-quick-start-column = 2
     top:90px
     width:100%
     font-size:21px
-
 
 $banner-getting-started-font
   font-family: font-mono
