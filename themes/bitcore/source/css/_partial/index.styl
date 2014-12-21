@@ -17,7 +17,7 @@ intro-quick-start-column = 2
   position:absolute;
   top:40px
 
-#ball 
+#ball
   position:absolute
   top:10px
   height:160px
@@ -31,12 +31,12 @@ intro-quick-start-column = 2
     top:40px
     height:112px
   @media mq-small
-    top:20px
+    top:50px
     background-size: 80px 76px
     width:80px
     height:76px
 
-#shadow-ball 
+#shadow-ball
   position:absolute
   top:190px
   background-size: 180px 20px
@@ -52,7 +52,7 @@ intro-quick-start-column = 2
     top:160px
   @media mq-small
     width:80px
-    top:110px
+    top:135px
     margin-left:0
     background-size:80px 10px
 
@@ -89,7 +89,7 @@ intro-quick-start-column = 2
 #terminal li
   margin:10px 0
   padding: 5px 0px 0px
-  
+
 .nodejs-icon
   position:relative
   top:21px
@@ -111,13 +111,11 @@ intro-quick-start-column = 2
 #projects
   clear:both
   background-color:color-black3
-  padding-bottom:30px
-  padding-top:40px
-
-#projects
   padding-top:60px
   padding-bottom:80px
   text-align:center
+  @media mq-small
+    padding-bottom:40px
 
 #projects .link a
   width:200px
@@ -133,33 +131,57 @@ intro-quick-start-column = 2
   width: 120px
   background-image: url("images/enbitcoins-link.svg")
   height:43px
+  @media mq-small
+    width: 70px
+    background-size: 70px
+    height:30px
 
 #enbitcoins-link:hover
   background-position:0 -60px
+  @media mq-small
+    background-position:0 -35px
 
 #streamium-link
   width:125px
   background-image: url("images/streamium-link.svg")
   height:38px
+  @media mq-small
+    width: 70px
+    background-size:70px
+    height:28px
 
 #streamium-link:hover
   background-position:0 -59px
+  @media mq-small
+    background-position:0 -33px
 
 #bitbox-link
   width:120px
   background-image: url("images/bitbox-link.svg")
   height:40px
+  @media mq-small
+    width: 70px
+    background-size:70px
+    height:26px
 
 #bitbox-link:hover
   background-position:0 -40.5px
+  @media mq-small
+    background-position:0 -26px
 
 #paper-wallet-link
   width:145px
   background-image: url("images/paper-wallet-link.svg")
   height:40px
+  @media mq-small
+    width: 100px
+    background-size: 100px
+    height:28px
 
 #paper-wallet-link:hover
   background-position:0 -41.5px
+  @media mq-small
+    background-position:0 -30px
 
 #cp-link a
   color:#6b6a65
@@ -173,9 +195,17 @@ intro-quick-start-column = 2
   width:120px
   background-image: url("images/cp-link.svg")
   height:23px
+  @media mq-small
+    width: 90px
+    background-size: 25px
+    height:16px
+    font-size:13px
+    line-height:15px
 
 #cp-link:hover
   background-position:0 -24px
+  @media mq-small
+    background-position:0 -17px
 
 #cp-link:hover a
   color:#b1b0a8
@@ -184,25 +214,43 @@ intro-quick-start-column = 2
   width: 120px
   background-image: url("images/bitpay-link.svg")
   height:45px
+  @media mq-small
+    width:90px
+    height:39px
+    background-size: 90px
 
 #bitpay-link:hover
   background-position:0 -60px
+  @media mq-small
+    background-position:0 -50px
 
 #copay-link
   width: 120px
   background-image: url("images/copay-link.svg")
   height:50px
+  @media mq-small
+    width:90px
+    height:46px
+    background-size: 90px
 
 #copay-link:hover
   background-position:0 -55px
+  @media mq-small
+    background-position:0 -47px
 
 #insight-link
   width: 120px
   background-image: url("images/insight-link.svg")
-  height:42px       
+  height:42px
+  @media mq-small
+    width:90px
+    height:37px
+    background-size: 90px
 
 #insight-link:hover
   background-position:0 -43px
+  @media mq-small
+    background-position:0 -38px
 
 .using-bitcore
   text-align:center
@@ -211,6 +259,8 @@ intro-quick-start-column = 2
   width:100%
   line-height:90px
   margin-bottom:45px
+  @media mq-small
+    line-height: 60px
 
 #banner-footer
   transition:0.3s
@@ -298,7 +348,7 @@ intro-quick-start-column = 2
     background-size: 65px 68px
     width: 65px
     height: 68px
-  
+
 #features .item p.headline
   margin-top:150px
   font-size:19px
@@ -315,10 +365,10 @@ intro-quick-start-column = 2
     line-height:23px
     margin-top:100px
 
-#features a 
+#features a
   color: color-black2
 
-#features .item p.detail 
+#features .item p.detail
   margin-top:20px
   font-size:15px
   line-height:20px
@@ -392,7 +442,7 @@ intro-quick-start-column = 2
   @media mq-half4
     width:100%
 
-#start-option a 
+#start-option a
   color:#000
 
 #start-option
@@ -407,6 +457,11 @@ intro-quick-start-column = 2
 #features h2, #projects h2, #getting-started h2
   font-size: 1.7em
   text-align:center
+  @media mq-half
+    font-size:1.5em
+  @media mq-small
+    font-size: 1.4em
+
 
 #projects h2
   color:#fff
@@ -447,11 +502,11 @@ $banner-getting-started-font
   margin:auto
   position:relative
   top:-45px
-  width:350px
+  width:378px
   clearfix()
   padding-top: 30px
   @media mq-half4
-    width: 260px
+    width: 265px
 
 #banner-getting-started-prefix
   @extend $banner-getting-started-font
