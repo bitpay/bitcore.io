@@ -512,6 +512,8 @@ $banner-getting-started-font
 
 #banner-getting-started-prefix
   @extend $banner-getting-started-font
+  border-top-left-radius:3px
+  border-bottom-left-radius:3px
   position:absolute
   background: color-red1
   width:30px
@@ -535,6 +537,8 @@ $banner-getting-started-font
   border-radius: 0
 
 #banner-getting-started-btn
+  border-top-right-radius:3px
+  border-bottom-right-radius:3px
   position:absolute
   right:0
   background: #ad2116
@@ -551,6 +555,10 @@ $banner-getting-started-font
   &:before
     @extend $icon-font
     content: "\f061"
+
+#banner-getting-started-btn:hover
+  background-color:#C71B00
+  color:#fff
 
 #banner-share
   padding: 100px 0 0
