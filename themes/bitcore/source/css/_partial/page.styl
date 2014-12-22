@@ -4,18 +4,29 @@ note-warn = hsl(0, 100%, 50%)
 
 #page-banner
   @extend $banner-background
-  padding: 30px 0
-  text-align: center
+  padding: 25px 0
   @media mq-normal
-    padding: 40px 0
+    padding: 30px 0
     text-align: left
 
 #page-banner-inner
   position: relative
 
+#page-title.api
+  background-image: url('images/api-title-icon.svg')
+  background-repeat:no-repeat
+  background-position:0 3px
+  padding-left:35px
+
+#page-title.docs
+  background-image: url('images/doc-single-icon.svg')
+  background-repeat:no-repeat
+  background-position:0 3px
+  padding-left:32px
+
 #page-title
   color: #555
-  font: 300 35px font-title
+  font: 300 32px font-title
   text-shadow: 1px 0 #eee
   line-height: 1em
   @media mq-half

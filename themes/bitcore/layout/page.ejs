@@ -6,11 +6,13 @@
           // setup the different titles
           if (is_current('guide/', false)) {
             var title = 'Documentation';
+            var titleClass = 'docs'
           } else if (is_current('api/', false)) {
             var title = 'API Reference';
+            var titleClass = 'api'
           }
         %>
-        <h1 id="page-title" itemprop="name"><%= title %></h1>
+        <h1 id="page-title" class="<%= titleClass %>" itemprop="name"><%= title %></h1>
         <% if (is_current('guide/contributing.html', true)) { %>
           <a href="https://github.com/bitpay/bitcore/blob/master/CONTRIBUTING.md" title="Improve this doc" id="page-edit-link"></a>
         <% } else if (is_current('guide/index.html', true)) { %>
