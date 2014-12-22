@@ -106,6 +106,24 @@ logo-medium-height = 41px
     float: left
     margin: 0 15px
 
+.main-nav-link.docs:hover
+  background-position:0 -29px
+
+.main-nav-link.api:hover
+  background-position:0 -25px
+
+.main-nav-link.api
+  background-image: url('images/api-icon.svg')
+  background-repeat:no-repeat
+  background-position:0 7px
+  padding-left:25px
+
+.main-nav-link.docs
+  background-image: url('images/doc-icon.svg')
+  background-repeat:no-repeat
+  background-position:0 5px
+  padding-left:25px
+
 .main-nav-link
   display: block
   font-weight: bold
@@ -116,10 +134,11 @@ logo-medium-height = 41px
   padding: 10px 15px
   line-height: 1
   transition: 0.2s
+  transition-property:color
   @media mq-normal
     padding: 10px 0
   &:hover, &:active
-    color: color-blue
+    color: color-grey1
     @media mq-mobile
       background: color-blue
       color: #fff
