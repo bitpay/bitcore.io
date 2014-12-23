@@ -26,11 +26,6 @@ gulp.task('copy-api-index', function() {
   }
 });
 
-gulp.task('copy-readme', function() {
-  var readme = fs.readFileSync('./node_modules/bitcore/README.md');
-  fs.writeFileSync('source/guide/index.md', readme);
-});
-
 gulp.task('copy-contributing', function() {
   var readme = fs.readFileSync('./node_modules/bitcore/CONTRIBUTING.md');
   fs.writeFileSync('source/guide/contributing.md', readme);
@@ -76,5 +71,5 @@ gulp.task('server', function(callback){
 });
 
 gulp.task('generate', function(callback){
-  runSequence(['copy-docs'], ['generate-api-docs'], ['copy-api-index'], ['copy-readme'], ['copy-contributing'], ['generate-public'], callback);
+  runSequence(['copy-docs'], ['generate-api-docs'], ['copy-api-index'], ['copy-contributing'], ['generate-public'], callback);
 });
