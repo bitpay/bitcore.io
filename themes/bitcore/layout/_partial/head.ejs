@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title><% if (page.title){ %><%= page.title %> | <% } %>Bitcore &mdash; A pure and powerful JavaScript Bitcoin API.</title>
+  <title><% if (page.title){ %><%= page.title %> | <% } %>Bitcore &mdash; A pure and powerful JavaScript Bitcoin library.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="canonical" href="<%- page.permalink %>">
   <link rel="apple-touch-icon" sizes="57x57" href="<%- url_for('apple-touch-icon-57x57.png') %>">
@@ -27,14 +27,12 @@
   <%- feed_tag('atom.xml') %>
 
   <meta property="og:image" content="/css/images/lava-ball-social.png" />
-  <meta name="twitter:image" content="/css/images/lava-ball-social.png">
-  <meta name="twitter:image:width" content="200">
-  <meta name="twitter:image:height" content="200">
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball-social.png">
 
   <%- open_graph({
     fb_admins: theme.fb_admins,
     twitter_site: '@' + theme.twitter,
-    description: page.description || 'A pure and powerful JavaScript Bitcoin API.'
+    description: page.description || 'A pure and powerful JavaScript Bitcoin library.'
   }) %>
   <%- partial('google-analytics') %>
 </head>
