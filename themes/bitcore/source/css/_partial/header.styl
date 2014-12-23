@@ -5,7 +5,6 @@ logo-small-height = 32px
 logo-medium-width = 142px
 logo-medium-height = 41px
 
-
 #header.invert
   background: color-black2
   border-bottom: 1px solid #464646
@@ -23,7 +22,6 @@ logo-medium-height = 41px
     background-size: logo-small-width logo-small-height
     width: logo-small-width
     height: logo-small-height
-
 
 #header
   background: #fff
@@ -117,6 +115,8 @@ logo-medium-height = 41px
   background-repeat:no-repeat
   background-position:0 7px
   padding-left:25px
+  @media mq-mobile
+    background-image:none
 
 .main-nav-link.github:hover
   background-position:0 -21px
@@ -126,12 +126,16 @@ logo-medium-height = 41px
   background-repeat:no-repeat
   background-position:0 7px
   padding-left:31px
+  @media mq-mobile
+    background-image:none
 
 .main-nav-link.docs
   background-image: url('images/doc-icon.svg')
   background-repeat:no-repeat
   background-position:0 5px
   padding-left:25px
+  @media mq-mobile
+    background-image:none
 
 .main-nav-link
   display: block
