@@ -6,14 +6,15 @@
     "bitcore": "bitpay/bitcore",
     "gulp": "^3.8.10",
     "gulp-shell": "^0.2.10",
-    "jsdoc-to-markdown": "=0.5.9",
-    "more-fs": "=0.5.0",
-    "through2": "=0.6.3",
     "gulp-util": "=3.0.1",
     "hexo": "=2.8.3",
+    "hexo-gfm-links": "0.0.1",
     "hexo-renderer-ejs": "*",
+    "hexo-renderer-marked": "*",
     "hexo-renderer-stylus": "*",
+    "jsdoc-to-markdown": "=0.5.9",
+    "more-fs": "=0.5.0",
     "run-sequence": "^1.0.2",
-    "hexo-renderer-marked": "*"
+    "through2": "=0.6.3"
   }
 }
