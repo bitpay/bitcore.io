@@ -73,3 +73,15 @@ gulp.task('server', function(callback){
 gulp.task('generate', function(callback){
   runSequence(['copy-docs'], ['generate-api-docs'], ['copy-api-index'], ['copy-contributing'], ['generate-public'], callback);
 });
+
+gulp.task('npm-install', shell.task([
+  'npm install'
+]));
+
+gulp.task('hexo-deploy', shell.task([
+  './node_modules/.bin/hexo deploy'
+]));
+
+gulp.task('release', function(callback){
+  runSequence(['npm-install'], ['generate'], ['hexo-deploy'], callback);
+});
