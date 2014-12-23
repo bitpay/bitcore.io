@@ -57,8 +57,6 @@ api_sidebar:
     Pool: transport/pool.html
     RPC: transport/rpc.html
 
-//google_analytics: UA-4910098-10
-//fb_admins: 100000247608790
-//swiftype_key: DDvzs7LQ9kdKssQNQLcv
+google_analytics: UA-24163874-2
 twitter: bitpay
 github: bitpay/bitcore
