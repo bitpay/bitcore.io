@@ -25,10 +25,13 @@
   <link href="//fonts.googleapis.com/css?family=Ubuntu:light,regular,bold&subset=Latin" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=Ubuntu%20Mono:regular,bold&subset=Latin" rel="stylesheet" type="text/css">
   <%- feed_tag('atom.xml') %>
+
+  <meta property="og:image" content="http://bitcore.io/css/images/lava-ball.png" />
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball.png">
+
   <%- open_graph({
     fb_admins: theme.fb_admins,
-    twitter_site: '@' + theme.twitter,
-    image: url_for('logo.png')
+    twitter_site: '@' + theme.twitter
   }) %>
   <%- partial('google-analytics') %>
 </head>
