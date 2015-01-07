@@ -11,11 +11,11 @@ doc_sidebar:
   Models:
     Address: address.html
     Block: block.html
-    Hierarchical: hierarchical.html
+    HD Keys: hierarchical.html
     Private Key: privatekey.html
     Public Key: publickey.html
     Script: script.html
-    UnspentOutput: unspentoutput.html
+    Unspent Output: unspentoutput.html
     Transaction: transaction.html
   Helpers:
     Crypto: crypto.html
