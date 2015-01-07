@@ -15,6 +15,7 @@ doc_sidebar:
     Private Key: privatekey.html
     Public Key: publickey.html
     Script: script.html
+    UnspentOutput: unspentoutput.html
     Transaction: transaction.html
   Helpers:
     Crypto: crypto.html
@@ -28,6 +29,7 @@ doc_sidebar:
     JSON-RPC: jsonrpc.html
     Peer: peer.html
     Pool: pool.html
+    Insight Explorer: insight.html
 
 api_sidebar:
   Main: 
@@ -50,12 +52,14 @@ api_sidebar:
 
   Transaction:
     Transaction: transaction/transaction.html
+    UnspentOutput: transaction/unspentoutput.html
     Sig Hash: transaction/sighash.html
 
   Transport:
     Peer: transport/peer.html
     Pool: transport/pool.html
     RPC: transport/rpc.html
+    Explorers/Insight: transport/explorers/insight.html
 
 google_analytics: UA-24163874-2
 twitter: bitpay
