@@ -15,8 +15,23 @@
         <h1 id="page-title" class="<%= titleClass %>" itemprop="name"><%= title %></h1>
         <% if (is_current('guide/contributing.html', true)) { %>
           <a href="https://github.com/bitpay/bitcore/blob/master/CONTRIBUTING.md" title="Improve this doc" id="page-edit-link"></a>
+        <% } else if (is_current('guide/module/', false)) { %>
+          <%
+            // parse the source from the url
+            var repository = page.path.replace('guide/module', '').replace(/^\/([^\/]*).*$/, '$1');
+            var source = page.path.replace('guide/module/', '').replace(repository+'/', '').replace(/\.html$/, '.md')
+          %>
+          <a href="https://github.com/bitpay/bitcore-<%- repository %>/blob/master/docs/<%- source %>" title="Improve this doc" id="page-edit-link"></a>
         <% } else if (is_current('guide/', false)) { %>
           <a href="https://github.com/bitpay/bitcore/blob/master/docs/<%- page.path.replace(/\.html$/, '.md') %>" title="Improve this doc" id="page-edit-link"></a>
+        <% } else if (is_current('api/module/', false)) { %>
+          <%
+            // parse the source from the url
+            var repository = page.path.replace('api/module', '').replace(/^\/([^\/]*).*$/, '$1');
+            var source = page.path.replace('api/module/', '').replace(repository+'/', '').replace(/\.html$/, '.js')
+          %>
+          <a href="https://github.com/bitpay/bitcore-<%- repository %>/blob/master/lib/<%- source %>" title="Improve this doc" id="page-edit-link"></a>
+
         <% } else if (is_current('api/', false)) { %>
           <a href="https://github.com/bitpay/bitcore/blob/master/lib/<%- page.path.replace(/\api\//, '').replace(/\.html$/, '.js') %>" title="Improve this doc" id="page-edit-link"></a>
         <% } %>

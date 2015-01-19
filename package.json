@@ -4,6 +4,11 @@
   "private": true,
   "dependencies": {
     "bitcore": "bitpay/bitcore",
+    "bitcore-p2p": "bitpay/bitcore-p2p",
+    "bitcore-payment-protocol": "bitpay/bitcore-payment-protocol",
+    "bitcore-ecies": "bitpay/bitcore-ecies",
+    "bitcore-mnemonic": "bitpay/bitcore-mnemonic",
+    "bitcore-channel": "bitpay/bitcore-channel",
     "gulp": "^3.8.10",
     "gulp-shell": "^0.2.10",
     "gulp-util": "=3.0.1",
