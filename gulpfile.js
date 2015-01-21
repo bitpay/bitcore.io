@@ -7,7 +7,9 @@ var gutil = require('gulp-util');
 var jsdoc2md = require('jsdoc-to-markdown');
 var mfs = require('more-fs');
 var fs = require('fs');
+var path = require('path');
 var runSequence = require('run-sequence');
+var redirects = require('./redirects');
 
 gulp.task('docs:bitcore', function() {
   gulp.src('./node_modules/bitcore/docs/**/*.md', {
@@ -67,6 +69,19 @@ gulp.task('docs', function(callback) {
     ['docs:bitcore-channel'],
     ['docs:bitcore-explorers'],
     callback);
+});
+
+gulp.task('generate-redirects', function() {
+  var template = '<html><head><meta http-equiv="refresh" content="0; url={0}" />' +
+    '</head><body></body></html>';
+  redirects.forEach(function(data) {
+    var source = './source'+data[0];
+    var dir = path.dirname(source);
+    if (!fs.existsSync(dir)){
+      fs.mkdirSync(dir);
+    }
+    fs.writeFileSync(source, template.replace('{0}', data[1])); 
+  });
 });
 
 gulp.task('copy-api-index', function() {
@@ -192,6 +207,7 @@ gulp.task('generate', function(callback){
               ['api'],
               ['copy-api-index'],
               ['copy-contributing'],
+              ['generate-redirects'], 
               ['generate-public'],
               callback);
 });

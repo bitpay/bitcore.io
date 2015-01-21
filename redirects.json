@@ -1,0 +1,11 @@
+[
+    ["/guide/paymentprotocol.html", "/guide/payment-protocol/index.html"],
+    ["/guide/peer.html", "/guide/module/p2p/peer.html"],
+    ["/guide/insight.html", "/guide/module/explorers/index.html"],
+    ["/guide/jsonrpc.html", "/guide/index.html"],
+    ["/guide/ecies.html", "/guide/module/ecies/index.html"],
+    ["/api/transport/peer.html", "/api/module/p2p/peer.html"],
+    ["/api/transport/pool.html", "/api/module/p2p/pool.html"],
+    ["/api/transport/rpc.html", "/api/index.html"],
+    ["/api/transport/explorers/insight.html", "/api/module/explorers/index.html"]
+]
