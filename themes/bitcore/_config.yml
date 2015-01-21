@@ -4,35 +4,50 @@ menu:
   Github: https://github.com/bitpay/bitcore
 
 doc_sidebar:
-  Home: 
+  Home:
     Get Started: index.html
     Contributing: contributing.html
 
-  Models:
+  Bitcore:
     Address: address.html
     Block: block.html
+    Browser: browser.html
+    Crypto: crypto.html
+    Encoding: encoding.html
     HD Keys: hierarchical.html
+    Networks: networks.html
     Private Key: privatekey.html
     Public Key: publickey.html
     Script: script.html
-    Unspent Output: unspentoutput.html
     Transaction: transaction.html
-  Helpers:
-    Crypto: crypto.html
-    ECIES: ecies.html
-    Encoding: encoding.html
-    Networks: networks.html
-    Payment Protocol: paymentprotocol.html
     Unit: unit.html
+    Unspent Output: unspentoutput.html
     URI: uri.html
-  Networking:
-    JSON-RPC: jsonrpc.html
-    Peer: peer.html
-    Pool: pool.html
-    Insight Explorer: insight.html
+
+  Payment Protocol:
+    Getting Started: module/payment-protocol/index.html
+
+  Peer-to-Peer:
+    Getting Started: module/p2p/index.html
+    Messages: module/p2p/messages.html
+    Peer: module/p2p/peer.html
+    Pool: module/p2p/pool.html
+
+  Mnemonic:
+    Getting Started: module/mnemonic/index.html
+
+  ECIES:
+    Getting Started: module/ecies/index.html
+
+  Channel:
+    Getting Started: module/channel/index.html
+
+  Explorers:
+    Getting Started: module/explorers/index.html
 
 api_sidebar:
-  Main: 
+
+  Bitcore:
     Address: address.html
     Block: block.html
     BlockHeader: blockheader.html
@@ -43,23 +58,29 @@ api_sidebar:
     PublicKey: publickey.html
     Unit: unit.html
     Uri: uri.html
-
-  Crypto:
-    Point: crypto/point.html
-
-  Script:
+    Crypto/Point: crypto/point.html
     Script: script/script.html
-
-  Transaction:
     Transaction: transaction/transaction.html
-    UnspentOutput: transaction/unspentoutput.html
-    Sig Hash: transaction/sighash.html
+    Transaction/UnspentOutput: transaction/unspentoutput.html
+    Transaction/Signing: transaction/sighash.html
 
-  Transport:
-    Peer: transport/peer.html
-    Pool: transport/pool.html
-    RPC: transport/rpc.html
-    Explorers/Insight: transport/explorers/insight.html
+  Peer-to-Peer:
+    Messages: module/p2p/messages.html
+    Peer: module/p2p/peer.html
+    Pool: module/p2p/pool.html
+
+  Mnemonic:
+    Mnemonic: module/mnemonic/mnemonic.html
+
+  Channel:
+    Consumer: module/channel/consumer.html
+    Provider: module/channel/provider.html
+    Transactions/Commitment: module/channel/transactions/commitment.html
+    Transactions/Payment: module/channel/transactions/payment.html
+    Transactions/Refund: module/channel/transactions/refund.html
+
+  Explorers:
+    Insight: module/explorers/insight.html
 
 google_analytics: UA-24163874-2
 twitter: bitpay

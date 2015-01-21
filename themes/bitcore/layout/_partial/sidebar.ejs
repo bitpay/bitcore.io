@@ -1,12 +1,12 @@
 <aside id="sidebar">
 
-  <% 
+  <%
     // setup the different menus
-    if (is_current('guide/', false)) { 
-      var sidebar = theme.doc_sidebar; 
+    if (is_current('guide/', false)) {
+      var sidebar = theme.doc_sidebar;
       var base = 'guide/';
     } else if (is_current('api/', false)) {
-      var sidebar = theme.api_sidebar; 
+      var sidebar = theme.api_sidebar;
       var base = 'api/';
     }
   %>
