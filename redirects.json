@@ -1,5 +1,5 @@
 [
-    ["/guide/paymentprotocol.html", "/guide/payment-protocol/index.html"],
+    ["/guide/paymentprotocol.html", "/guide/module/payment-protocol/index.html"],
     ["/guide/peer.html", "/guide/module/p2p/peer.html"],
     ["/guide/insight.html", "/guide/module/explorers/index.html"],
     ["/guide/jsonrpc.html", "/guide/index.html"],
