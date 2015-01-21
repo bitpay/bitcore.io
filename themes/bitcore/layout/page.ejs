@@ -15,6 +15,8 @@
         <h1 id="page-title" class="<%= titleClass %>" itemprop="name"><%= title %></h1>
         <% if (is_current('guide/contributing.html', true)) { %>
           <a href="https://github.com/bitpay/bitcore/blob/master/CONTRIBUTING.md" title="Improve this doc" id="page-edit-link"></a>
+        <% } else if (is_current('api/index.html', true)) { %>
+          <a href="https://github.com/bitpay/bitcore.io/blob/master/api/index.md" title="Improve this doc" id="page-edit-link"></a>
         <% } else if (is_current('guide/module/', false)) { %>
           <%
             // parse the source from the url
