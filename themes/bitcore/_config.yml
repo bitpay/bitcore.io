@@ -80,6 +80,9 @@ api_sidebar:
     Transactions/Payment: module/channel/transactions/payment.html
     Transactions/Refund: module/channel/transactions/refund.html
 
+  Explorers:
+    Insight: module/explorers/insight.html
+
 google_analytics: UA-24163874-2
 twitter: bitpay
 github: bitpay/bitcore

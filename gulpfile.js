@@ -152,6 +152,10 @@ gulp.task('api:bitcore-channel', function(callback) {
   return jsdocForModule('bitcore-channel', 'module/channel');
 });
 
+gulp.task('api:bitcore-explorers', function(callback) {
+  return jsdocForModule('bitcore-explorers', 'module/explorers');
+});
+
 gulp.task('api', function(callback) {
   runSequence(
     ['api:bitcore'],
@@ -161,6 +165,7 @@ gulp.task('api', function(callback) {
     ['api:bitcore-ecies'],
     ['api:bitcore-mnemonic'],
     ['api:bitcore-channel'],
+    ['api:bitcore-explorers'],
     callback);
 });
 
