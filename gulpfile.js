@@ -10,8 +10,8 @@ var fs = require('fs');
 var runSequence = require('run-sequence');
 
 gulp.task('docs:bitcore', function() {
-  gulp.src('./node_modules/bitcore/docs/guide/**/*.md', {
-    base: './node_modules/bitcore/docs/guide/'
+  gulp.src('./node_modules/bitcore/docs/**/*.md', {
+    base: './node_modules/bitcore/docs/'
   }).pipe(gulp.dest('./source/guide/'));
 });
 
@@ -51,6 +51,12 @@ gulp.task('docs:bitcore-channel', function() {
   }).pipe(gulp.dest('./source/guide/module/channel/'));
 });
 
+gulp.task('docs:bitcore-explorers', function() {
+  gulp.src('./node_modules/bitcore-explorers/docs/**/*.md', {
+    base: './node_modules/bitcore-explorers/docs/'
+  }).pipe(gulp.dest('./source/guide/module/explorers/'));
+});
+
 gulp.task('docs', function(callback) {
   runSequence(
     ['docs:bitcore'],
@@ -59,6 +65,7 @@ gulp.task('docs', function(callback) {
     ['docs:bitcore-ecies'],
     ['docs:bitcore-mnemonic'],
     ['docs:bitcore-channel'],
+    ['docs:bitcore-explorers'],
     callback);
 });
 

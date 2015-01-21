@@ -9,6 +9,7 @@
     "bitcore-ecies": "bitpay/bitcore-ecies",
     "bitcore-mnemonic": "bitpay/bitcore-mnemonic",
     "bitcore-channel": "bitpay/bitcore-channel",
+    "bitcore-explorers": "bitpay/bitcore-explorers",
     "gulp": "^3.8.10",
     "gulp-shell": "^0.2.10",
     "gulp-util": "=3.0.1",

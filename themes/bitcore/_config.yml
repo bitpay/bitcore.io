@@ -42,6 +42,9 @@ doc_sidebar:
   Channel:
     Getting Started: module/channel/index.html
 
+  Explorers:
+    Getting Started: module/explorers/index.html
+
 api_sidebar:
 
   Bitcore:
