@@ -23,7 +23,7 @@
           %>
           <a href="https://github.com/bitpay/bitcore-<%- repository %>/blob/master/docs/<%- source %>" title="Improve this doc" id="page-edit-link"></a>
         <% } else if (is_current('guide/', false)) { %>
-          <a href="https://github.com/bitpay/bitcore/blob/master/docs/<%- page.path.replace(/\.html$/, '.md') %>" title="Improve this doc" id="page-edit-link"></a>
+          <a href="https://github.com/bitpay/bitcore/blob/master/docs/<%- page.path.replace('guide/', '').replace(/\.html$/, '.md') %>" title="Improve this doc" id="page-edit-link"></a>
         <% } else if (is_current('api/module/', false)) { %>
           <%
             // parse the source from the url
