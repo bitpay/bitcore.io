@@ -71,7 +71,6 @@ api_sidebar:
 
   Mnemonic:
     Mnemonic: module/mnemonic/mnemonic.html
-    PBKDF2: module/mnemonic/pbkdf2.html
 
   Channel:
     Consumer: module/channel/consumer.html
