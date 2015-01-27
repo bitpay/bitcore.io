@@ -1,3 +1,4 @@
+---
 title: Bitcore Examples
 description: Sample code for the most common task in any bitcoin application.
 ---
@@ -11,6 +12,9 @@ var privateKey = new bitcore.PrivateKey();
 var exported = privateKey.toWIF();
 // e.g. L3T1s1TYP9oyhHpXgkyLoJFGniEgkv2Jhi138d7R2yJ9F4QdDU2m
 var imported = bitcore.PrivateKey.fromWIF(exported);
+
+// hexa will store the value 'b9de6e778fe92aa7edb69395556f843f1dce0448350112e14906efc2a80fa61a'
+var hexa = exported.toString();
 ```
 
 ## Create an Address
