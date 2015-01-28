@@ -14,7 +14,7 @@ var exported = privateKey.toWIF();
 var imported = bitcore.PrivateKey.fromWIF(exported);
 
 // hexa will store the value 'b9de6e778fe92aa7edb69395556f843f1dce0448350112e14906efc2a80fa61a'
-var hexa = exported.toString();
+var hexa = privateKey.toString();
 ```
 
 ## Create an Address
