@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var bower = require('gulp-bower');
 var shell = require('gulp-shell');
 var through = require('through2');
 var gutil = require('gulp-util');
@@ -68,6 +69,23 @@ gulp.task('docs', function(callback) {
     ['docs:bitcore-mnemonic'],
     ['docs:bitcore-channel'],
     ['docs:bitcore-explorers'],
+    callback);
+});
+
+gulp.task('playground:bower', function() {
+  return bower({ cwd: './node_modules/bitcore-playground' });
+});
+
+gulp.task('playground:copy', function() {
+  gulp.src('./node_modules/bitcore-playground/app/**', {
+    base: './node_modules/bitcore-playground/app/'
+  }).pipe(gulp.dest('./public/playground/'));
+});
+
+gulp.task('playground', function(callback) {
+  runSequence(
+    ['playground:bower'],
+    ['playground:copy'],
     callback);
 });
 
@@ -209,6 +227,7 @@ gulp.task('generate', function(callback){
               ['copy-contributing'],
               ['generate-redirects'], 
               ['generate-public'],
+              ['playground'],
               callback);
 });
 
