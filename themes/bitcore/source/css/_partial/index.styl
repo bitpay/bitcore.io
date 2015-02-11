@@ -19,7 +19,7 @@ intro-quick-start-column = 2
 
 #ball
   position:absolute
-  top:10px
+  top:30px
   height:160px
   width:169px
   background-repeat:no-repeat
@@ -99,8 +99,15 @@ intro-quick-start-column = 2
   @media mq-half4
     background-image:none
 
+ p.getting-started
+  color:#FFFFFF   
+  line-height: 20px
+
 #getting-started a
-  color:#000
+  color:#FFFFFF
+  text-decoration: none
+  border-bottom: 1px dotted #FFFFFF
+  padding-bottom: 1px
 
 #getting-started
   clear:both;
@@ -268,6 +275,36 @@ intro-quick-start-column = 2
   @media mq-small
     background-position:0 -33px
 
+#pheeva-link
+  width: 120px
+  background-image: url("images/pheeva-link.svg")
+  height:32px
+  @media mq-small
+    width: 70px
+    background-size: 70px
+    height:30px
+
+#pheeva-link:hover
+  background-position:0 -60px
+  @media mq-small
+    background-position:0 -35px    
+
+
+
+#counterparty-link-complete
+  width: 108px
+  background-image: url("images/cp-link-complete.svg")
+  height:32px
+  @media mq-small
+    width: 70px
+    background-size: 70px
+    height:30px
+
+#counterparty-link-complete:hover
+  background-position:0 -60px
+  @media mq-small
+    background-position:0 -35px
+
 
 .using-bitcore
   text-align:center
@@ -366,6 +403,24 @@ intro-quick-start-column = 2
     background-size: 65px 68px
     width: 65px
     height: 68px
+
+#play-ground
+  background-image: url("images/playground-illustration.png")
+  background-size: 168px 88px
+  background-repeat:no-repeat
+  margin:0 auto
+  margin-top:18px
+  margin-bottom:18px
+  width:168px
+  height:88px
+  @media mq-half3
+    background-size: 65px 68px
+    width: 65px
+    height: 68px
+
+
+
+
 
 #features .item p.headline
   margin-top:150px
@@ -493,7 +548,7 @@ intro-quick-start-column = 2
 
 #banner-title
   position:relative
-  top:-30px
+  top:-20px
   color: #fff
   font: 300 38px font-title
   text-shadow: 1px 0 #000
