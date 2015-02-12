@@ -205,7 +205,7 @@ gulp.task('api', function(callback) {
 // html covertion
 
 gulp.task('generate-public', shell.task([
-  './node_modules/.bin/hexo generate'
+  'rm -rf public/* && ./node_modules/.bin/hexo generate'
 ]));
 
 // launch demo server
