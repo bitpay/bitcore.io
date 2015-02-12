@@ -1,9 +1,8 @@
 menu:
   Docs: /guide/
-  API: /api/
   Github: https://github.com/bitpay/bitcore
-  Forum: http://bitpaylabs.com
-
+  Forum: http://labs.bitpay.com/
+  Playground: http://bitcore.io/playground
 
 doc_sidebar:
   Home:
