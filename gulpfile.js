@@ -11,6 +11,7 @@ var fs = require('fs');
 var path = require('path');
 var runSequence = require('run-sequence');
 var redirects = require('./redirects');
+var submodules = require('./submodules');
 
 gulp.task('docs:bitcore', function() {
   gulp.src('./node_modules/bitcore/docs/**/*.md', {
@@ -18,62 +19,27 @@ gulp.task('docs:bitcore', function() {
   }).pipe(gulp.dest('./source/guide/'));
 });
 
-gulp.task('docs:bitcore-p2p', function() {
-  gulp.src('./node_modules/bitcore-p2p/docs/**/*.md', {
-    base: './node_modules/bitcore-p2p/docs/'
-  }).pipe(gulp.dest('./source/guide/module/p2p/'));
-});
-
-gulp.task('docs:bitcoind-rpc', function() {
-  gulp.src('./node_modules/bitcoind-rpc/docs/**/*.md', {
-    base: './node_modules/bitcoind-rpc/docs/'
-  }).pipe(gulp.dest('./source/guide/module/bitcoind-rpc/'));
-});
-
-gulp.task('docs:bitcore-payment-protocol', function() {
-  gulp.src('./node_modules/bitcore-payment-protocol/docs/**/*.md', {
-    base: './node_modules/bitcore-payment-protocol/docs/'
-  }).pipe(gulp.dest('./source/guide/module/payment-protocol/'));
-});
-
-gulp.task('docs:bitcore-ecies', function() {
-  gulp.src('./node_modules/bitcore-ecies/docs/**/*.md', {
-    base: './node_modules/bitcore-ecies/docs/'
-  }).pipe(gulp.dest('./source/guide/module/ecies/'));
-});
-
-gulp.task('docs:bitcore-mnemonic', function() {
-  gulp.src('./node_modules/bitcore-mnemonic/docs/**/*.md', {
-    base: './node_modules/bitcore-mnemonic/docs/'
-  }).pipe(gulp.dest('./source/guide/module/mnemonic/'));
-});
-
-gulp.task('docs:bitcore-channel', function() {
-  gulp.src('./node_modules/bitcore-channel/docs/**/*.md', {
-    base: './node_modules/bitcore-channel/docs/'
-  }).pipe(gulp.dest('./source/guide/module/channel/'));
-});
-
-gulp.task('docs:bitcore-explorers', function() {
-  gulp.src('./node_modules/bitcore-explorers/docs/**/*.md', {
-    base: './node_modules/bitcore-explorers/docs/'
-  }).pipe(gulp.dest('./source/guide/module/explorers/'));
+submodules.forEach(function(m) {
+  gulp.task('docs:bitcore-' + m, function() {
+    gulp.src('./node_modules/bitcore-' + m + '/docs/**/*.md', {
+      base: './node_modules/bitcore-' + m + '/docs/'
+    }).pipe(gulp.dest('./source/guide/module/' + m + '/'));
+  });
 });
 
 gulp.task('docs', function(callback) {
-  runSequence(
-    ['docs:bitcore'],
-    ['docs:bitcore-p2p'],
-    ['docs:bitcore-payment-protocol'],
-    ['docs:bitcore-ecies'],
-    ['docs:bitcore-mnemonic'],
-    ['docs:bitcore-channel'],
-    ['docs:bitcore-explorers'],
-    callback);
+  var seq = submodules.map(function(m) {
+    return 'docs:bitcore-' + m;
+  });
+  seq.push('docs:bitcore');
+  seq.push(callback);
+  runSequence.apply(null, seq);
 });
 
 gulp.task('playground:bower', function() {
-  return bower({ cwd: './node_modules/bitcore-playground' });
+  return bower({
+    cwd: './node_modules/bitcore-playground'
+  });
 });
 
 gulp.task('playground:copy', function() {
@@ -84,8 +50,7 @@ gulp.task('playground:copy', function() {
 
 gulp.task('playground', function(callback) {
   runSequence(
-    ['playground:bower'],
-    ['playground:copy'],
+    ['playground:bower'], ['playground:copy'],
     callback);
 });
 
@@ -93,19 +58,21 @@ gulp.task('generate-redirects', function() {
   var template = '<html><head><meta http-equiv="refresh" content="0; url={0}" />' +
     '</head><body></body></html>';
   redirects.forEach(function(data) {
-    var source = './source'+data[0];
+    var source = './source' + data[0];
     var dir = path.dirname(source);
-    if (!fs.existsSync(dir)){
+    if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
-    fs.writeFileSync(source, template.replace('{0}', data[1])); 
+    fs.writeFileSync(source, template.replace('{0}', data[1]));
   });
 });
 
 gulp.task('copy-api-index', function() {
   var indexExists = fs.existsSync('./api/index.md');
   if (indexExists) {
-    gulp.src('./api/index.md', {base: './api/'})
+    gulp.src('./api/index.md', {
+      base: './api/'
+    })
       .pipe(gulp.dest('./source/api/'));
   } else {
     fs.writeFileSync('./source/api/index.md', '');
@@ -122,7 +89,7 @@ function jsdocForModule(moduleName, moduleSlug) {
   function jsdoc() {
     return through.obj(function(file, enc, cb) {
 
-      if (file.isNull()){
+      if (file.isNull()) {
         cb(null, file);
         return;
       }
@@ -157,49 +124,23 @@ function jsdocForModule(moduleName, moduleSlug) {
 
 // jsdocs
 
-gulp.task('api:bitcore', function(callback) {
+gulp.task('api:bitcore', function() {
   return jsdocForModule('bitcore');
 });
-
-gulp.task('api:bitcore-p2p', function(callback) {
-  return jsdocForModule('bitcore-p2p', 'module/p2p');
+submodules.forEach(function(m) {
+  gulp.task('api:bitcore-' + m, function() {
+    return jsdocForModule('bitcore-' + m, 'module/' + m);
+  });
 });
 
-gulp.task('api:bitcoind-rpc', function(callback) {
-  return jsdocForModule('bitcoind-rpc', 'module/bitcoind-rpc');
-});
-
-gulp.task('api:bitcore-payment-protocol', function(callback) {
-  return jsdocForModule('bitcore-payment-protocol', 'module/payment-protocol');
-});
-
-gulp.task('api:bitcore-ecies', function(callback) {
-  return jsdocForModule('bitcore-ecies', 'module/ecies');
-});
-
-gulp.task('api:bitcore-mnemonic', function(callback) {
-  return jsdocForModule('bitcore-mnemonic', 'module/mnemonic');
-});
-
-gulp.task('api:bitcore-channel', function(callback) {
-  return jsdocForModule('bitcore-channel', 'module/channel');
-});
-
-gulp.task('api:bitcore-explorers', function(callback) {
-  return jsdocForModule('bitcore-explorers', 'module/explorers');
-});
 
 gulp.task('api', function(callback) {
-  runSequence(
-    ['api:bitcore'],
-    ['api:bitcore-p2p'],
-    ['api:bitcoind-rpc'],
-    ['api:bitcore-payment-protocol'],
-    ['api:bitcore-ecies'],
-    ['api:bitcore-mnemonic'],
-    ['api:bitcore-channel'],
-    ['api:bitcore-explorers'],
-    callback);
+  var seq = submodules.map(function(m) {
+    return 'api:bitcore-' + m;
+  });
+  seq.push('api:bitcore');
+  seq.push(callback);
+  runSequence.apply(null, seq);
 });
 
 // html covertion
@@ -214,18 +155,18 @@ gulp.task('run-server', shell.task([
   './node_modules/.bin/hexo server'
 ]));
 
-gulp.task('server', function(callback){
+gulp.task('server', function(callback) {
   runSequence(['generate'], ['run-server'], callback);
 });
 
 // generate everything
 
-gulp.task('generate', function(callback){
+gulp.task('generate', function(callback) {
   runSequence(['docs'],
               ['api'],
               ['copy-api-index'],
               ['copy-contributing'],
-              ['generate-redirects'], 
+              ['generate-redirects'],
               ['generate-public'],
               ['playground'],
               callback);
@@ -244,6 +185,6 @@ gulp.task('hexo-deploy', shell.task([
   './node_modules/.bin/hexo deploy'
 ]));
 
-gulp.task('release', function(callback){
+gulp.task('release', function(callback) {
   runSequence(['npm-install'], ['generate'], ['hexo-deploy'], callback);
 });
