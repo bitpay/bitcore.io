@@ -10,7 +10,7 @@
     "bitcore-mnemonic": "bitpay/bitcore-mnemonic",
     "bitcore-channel": "bitpay/bitcore-channel",
     "bitcore-explorers": "bitpay/bitcore-explorers",
-    "bitcore-playground": "0.0.4",
+    "bitcore-playground": "bitpay/bitcore-playground",
     "bower": "^1.3.12",
     "gulp": "^3.8.10",
     "gulp-bower": "0.0.10",
