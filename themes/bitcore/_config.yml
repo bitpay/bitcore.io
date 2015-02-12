@@ -34,6 +34,9 @@ doc_sidebar:
     Peer: module/p2p/peer.html
     Pool: module/p2p/pool.html
 
+  Message Signing and Verification:
+    Getting Started: module/message/index.html
+
   Mnemonic:
     Getting Started: module/mnemonic/index.html
 

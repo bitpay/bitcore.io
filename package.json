@@ -7,6 +7,7 @@
     "bitcore-p2p": "bitpay/bitcore-p2p",
     "bitcore-payment-protocol": "bitpay/bitcore-payment-protocol",
     "bitcore-ecies": "bitpay/bitcore-ecies",
+    "bitcore-message": "bitpay/bitcore-message",
     "bitcore-mnemonic": "bitpay/bitcore-mnemonic",
     "bitcore-channel": "bitpay/bitcore-channel",
     "bitcore-explorers": "bitpay/bitcore-explorers",
