@@ -8,9 +8,11 @@
       <nav id="main-nav">
         <ul id="main-nav-list">
           <% _.each(theme.menu, function(menu, title, css){ %>
-            <li class="main-nav-item">
-              <a href="<%= url_for(menu) %>" class="main-nav-link <%- title.replace(' ', '-').toLowerCase() %>"><%= title %></a>
-            </li>
+            <%if (title !== 'API') { %>
+              <li class="main-nav-item">
+                <a href="<%= url_for(menu) %>" class="main-nav-link <%- title.replace(' ', '-').toLowerCase() %>"><%= title %></a>
+              </li>
+            <% } %>
           <% }); %>
         </ul>
       </nav>
