@@ -162,8 +162,14 @@ gulp.task('server', function(callback) {
 // generate everything
 
 gulp.task('generate', function(callback) {
-  runSequence(['docs'], ['api'], ['copy-api-index'], ['copy-contributing'], ['generate-redirects'], ['generate-public'], ['playground'],
-    callback);
+  runSequence(['docs'],
+              ['api'],
+              ['copy-api-index'],
+              ['copy-contributing'],
+              ['generate-redirects'],
+              ['generate-public'],
+              ['playground'],
+              callback);
 });
 
 // update the packages
