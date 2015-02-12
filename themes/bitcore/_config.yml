@@ -74,6 +74,9 @@ api_sidebar:
     Peer: module/p2p/peer.html
     Pool: module/p2p/pool.html
 
+  Message Signing and Verification:
+    Getting Started: module/message/message.html
+
   Mnemonic:
     Mnemonic: module/mnemonic/mnemonic.html
 
