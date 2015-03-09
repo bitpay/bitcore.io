@@ -82,6 +82,9 @@ disqus_shortname:
 theme: bitcore
 exclude_generator:
 
+alias:
+  docs/index.html: guide/index.html
+
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
