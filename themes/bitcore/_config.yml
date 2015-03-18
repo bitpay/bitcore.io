@@ -27,28 +27,28 @@ doc_sidebar:
     URI: uri.html
 
   Payment Protocol:
-    Getting Started: module/payment-protocol/index.html
+    Usage: module/payment-protocol/index.html
 
   Peer-to-Peer:
-    Getting Started: module/p2p/index.html
+    Overview: module/p2p/index.html
     Messages: module/p2p/messages.html
     Peer: module/p2p/peer.html
     Pool: module/p2p/pool.html
 
   Message Signing and Verification:
-    Getting Started: module/message/index.html
+    Overview: module/message/index.html
 
   Mnemonic:
-    Getting Started: module/mnemonic/index.html
+    Overview: module/mnemonic/index.html
 
   ECIES:
-    Getting Started: module/ecies/index.html
+    Overview: module/ecies/index.html
 
   Channel:
-    Getting Started: module/channel/index.html
+    Overview: module/channel/index.html
 
   Explorers:
-    Getting Started: module/explorers/index.html
+    Overview: module/explorers/index.html
 
 api_sidebar:
 
@@ -75,7 +75,7 @@ api_sidebar:
     Pool: module/p2p/pool.html
 
   Message Signing and Verification:
-    Getting Started: module/message/message.html
+    Overview: module/message/message.html
 
   Mnemonic:
     Mnemonic: module/mnemonic/mnemonic.html
