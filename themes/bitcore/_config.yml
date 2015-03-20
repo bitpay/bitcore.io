@@ -70,7 +70,8 @@ api_sidebar:
     Transaction/Signing: transaction/sighash.html
 
   Peer-to-Peer:
-    Messages: module/p2p/messages.html
+    Inventory: module/p2p/inventory.html
+    Messages: module/p2p/messages/index.html
     Peer: module/p2p/peer.html
     Pool: module/p2p/pool.html
 
