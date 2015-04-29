@@ -401,7 +401,7 @@ intro-quick-start-column = 2
     width:auto
 
 
-#features .list
+#features .list, #bitcores .list
   text-align:center
   margin-bottom:40px
   margin-top:40px
@@ -477,7 +477,7 @@ intro-quick-start-column = 2
     width: 65px
     height: 68px
 
-#features .item p.headline
+#features .item p.headline, #bitcores .item p.headline
   margin-top:150px
   font-size:19px
   line-height:28px
@@ -493,6 +493,7 @@ intro-quick-start-column = 2
     line-height:23px
     margin-top:100px
 
+  
 #features a
   color: color-black2
 
@@ -504,12 +505,32 @@ intro-quick-start-column = 2
   @media mq-half2
     font-size:13px
 
-#features .item
+ #bitcores .item p.github-links
+  margin-top:20px
+  font-size:15px
+  line-height:20px
+  display:block
+  background-image: url("images/githubcat-icon.svg")
+  background-repeat: no-repeat
+  background-position: 0px 0px
+  padding-left: 31px
+  @media mq-half2
+    font-size:13px 
+
+.github-links a
+  text-decoration: none
+  color: #ABABAB !important;
+  border-bottom: 1px dotted #ABABAB !important;
+
+.github-links a:hover
+  color: #000000 !important;
+  border-bottom: 1px dotted #000000 !important;
+
+#features .item, #bitcores .item
   vertical-align: top;
   margin:0 20px
   width:165px
   height:125px
-  padding-bottom:230px
   text-align:center
   display:inline-block
   background-size:165px 124px
@@ -531,6 +552,12 @@ intro-quick-start-column = 2
   @media mq-small
     margin:0 5px 30px 5px;
 
+#features .item
+  padding-bottom:230px
+
+#bitcores .item
+  padding-bottom:50px
+
 
 #features .inneritem
   height:800px
@@ -550,13 +577,41 @@ intro-quick-start-column = 2
 #keys
   background-image: url("images/keys-illustration.png")
 
+
+#bitcore-library
+  background-image: url("images/library-illustration.png") 
+
+#bitcore-node
+  background-image: url("images/node-illustration.png") 
+
+#bitcore-wallet
+  background-image: url("images/wallet-illustration.png") 
+
+
+#bitcore-library-logo, #bitcore-node-logo, #bitcore-wallet-logo 
+ width:165px
+ height:57px
+ background-repeat: no-repeat
+ background-size:164px 40px
+ margin-top:160px 
+
+#bitcore-library-logo  
+ background-image: url("images/bitcore-library-logo.png") 
+
+#bitcore-node-logo  
+ background-image: url("images/bitcore-node-logo.png") 
+
+#bitcore-wallet-logo  
+ background-image: url("images/bitcore-wallet-service-logo.png") 
+
+
 #getting-started .outer
   position:relative
   width:800px
   @media mq-reg
     width:85%
 
-#features
+#features, #bitcores
   vertical-align:top
   clear:both;
   padding-top:60px
@@ -582,7 +637,7 @@ intro-quick-start-column = 2
   color:#fff
   margin-bottom:45px
 
-#features h2, #projects h2, #getting-started h2
+#features h2, #projects h2, #getting-started h2, #bitcores-new h2
   font-size: 1.7em
   text-align:center
   @media mq-half
@@ -787,3 +842,62 @@ $banner-getting-started-font
   &:hover
     color: #fff
     background: color-blue
+
+#bitcores-new
+  clear:both
+  padding-top:120px
+  text-align:center
+  @media mq-small
+    padding-bottom:100px
+
+
+#bitcores-new .outer
+backgound-color: green
+  width:80%
+  @media mq-reg
+    width:85% 
+
+.item-bitcores 
+  background-size: 165px 124px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  width:250px  
+  padding:0px 10px 80px 15px
+  display: inline-block
+  text-align: center
+  margin-top: 70px;
+
+ #bitcore-library-logo-new, #bitcore-node-logo-new, #bitcore-wallet-logo-new
+  height:57px
+  background-repeat: no-repeat
+  background-size:164px 40px
+  background-position: center top;
+  margin-top:160px 
+
+ #bitcore-library-logo-new
+  background-image: url("images/bitcore-library-logo.png") 
+
+ #bitcore-node-logo-new
+  background-image: url("images/bitcore-node-logo.png") 
+
+ #bitcore-wallet-logo-new
+  background-image: url("images/bitcore-wallet-service-logo.png") 
+
+.github-link-bitcores
+  margin: 20px 0 0 0
+
+.github-link-bitcores a
+  background-image: url("images/githubcat-icon.svg")
+  background-repeat: no-repeat
+  background-position: left top
+  text-decoration: none
+  color: #7A7979 !important
+  padding: 2px 0 5px 30px
+
+.github-link-bitcores a:hover
+  background-image: url("images/githubcat-icon.svg")
+  background-repeat: no-repeat  
+  background-position: 0 -28px
+  color: #BAB8B4 !important
+  border-bottom: 1px dotted #ABABAB !important
+
