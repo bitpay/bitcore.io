@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Bitcore &mdash; A pure and powerful JavaScript Bitcoin library.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="http://bitcore.io/guide/contributing.html">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <link href="/css/animations.css" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu:light,regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu%20Mono:regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
+
+  <meta property="og:image" content="/css/images/lava-ball-social.png" />
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball-social.png">
+
+  <meta name="description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bitcore">
+<meta property="og:url" content="http://bitcore.io/guide/contributing.html">
+<meta property="og:site_name" content="Bitcore">
+<meta property="og:description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bitcore">
+<meta name="twitter:description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta name="twitter:site" content="@bitpay">
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24163874-2', 'bitcore.io');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+
+<body>
+  <header id="header"  class="invert" >
+  <div class="outer">
+    <div class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Bitcore</a>
+        <a id="main-nav-toggle"></a>
+      </h1>
+      <nav id="main-nav">
+        <ul id="main-nav-list">
+          
+            
+              <li class="main-nav-item">
+                <a href="/api/" class="main-nav-link api">API</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="/guide/" class="main-nav-link docs">Docs</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="https://github.com/bitpay/bitcore" class="main-nav-link github">Github</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://labs.bitpay.com/" class="main-nav-link forum">Forum</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://bitcore.io/playground" class="main-nav-link playground">Playground</a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <article class="page" itemscope itemtype="http://schema.org/Article">
+  <header id="page-banner">
+    <div class="outer">
+      <div id="page-banner-inner" class="inner">
+        
+        <h1 id="page-title" class="docs" itemprop="name">Documentation</h1>
+        
+          <a href="https://github.com/bitpay/bitcore/blob/master/CONTRIBUTING.md" title="Improve this doc" id="page-edit-link"></a>
+        
+      </div>
+    </div>
+  </header>
+  <div class="outer">
+    <div id="mobile-menu-wrap"></div>
+    <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Contributing_to_Bitcore"><span class="toc-number">1.</span> <span class="toc-text">Contributing to Bitcore</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Community"><span class="toc-number">1.1.</span> <span class="toc-text">Community</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Checklist"><span class="toc-number">1.2.</span> <span class="toc-text">Quick Checklist</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Design_Guidelines"><span class="toc-number">1.3.</span> <span class="toc-text">Design Guidelines</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#D1_-_Naming_Matters"><span class="toc-number">1.3.1.</span> <span class="toc-text">D1 - Naming Matters</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D2_-_Tests"><span class="toc-number">1.3.2.</span> <span class="toc-text">D2 - Tests</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D3_-_Robustness_Principle"><span class="toc-number">1.3.3.</span> <span class="toc-text">D3 - Robustness Principle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D4_-_Consistency_Everywhere"><span class="toc-number">1.3.4.</span> <span class="toc-text">D4 - Consistency Everywhere</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Style_Guidelines"><span class="toc-number">1.4.</span> <span class="toc-text">Style Guidelines</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#General"><span class="toc-number">1.4.1.</span> <span class="toc-text">General</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#G0_-_Default_to_Felixge’s_Style_Guide"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">G0 - Default to Felixge’s Style Guide</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#G1_-_No_Magic_Numbers"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">G1 - No Magic Numbers</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#G2_-_Internal_Objects_Should_be_Instances"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">G2 - Internal Objects Should be Instances</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#G3_-_Internal_Amounts_Must_be_Integers_Representing_Satoshis"><span class="toc-number">1.4.1.4.</span> <span class="toc-text">G3 - Internal Amounts Must be Integers Representing Satoshis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#G4_-_Internal_Network_References_Must_be_Network_Instances"><span class="toc-number">1.4.1.5.</span> <span class="toc-text">G4 - Internal Network References Must be Network Instances</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#G5_-_Objects_Should_Display_Nicely_in_the_Console"><span class="toc-number">1.4.1.6.</span> <span class="toc-text">G5 - Objects Should Display Nicely in the Console</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#G6_-_Naming_Utility_Namespaces"><span class="toc-number">1.4.1.7.</span> <span class="toc-text">G6 - Naming Utility Namespaces</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#G7_-_Standard_Methods"><span class="toc-number">1.4.1.8.</span> <span class="toc-text">G7 - Standard Methods</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Errors"><span class="toc-number">1.4.2.</span> <span class="toc-text">Errors</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#E1_-_Use_bitcore-Errors"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">E1 - Use bitcore.Errors</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#E2_-_Provide_a_getValidationError_Static_Method_for_Classes"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">E2 - Provide a getValidationError Static Method for Classes</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Interface"><span class="toc-number">1.4.3.</span> <span class="toc-text">Interface</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#I1_-_Code_that_Fails_Early"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">I1 - Code that Fails Early</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#I2_-_Permissive_Constructors"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">I2 - Permissive Constructors</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#I3_-_Method_Chaining"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">I3 - Method Chaining</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#I4_-_Copy_Constructors"><span class="toc-number">1.4.3.4.</span> <span class="toc-text">I4 - Copy Constructors</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#I5_-_No_New_Keyword_for_Constructors"><span class="toc-number">1.4.3.5.</span> <span class="toc-text">I5 - No New Keyword for Constructors</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Testing"><span class="toc-number">1.4.4.</span> <span class="toc-text">Testing</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#T1_-_Tests_Must_be_Written_Elegantly"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">T1 - Tests Must be Written Elegantly</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#T2_-_Tests_Must_not_be_Random"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">T2 - Tests Must not be Random</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#T3_-_Require_‘bitcore’_and_Look_up_Classes_from_There"><span class="toc-number">1.4.4.3.</span> <span class="toc-text">T3 - Require ‘bitcore’ and Look up Classes from There</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#T4_-_Data_for_Tests_Included_in_a_JSON_File"><span class="toc-number">1.4.4.4.</span> <span class="toc-text">T4 - Data for Tests Included in a JSON File</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Documentation"><span class="toc-number">1.4.5.</span> <span class="toc-text">Documentation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#D1_-_Guide_and_API_Reference"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">D1 - Guide and API Reference</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#D2_-_Proofread"><span class="toc-number">1.4.5.2.</span> <span class="toc-text">D2 - Proofread</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pull_Request_Workflow"><span class="toc-number">1.5.</span> <span class="toc-text">Pull Request Workflow</span></a></li></ol></li></ol>
+      </div>
+      <div class="page-entry" itemprop="articleBody">
+        <h1 id="Contributing_to_Bitcore">Contributing to Bitcore</h1>
+<p>We’re working hard to make <em>bitcore</em> the most powerful JavaScript library for working with bitcoin. Our goal is to have <em>bitcore</em> be a library that can be used by anyone interested in bitcoin, and to level expertise differences with great design and documentation.</p>
+<h2 id="Community">Community</h2>
+<p>If there are any questions, etc., please feel to ask in one of the community channels:</p>
+<ul>
+<li><a href="https://labs.bitpay.com/c/bitcore" target="_blank" rel="external">https://labs.bitpay.com/c/bitcore</a> (Support Forum)</li>
+<li><a href="https://gitter.im/bitpay/bitcore" target="_blank" rel="external">https://gitter.im/bitpay/bitcore</a> (Development Chat)</li>
+</ul>
+<h2 id="Quick_Checklist">Quick Checklist</h2>
+<p>Ideally, please make sure to run:</p>
+<ul>
+<li><code>gulp test</code> passes all the tests (We run tests against Node.js v0.10, v0.12, io.js, and modern browsers)</li>
+<li><code>gulp coverage</code> covers 100% of the branches of your code (See <code>coverage/lcov-report/index.html</code> for details)</li>
+<li><code>gulp lint</code> doesn’t complain about your changes</li>
+</ul>
+<h2 id="Design_Guidelines">Design Guidelines</h2>
+<p>These are some global design goals in bitcore that any change must adhere.</p>
+<h3 id="D1_-_Naming_Matters">D1 - Naming Matters</h3>
+<p>We take our time with picking names. Code is going to be written once, and read hundreds of times.</p>
+<p>We were inspired to name this rule first due to Uncle Bob’s great work <em>Clean Code</em>, which has a whole chapter on this subject.</p>
+<p>In particular, you may notice that some names in this library are quite long for the average JavaScript user. That’s because we prefer a long but comprehensible name than an abbreviation that might confuse new users.</p>
+<h3 id="D2_-_Tests">D2 - Tests</h3>
+<p>Write a test for all your code. We encourage Test Driven Development so we know when our code is right. We have increased test coverage from 80% to around 95% and are targeting 100% as we move towards our 1.0 release.</p>
+<h3 id="D3_-_Robustness_Principle">D3 - Robustness Principle</h3>
+<p><em>Be conservative in what you send, be liberal in what you accept.</em></p>
+<p>Interfaces should accept as many types of arguments as possible, so there’s no mental tax on using them: we want to avoid questions such as “should I use a string here or a buffer?”, “what happens if I’m not sure if the type of this variable is an Address instance or a string with it encoded in base-58?” or “what kind of object will I receive after calling this function?”.</p>
+<p>Accept a wide variety of use cases and arguments, always return an internal form of an object. For example, the class <code>PublicKey</code> can accept strings or buffers with a DER encoded public key (either compressed or uncompressed), another PublicKey, a PrivateKey, or a Point, an instance of the <code>elliptic.js</code> library with the point in bitcoin’s elliptic curve that represents the public key.</p>
+<h3 id="D4_-_Consistency_Everywhere">D4 - Consistency Everywhere</h3>
+<p>Consistency on the way classes are used is paramount to allow an easier understanding of the library.</p>
+<h2 id="Style_Guidelines">Style Guidelines</h2>
+<p>The design guidelines have quite a high abstraction level. These style guidelines are more concrete and easier to apply, and also more opinionated. The design guidelines mentioned above are the way we think about general software development and we believe they should be present in any software project.</p>
+<h3 id="General">General</h3>
+<h4 id="G0_-_Default_to_Felixge’s_Style_Guide">G0 - Default to Felixge’s Style Guide</h4>
+<p>Follow this Node.js Style Guide: <a href="https://github.com/felixge/node-style-guide#nodejs-style-guide" target="_blank" rel="external">https://github.com/felixge/node-style-guide#nodejs-style-guide</a></p>
+<h4 id="G1_-_No_Magic_Numbers">G1 - No Magic Numbers</h4>
+<p>Avoid constants in the code as much as possible. Magic strings are also magic numbers.</p>
+<h4 id="G2_-_Internal_Objects_Should_be_Instances">G2 - Internal Objects Should be Instances</h4>
+<p>If a class has a <code>publicKey</code> member, for instance, that should be a <code>PublicKey</code> instance.</p>
+<h4 id="G3_-_Internal_Amounts_Must_be_Integers_Representing_Satoshis">G3 - Internal Amounts Must be Integers Representing Satoshis</h4>
+<p>Avoid representation errors by always dealing with satoshis. For conversion for frontends, use the <code>Unit</code> class.</p>
+<h4 id="G4_-_Internal_Network_References_Must_be_Network_Instances">G4 - Internal Network References Must be Network Instances</h4>
+<p>A special case for <a href="#g2---general-internal-objects-should-be-instances">G2</a> all network references must be <code>Network</code> instances (see <code>lib/network.js</code>), but when returned to the user, its <code>.name</code> property should be used.</p>
+<h4 id="G5_-_Objects_Should_Display_Nicely_in_the_Console">G5 - Objects Should Display Nicely in the Console</h4>
+<p>Write a <code>.inspect()</code> method so an instance can be easily debugged in the console.</p>
+<h4 id="G6_-_Naming_Utility_Namespaces">G6 - Naming Utility Namespaces</h4>
+<p>Name them in UpperCamelCase, as they are namespaces.</p>
+<p>DO:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> BufferUtil = <span class="built_in">require</span>(<span class="string">'./util/buffer'</span>);</div></pre></td></tr></table></figure>
+
+<p>DON’T:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bufferUtil = <span class="built_in">require</span>(<span class="string">'./util/buffer'</span>);</div></pre></td></tr></table></figure>
+
+<h4 id="G7_-_Standard_Methods">G7 - Standard Methods</h4>
+<p>When possible, bitcore objects should have standard methods on an instance prototype:</p>
+<ul>
+<li><code>toObject/toJSON</code> - A plain JavaScript object that <code>JSON.stringify</code> can call</li>
+<li><code>toString</code> - A string representation of the instance</li>
+<li><code>toBuffer</code> - A hex Buffer</li>
+</ul>
+<p>These should have a matching static method that can be used for instantiation:</p>
+<ul>
+<li><code>fromObject</code> - Should be able to instatiate with the output from <code>toObject/toJSON</code></li>
+<li><code>fromString</code> - Should be able to instantiate with output from <code>toString</code></li>
+<li><code>fromBuffer</code> - Should likewise be able to instantiate from output from <code>toBuffer</code></li>
+</ul>
+<p><code>JSON.stringify</code> and <code>JSON.parse</code> are expected to be handled outside of the scope of Bitcore methods. For example, calling <code>JSON.stringify</code> on an Bitcore object will behave as expected and call <code>transaction.toJSON()</code> and then stringify it:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> transactionString = <span class="built_in">JSON</span>.stringify(transaction);</div></pre></td></tr></table></figure>
+
+<p>Likewise to instantiate a transaction from that string:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = <span class="built_in">JSON</span>.parse(transactionString);</div><div class="line"><span class="keyword">var</span> tx = <span class="keyword">new</span> Transaction(data);</div></pre></td></tr></table></figure>
+
+<h3 id="Errors">Errors</h3>
+<h4 id="E1_-_Use_bitcore-Errors">E1 - Use bitcore.Errors</h4>
+<p>We’ve designed a structure for Errors to follow and are slowly migrating to it.</p>
+<p>Usage:</p>
+<ul>
+<li>Errors are generated in the file <code>lib/errors/index.js</code> by invoking <code>gulp errors</code>.</li>
+<li>The specification for errors is written in the <code>lib/errors/spec.js</code> file.</li>
+<li>Whenever a new class is created, add a generic error for that class in <code>lib/errors/spec.js</code>.</li>
+<li>Specific errors for that class should subclass that error. Take a look at the structure in <code>lib/errors/spec.js</code>, it should be clear how subclasses are generated from that file.</li>
+</ul>
+<h4 id="E2_-_Provide_a_getValidationError_Static_Method_for_Classes">E2 - Provide a <code>getValidationError</code> Static Method for Classes</h4>
+<h3 id="Interface">Interface</h3>
+<h4 id="I1_-_Code_that_Fails_Early">I1 - Code that Fails Early</h4>
+<p>In order to deal with JavaScript’s weak typing and confusing errors, we ask our code to fail as soon as possible when an unexpected input was provided.</p>
+<p>There’s a module called <code>util/preconditions</code>, loosely based on <code>preconditions.js</code>, based on <code>guava</code>, that we use for state and argument checking. It should be trivial to use. We recommend using it on all methods, in order to improve robustness and consistency.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$.checkState(something === anotherthing, <span class="string">'Expected something to be anotherthing'</span>);</div><div class="line">$.checkArgument(something &lt; <span class="number">100</span>, <span class="string">'something'</span>, <span class="string">'must be less than 100'</span>);</div><div class="line">$.checkArgumentType(something, PrivateKey, <span class="string">'something'</span>); <span class="comment">// The third argument is a helper to mention the name of the argument</span></div><div class="line">$.checkArgumentType(something, PrivateKey); <span class="comment">// but it's optional (will show up as "(unknown argument)")</span></div></pre></td></tr></table></figure>
+
+<h4 id="I2_-_Permissive_Constructors">I2 - Permissive Constructors</h4>
+<p>Most classes have static methods named <code>fromBuffer</code>, <code>fromString</code>, <code>fromJSON</code>. Whenever one of those methods is provided, the constructor for that class should also be able to detect the type of the arguments and call the appropriate method.</p>
+<h4 id="I3_-_Method_Chaining">I3 - Method Chaining</h4>
+<p>For classes that have a mutable state, most of the methods that can be chained <em>SHOULD</em> be chained, allowing for interfaces that read well, like:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> transaction = <span class="keyword">new</span> Transaction()</div><div class="line">    .from(utxo)</div><div class="line">    .to(address, amount)</div><div class="line">    .change(address)</div><div class="line">    .sign(privkey);</div></pre></td></tr></table></figure>
+
+<h4 id="I4_-_Copy_Constructors">I4 - Copy Constructors</h4>
+<p>Constructors, when provided an instance of the same class, should:</p>
+<ul>
+<li>Return the same object, if the instances of this class are immutable</li>
+<li>Return a deep copy of the object, if the instances are mutable</li>
+</ul>
+<p>Examples:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyMutableClass</span><span class="params">(arg)</span> </span>{</div><div class="line">  <span class="keyword">if</span> (arg <span class="keyword">instanceof</span> MyMutableClass) {</div><div class="line">    <span class="keyword">return</span> MyMutableClass._deepCopy(arg);</div><div class="line">  }</div><div class="line">  <span class="comment">// ...</span></div><div class="line">}</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ImmutableClass</span><span class="params">(arg)</span> </span>{</div><div class="line">  <span class="keyword">if</span> (arg <span class="keyword">instanceof</span> ImmutableClass) {</div><div class="line">    <span class="keyword">return</span> arg;</div><div class="line">  }</div><div class="line">  <span class="comment">// ...</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h4 id="I5_-_No_New_Keyword_for_Constructors">I5 - No New Keyword for Constructors</h4>
+<p>Constructors should not require to be called with <code>new</code>. This rule is not heavily enforced, but is a “nice to have”.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">NoNewRequired</span><span class="params">(args)</span> </span>{</div><div class="line">  <span class="keyword">if</span> (!(<span class="keyword">this</span> <span class="keyword">instanceof</span> NoNewRequired)) {</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> NoNewRequired(args);</div><div class="line">  }</div><div class="line">  <span class="comment">// ...</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h3 id="Testing">Testing</h3>
+<h4 id="T1_-_Tests_Must_be_Written_Elegantly">T1 - Tests Must be Written Elegantly</h4>
+<p>Style guidelines are not relaxed for tests. Tests are a good way to show how to use the library, and maintaining them is extremely necessary.</p>
+<p>Don’t write long tests, write helper functions to make them be as short and concise as possible (they should take just a few lines each), and use good variable names.</p>
+<h4 id="T2_-_Tests_Must_not_be_Random">T2 - Tests Must not be Random</h4>
+<p>Inputs for tests should not be generated randomly. Also, the type and structure of outputs should be checked.</p>
+<h4 id="T3_-_Require_‘bitcore’_and_Look_up_Classes_from_There">T3 - Require ‘bitcore’ and Look up Classes from There</h4>
+<p>This helps to make tests more useful as examples, and more independent of where they are placed. This also helps prevent forgetting to include all submodules in the bitcore object.</p>
+<p>DO:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bitcore = <span class="built_in">require</span>(<span class="string">'../'</span>);</div><div class="line"><span class="keyword">var</span> PublicKey = bitcore.PublicKey;</div></pre></td></tr></table></figure>
+
+<p>DON’T:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> PublicKey = <span class="built_in">require</span>(<span class="string">'../lib/publickey'</span>);</div></pre></td></tr></table></figure>
+
+<h4 id="T4_-_Data_for_Tests_Included_in_a_JSON_File">T4 - Data for Tests Included in a JSON File</h4>
+<p>If possible, data for tests should be included in a JSON file in the <code>test/data</code> directory. This improves interoperability with other libraries and keeps tests cleaner.</p>
+<h3 id="Documentation">Documentation</h3>
+<h4 id="D1_-_Guide_and_API_Reference">D1 - Guide and API Reference</h4>
+<p>All modules should include a developer guide and API reference. The API reference documentation is generated using JSDOC. Each function that exposes a public API should include a description, @return and @param, as appropriate. The general documentation guide for the module should be located in the <code>docs/guide</code> directory and is written in GitHub Flavored Markdown.</p>
+<h4 id="D2_-_Proofread">D2 - Proofread</h4>
+<p>Please proofread documentation to avoid unintentional spelling and grammatical mistakes before submitting a pull request.</p>
+<h2 id="Pull_Request_Workflow">Pull Request Workflow</h2>
+<p>Our workflow is based on GitHub’s pull requests. We use feature branches, prepended with: <code>test</code>, <code>feature</code>, <code>fix</code>, <code>refactor</code>, or <code>remove</code> according to the change the branch introduces. Some examples for such branches are:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git checkout -b test/some-module</div><div class="line">git checkout -b feature/some-new-stuff</div><div class="line">git checkout -b fix/some-bug</div><div class="line">git checkout -b remove/some-file</div></pre></td></tr></table></figure>
+
+<p>We expect pull requests to be rebased to the master branch before merging:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git remote add bitpay git@github.com:bitpay/bitcore.git</div><div class="line">git pull --rebase bitpay master</div></pre></td></tr></table></figure>
+
+<p>Note that we require rebasing your branch instead of merging it, for commit readability reasons.</p>
+<p>After that, you can push the changes to your fork, by doing:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git push origin your_branch_name</div><div class="line">git push origin feature/some-new-stuff</div><div class="line">git push origin fix/some-bug</div></pre></td></tr></table></figure>
+
+<p>Finally go to <a href="https://github.com/bitpay/bitcore" target="_blank" rel="external">github.com/bitpay/bitcore</a> in your web browser and issue a new pull request.</p>
+<p>Main contributors will review your code and possibly ask for changes before your code is pulled in to the main repository.  We’ll check that all tests pass, review the coding style, and check for general code correctness. If everything is OK, we’ll merge your pull request and your code will be part of bitcore.</p>
+<p>If you have any questions feel free to post them to<br><a href="https://github.com/bitpay/bitcore/issues" target="_blank" rel="external">github.com/bitpay/bitcore/issues</a>.</p>
+<p>Thanks for your time and code!</p>
+
+      </div>
+      <footer id="page-footer">
+        <time id="page-footer-updated" datetime="2015-08-19T18:21:34.689Z" itemprop="dateModified">Last updated: Aug 19 2015</time>
+        <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
+      </footer>
+      
+    </div>
+    <aside id="sidebar">
+
+  
+
+  
+    <strong class="sidebar-title">Home</strong>
+    
+      <a href="/guide/index.html" class="sidebar-link">Get Started</a>
+    
+      <a href="/guide/contributing.html" class="sidebar-link current">Contributing</a>
+    
+  
+    <strong class="sidebar-title">Bitcore</strong>
+    
+      <a href="/guide/address.html" class="sidebar-link">Address</a>
+    
+      <a href="/guide/block.html" class="sidebar-link">Block</a>
+    
+      <a href="/guide/browser.html" class="sidebar-link">Browser</a>
+    
+      <a href="/guide/crypto.html" class="sidebar-link">Crypto</a>
+    
+      <a href="/guide/encoding.html" class="sidebar-link">Encoding</a>
+    
+      <a href="/guide/hierarchical.html" class="sidebar-link">HD Keys</a>
+    
+      <a href="/guide/networks.html" class="sidebar-link">Networks</a>
+    
+      <a href="/guide/privatekey.html" class="sidebar-link">Private Key</a>
+    
+      <a href="/guide/publickey.html" class="sidebar-link">Public Key</a>
+    
+      <a href="/guide/script.html" class="sidebar-link">Script</a>
+    
+      <a href="/guide/transaction.html" class="sidebar-link">Transaction</a>
+    
+      <a href="/guide/unit.html" class="sidebar-link">Unit</a>
+    
+      <a href="/guide/unspentoutput.html" class="sidebar-link">Unspent Output</a>
+    
+      <a href="/guide/uri.html" class="sidebar-link">URI</a>
+    
+  
+    <strong class="sidebar-title">Payment Protocol</strong>
+    
+      <a href="/guide/module/payment-protocol/index.html" class="sidebar-link">Usage</a>
+    
+  
+    <strong class="sidebar-title">Peer-to-Peer</strong>
+    
+      <a href="/guide/module/p2p/index.html" class="sidebar-link">Overview</a>
+    
+      <a href="/guide/module/p2p/messages.html" class="sidebar-link">Messages</a>
+    
+      <a href="/guide/module/p2p/peer.html" class="sidebar-link">Peer</a>
+    
+      <a href="/guide/module/p2p/pool.html" class="sidebar-link">Pool</a>
+    
+  
+    <strong class="sidebar-title">Message Signing and Verification</strong>
+    
+      <a href="/guide/module/message/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Mnemonic</strong>
+    
+      <a href="/guide/module/mnemonic/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">ECIES</strong>
+    
+      <a href="/guide/module/ecies/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Channel</strong>
+    
+      <a href="/guide/module/channel/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Explorers</strong>
+    
+      <a href="/guide/module/explorers/index.html" class="sidebar-link">Overview</a>
+    
+  
+
+
+
+
+</aside>
+  </div>
+</article>
+
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">
+        <p>bitcore™ &copy; 2013-2015 BitPay, Inc. bitcore is released under the MIT license.</p>
+      </div>
+      <div id="footer-links">
+        <a href="https://twitter.com/bitpay" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
+        <a href="https://github.com/bitpay/bitcore" id="footer-link-github" class="footer-link" target="_blank"><span>GitHub</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/retina.min.js" type="text/javascript"></script>
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+<!-- Google+ -->
+<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</body>
+</html>

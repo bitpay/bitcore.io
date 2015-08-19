@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="17px" height="31px" viewBox="0 0 17 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Fill 7 + Stroke 8 + Stroke 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="HD-Multisig-4" sketch:type="MSArtboardGroup" transform="translate(-676.000000, -373.000000)">
+            <g id="Fill-7-+-Stroke-8-+-Stroke-9" sketch:type="MSLayerGroup" transform="translate(676.964466, 373.500000)">
+                <path d="M15.009,7.908 C14.96,3.836 11.62,0.574 7.548,0.623 C3.475,0.672 0.214,4.013 0.263,8.085 C0.302,11.365 2.479,14.116 5.451,15.038 L5.624,27.802 L8.712,29.822 L10.984,27.288 L9.954,24.721 L10.932,22.978 L9.906,20.784 L10.877,18.415 L9.853,16.38 L10.017,14.973 C12.952,13.972 15.049,11.178 15.009,7.908 L15.009,7.908 Z M7.638,8.194 C6.538,8.207 5.636,7.326 5.622,6.225 C5.609,5.125 6.49,4.222 7.591,4.209 C8.691,4.196 9.594,5.077 9.607,6.177 C9.62,7.278 8.739,8.18 7.638,8.194 L7.638,8.194 Z" id="Fill-7" fill="#E1E4E4" sketch:type="MSShapeGroup"></path>
+                <path d="M15.009,7.908 C14.96,3.836 11.62,0.574 7.548,0.623 C3.475,0.672 0.214,4.013 0.263,8.085 C0.302,11.365 2.479,14.116 5.451,15.038 L5.624,27.802 L8.712,29.822 L10.984,27.288 L9.954,24.721 L10.932,22.978 L9.906,20.784 L10.877,18.415 L9.853,16.38 L10.017,14.973 C12.952,13.972 15.049,11.178 15.009,7.908 L15.009,7.908 Z M7.638,8.194 C6.538,8.207 5.636,7.326 5.622,6.225 C5.609,5.125 6.49,4.222 7.591,4.209 C8.691,4.196 9.594,5.077 9.607,6.177 C9.62,7.278 8.739,8.18 7.638,8.194 L7.638,8.194 Z" id="Stroke-8" stroke="#858D93" sketch:type="MSShapeGroup"></path>
+                <path d="M13.362,7.946 C13.362,11.109 10.798,13.672 7.636,13.672 C4.474,13.672 1.91,11.109 1.91,7.946 C1.91,4.784 4.474,2.22 7.636,2.22 C10.798,2.22 13.362,4.784 13.362,7.946 L13.362,7.946 Z M7.636,13.672 L7.636,26.735 L7.636,13.672 Z" id="Stroke-9" stroke="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

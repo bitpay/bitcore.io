@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Mnemonic | Bitcore &mdash; A pure and powerful JavaScript Bitcoin library.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="http://bitcore.io/guide/module/mnemonic/index.html">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <link href="/css/animations.css" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu:light,regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu%20Mono:regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
+
+  <meta property="og:image" content="/css/images/lava-ball-social.png" />
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball-social.png">
+
+  <meta name="description" content="A simple interface to generate mnemonic codes and deterministic keys.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mnemonic">
+<meta property="og:url" content="http://bitcore.io/guide/module/mnemonic/index.html">
+<meta property="og:site_name" content="Bitcore">
+<meta property="og:description" content="A simple interface to generate mnemonic codes and deterministic keys.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mnemonic">
+<meta name="twitter:description" content="A simple interface to generate mnemonic codes and deterministic keys.">
+<meta name="twitter:site" content="@bitpay">
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24163874-2', 'bitcore.io');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+
+<body>
+  <header id="header"  class="invert" >
+  <div class="outer">
+    <div class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Bitcore</a>
+        <a id="main-nav-toggle"></a>
+      </h1>
+      <nav id="main-nav">
+        <ul id="main-nav-list">
+          
+            
+              <li class="main-nav-item">
+                <a href="/api/" class="main-nav-link api">API</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="/guide/" class="main-nav-link docs">Docs</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="https://github.com/bitpay/bitcore" class="main-nav-link github">Github</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://labs.bitpay.com/" class="main-nav-link forum">Forum</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://bitcore.io/playground" class="main-nav-link playground">Playground</a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <article class="page" itemscope itemtype="http://schema.org/Article">
+  <header id="page-banner">
+    <div class="outer">
+      <div id="page-banner-inner" class="inner">
+        
+        <h1 id="page-title" class="docs" itemprop="name">Documentation</h1>
+        
+          
+          <a href="https://github.com/bitpay/bitcore-mnemonic/blob/master/docs/index.md" title="Improve this doc" id="page-edit-link"></a>
+        
+      </div>
+    </div>
+  </header>
+  <div class="outer">
+    <div id="mobile-menu-wrap"></div>
+    <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mnemonic"><span class="toc-number">1.</span> <span class="toc-text">Mnemonic</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Installation"><span class="toc-number">1.2.</span> <span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mnemonic_generation"><span class="toc-number">1.3.</span> <span class="toc-text">Mnemonic generation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multi-language_support"><span class="toc-number">1.4.</span> <span class="toc-text">Multi-language support</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Validating_a_mnemonic"><span class="toc-number">1.5.</span> <span class="toc-text">Validating a mnemonic</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Generating_a_private_key"><span class="toc-number">1.6.</span> <span class="toc-text">Generating a private key</span></a></li></ol></li></ol>
+      </div>
+      <div class="page-entry" itemprop="articleBody">
+        <h1 id="Mnemonic">Mnemonic</h1>
+<h2 id="Description">Description</h2>
+<p>The <code>Mnemonic</code> class provides an implementation of a mnemonic code or mnemonic sentence – a group of easy to remember words – for the generation of deterministic keys. The class handles code generation and it’s later conversion to a <a href="hierarchical.html">HDPrivateKey</a>. See <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" target="_blank" rel="external">the official BIP-0039</a> for technical background information.</p>
+<h2 id="Installation">Installation</h2>
+<p>Mnemonics is implemented as a separate module and you must add it to your dependencies:</p>
+<p>For node projects:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> bitcore-mnemonic <span class="comment">--save</span></span></div></pre></td></tr></table></figure>
+
+<p>For client-side projects:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bower <span class="operator"><span class="keyword">install</span> bitcore-mnemonic <span class="comment">--save</span></span></div></pre></td></tr></table></figure>
+
+<h2 id="Mnemonic_generation">Mnemonic generation</h2>
+<p>For creating a new random mnemonic code you just create a new instance.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Mnemonic = <span class="built_in">require</span>(<span class="string">'bitcore-mnemonic'</span>);</div><div class="line"><span class="keyword">var</span> code = <span class="keyword">new</span> Mnemonic();</div><div class="line"></div><div class="line">code.toString(); <span class="comment">// 'select scout crash enforce riot rival spring whale hollow radar rule sentence'</span></div></pre></td></tr></table></figure>
+
+<h2 id="Multi-language_support">Multi-language support</h2>
+<p>The <code>Mnemonic</code> class can use any list of 2048 unique words to generate the mnemonic code. For convenience the class provides default word lists for the following languages: English (default), Chinese, French, Japanese and Spanish. Those word list are published under <code>Mnemonic.Words.LANGUAGE</code>, take a look at the following example:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Mnemonic = <span class="built_in">require</span>(<span class="string">'bitcore-mnemonic'</span>);</div><div class="line"><span class="keyword">var</span> code = <span class="keyword">new</span> Mnemonic(Mnemonic.Words.SPANISH);</div><div class="line">code.toString(); <span class="comment">// natal hada sutil año sólido papel jamón combate aula flota ver esfera...</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myWordList = [ <span class="string">'abandon'</span>, <span class="string">'ability'</span>, <span class="string">'able'</span>, <span class="string">'about'</span>, <span class="string">'above'</span>, ... ];</div><div class="line"><span class="keyword">var</span> customCode = <span class="keyword">new</span> Mnemonic(myWordList);</div></pre></td></tr></table></figure>
+
+<h2 id="Validating_a_mnemonic">Validating a mnemonic</h2>
+<p>The Mnemonic class provides a static method to check if a mnemonic string is valid. If you generated the mnemonic code using any of the default word list, the class will identify it, otherwise you must provide the word list used.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Mnemonic = <span class="built_in">require</span>(<span class="string">'bitcore-mnemonic'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> code = <span class="string">'select scout crash enforce riot rival spring whale hollow radar rule sentence'</span>;</div><div class="line"><span class="keyword">var</span> valid = Mnemonic.isValid(code);</div><div class="line"></div><div class="line"><span class="comment">// using a custom word list</span></div><div class="line"><span class="keyword">var</span> validCutom = Mnemonic.isValid(code, customWordlist);</div></pre></td></tr></table></figure>
+
+<h2 id="Generating_a_private_key">Generating a private key</h2>
+<p>A mnemonic encodes entropy that can be used for creating a seed and later a <a href="hierarchical.html">HDPrivateKey</a>. During the seed generation process a passphrase can be used. The code for doing so looks like this:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Mnemonic = <span class="built_in">require</span>(<span class="string">'bitcore-mnemonic'</span>);</div><div class="line"><span class="keyword">var</span> code = <span class="keyword">new</span> Mnemonic(<span class="string">'select scout crash enforce riot rival spring whale hollow radar rule sentence'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> xpriv1 = code.toHDPrivateKey(); <span class="comment">// no passphrase</span></div><div class="line"><span class="keyword">var</span> xpriv2 = code.toHDPrivateKey(<span class="string">'my passphrase'</span>); <span class="comment">// using a passphrase</span></div></pre></td></tr></table></figure>
+
+
+      </div>
+      <footer id="page-footer">
+        <time id="page-footer-updated" datetime="2015-08-19T18:21:29.849Z" itemprop="dateModified">Last updated: Aug 19 2015</time>
+        <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
+      </footer>
+      
+    </div>
+    <aside id="sidebar">
+
+  
+
+  
+    <strong class="sidebar-title">Home</strong>
+    
+      <a href="/guide/index.html" class="sidebar-link">Get Started</a>
+    
+      <a href="/guide/contributing.html" class="sidebar-link">Contributing</a>
+    
+  
+    <strong class="sidebar-title">Bitcore</strong>
+    
+      <a href="/guide/address.html" class="sidebar-link">Address</a>
+    
+      <a href="/guide/block.html" class="sidebar-link">Block</a>
+    
+      <a href="/guide/browser.html" class="sidebar-link">Browser</a>
+    
+      <a href="/guide/crypto.html" class="sidebar-link">Crypto</a>
+    
+      <a href="/guide/encoding.html" class="sidebar-link">Encoding</a>
+    
+      <a href="/guide/hierarchical.html" class="sidebar-link">HD Keys</a>
+    
+      <a href="/guide/networks.html" class="sidebar-link">Networks</a>
+    
+      <a href="/guide/privatekey.html" class="sidebar-link">Private Key</a>
+    
+      <a href="/guide/publickey.html" class="sidebar-link">Public Key</a>
+    
+      <a href="/guide/script.html" class="sidebar-link">Script</a>
+    
+      <a href="/guide/transaction.html" class="sidebar-link">Transaction</a>
+    
+      <a href="/guide/unit.html" class="sidebar-link">Unit</a>
+    
+      <a href="/guide/unspentoutput.html" class="sidebar-link">Unspent Output</a>
+    
+      <a href="/guide/uri.html" class="sidebar-link">URI</a>
+    
+  
+    <strong class="sidebar-title">Payment Protocol</strong>
+    
+      <a href="/guide/module/payment-protocol/index.html" class="sidebar-link">Usage</a>
+    
+  
+    <strong class="sidebar-title">Peer-to-Peer</strong>
+    
+      <a href="/guide/module/p2p/index.html" class="sidebar-link">Overview</a>
+    
+      <a href="/guide/module/p2p/messages.html" class="sidebar-link">Messages</a>
+    
+      <a href="/guide/module/p2p/peer.html" class="sidebar-link">Peer</a>
+    
+      <a href="/guide/module/p2p/pool.html" class="sidebar-link">Pool</a>
+    
+  
+    <strong class="sidebar-title">Message Signing and Verification</strong>
+    
+      <a href="/guide/module/message/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Mnemonic</strong>
+    
+      <a href="/guide/module/mnemonic/index.html" class="sidebar-link current">Overview</a>
+    
+  
+    <strong class="sidebar-title">ECIES</strong>
+    
+      <a href="/guide/module/ecies/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Channel</strong>
+    
+      <a href="/guide/module/channel/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Explorers</strong>
+    
+      <a href="/guide/module/explorers/index.html" class="sidebar-link">Overview</a>
+    
+  
+
+
+
+
+</aside>
+  </div>
+</article>
+
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">
+        <p>bitcore™ &copy; 2013-2015 BitPay, Inc. bitcore is released under the MIT license.</p>
+      </div>
+      <div id="footer-links">
+        <a href="https://twitter.com/bitpay" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
+        <a href="https://github.com/bitpay/bitcore" id="footer-link-github" class="footer-link" target="_blank"><span>GitHub</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/retina.min.js" type="text/javascript"></script>
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+<!-- Google+ -->
+<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</body>
+</html>

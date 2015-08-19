@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Bitcore &mdash; A pure and powerful JavaScript Bitcoin library.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="http://bitcore.io/api/transaction/transaction.html">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <link href="/css/animations.css" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu:light,regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu%20Mono:regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
+
+  <meta property="og:image" content="/css/images/lava-ball-social.png" />
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball-social.png">
+
+  <meta name="description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bitcore">
+<meta property="og:url" content="http://bitcore.io/api/transaction/transaction.html">
+<meta property="og:site_name" content="Bitcore">
+<meta property="og:description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bitcore">
+<meta name="twitter:description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta name="twitter:site" content="@bitpay">
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24163874-2', 'bitcore.io');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+
+<body>
+  <header id="header"  class="invert" >
+  <div class="outer">
+    <div class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Bitcore</a>
+        <a id="main-nav-toggle"></a>
+      </h1>
+      <nav id="main-nav">
+        <ul id="main-nav-list">
+          
+            
+              <li class="main-nav-item">
+                <a href="/api/" class="main-nav-link api">API</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="/guide/" class="main-nav-link docs">Docs</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="https://github.com/bitpay/bitcore" class="main-nav-link github">Github</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://labs.bitpay.com/" class="main-nav-link forum">Forum</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://bitcore.io/playground" class="main-nav-link playground">Playground</a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <article class="page" itemscope itemtype="http://schema.org/Article">
+  <header id="page-banner">
+    <div class="outer">
+      <div id="page-banner-inner" class="inner">
+        
+        <h1 id="page-title" class="api" itemprop="name">API Reference</h1>
+        
+          <a href="https://github.com/bitpay/bitcore/blob/master/lib/transaction/transaction.js" title="Improve this doc" id="page-edit-link"></a>
+        
+      </div>
+    </div>
+  </header>
+  <div class="outer">
+    <div id="mobile-menu-wrap"></div>
+    <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        
+      </div>
+      <div class="page-entry" itemprop="articleBody">
+        <p><a name="Transaction"></a></p>
+<p>#class: Transaction<br><strong>Members</strong></p>
+<ul>
+<li><a href="#Transaction">class: Transaction</a><ul>
+<li><a href="#new_Transaction">new Transaction(serialized)</a></li>
+<li><a href="#Transaction.shallowCopy">Transaction.shallowCopy(transaction)</a></li>
+<li><a href="#Transaction#_getHash">transaction._getHash()</a></li>
+<li><a href="#Transaction#serialize">transaction.serialize(unsafe)</a></li>
+<li><a href="#Transaction#checkedSerialize">transaction.checkedSerialize(opts)</a></li>
+<li><a href="#Transaction#getSerializationError">transaction.getSerializationError(opts)</a></li>
+<li><a href="#Transaction#lockUntilDate">transaction.lockUntilDate(time)</a></li>
+<li><a href="#Transaction#lockUntilBlockHeight">transaction.lockUntilBlockHeight(height)</a></li>
+<li><a href="#Transaction#getLockTime">transaction.getLockTime()</a></li>
+<li><a href="#Transaction#from">transaction.from(utxo, [pubkeys], [threshold])</a></li>
+<li><a href="#Transaction#addInput">transaction.addInput(input, outputScript, satoshis)</a></li>
+<li><a href="#Transaction#uncheckedAddInput">transaction.uncheckedAddInput(input)</a></li>
+<li><a href="#Transaction#hasAllUtxoInfo">transaction.hasAllUtxoInfo()</a></li>
+<li><a href="#Transaction#fee">transaction.fee(amount)</a></li>
+<li><a href="#Transaction#feePerKb">transaction.feePerKb(amount)</a></li>
+<li><a href="#Transaction#change">transaction.change(address)</a></li>
+<li><a href="#Transaction#getChangeOutput">transaction.getChangeOutput()</a></li>
+<li><a href="#Transaction#to">transaction.to(address, amount)</a></li>
+<li><a href="#Transaction#addData">transaction.addData(value)</a></li>
+<li><a href="#Transaction#addOutput">transaction.addOutput(output)</a></li>
+<li><a href="#Transaction#clearOutputs">transaction.clearOutputs()</a></li>
+<li><a href="#Transaction#_getOutputAmount">transaction._getOutputAmount()</a></li>
+<li><a href="#Transaction#_getInputAmount">transaction._getInputAmount()</a></li>
+<li><a href="#Transaction#getFee">transaction.getFee()</a></li>
+<li><a href="#Transaction#_estimateFee">transaction._estimateFee()</a></li>
+<li><a href="#Transaction#shuffleOutputs">transaction.shuffleOutputs()</a></li>
+<li><a href="#Transaction#sortOutputs">transaction.sortOutputs(sortingFunction)</a></li>
+<li><a href="#Transaction#sign">transaction.sign(privateKey, sigtype)</a></li>
+<li><a href="#Transaction#applySignature">transaction.applySignature(signature)</a></li>
+<li><a href="#Transaction#verifySignature">transaction.verifySignature()</a></li>
+<li><a href="#Transaction#verify">transaction.verify()</a></li>
+<li><a href="#Transaction#isCoinbase">transaction.isCoinbase()</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="new_Transaction"></a></p>
+<p>##new Transaction(serialized)<br>Represents a transaction, a set of inputs and outputs to change ownership of tokens</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>serialized <code>*</code>  </li>
+</ul>
+<p><a name="Transaction.shallowCopy"></a></p>
+<p>##Transaction.shallowCopy(transaction)<br>Create a ‘shallow’ copy of the transaction, by serializing and deserializing<br>it dropping any additional information that inputs and outputs may have hold</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>transaction <code><a href="#Transaction">Transaction</a></code>  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a><br><a name="Transaction#_getHash"></a></p>
+<p>##transaction._getHash()<br>Retrieve the little endian hash of the transaction (used for serialization)</p>
+<p><strong>Returns</strong>: <code>Buffer</code><br><a name="Transaction#serialize"></a></p>
+<p>##transaction.serialize(unsafe)<br>Retrieve a hexa string that can be used with bitcoind’s CLI interface<br>(decoderawtransaction, sendrawtransaction)</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>unsafe <code>Object</code> | <code>boolean</code> - if true, skip all tests. if it’s an object,<br>it’s expected to contain a set of flags to skip certain tests:</li>
+</ul>
+<ul>
+<li><code>disableAll</code>: disable all checks</li>
+<li><code>disableSmallFees</code>: disable checking for fees that are too small</li>
+<li><code>disableLargeFees</code>: disable checking for fees that are too large</li>
+<li><code>disableNotFullySigned</code>: disable checking if all inputs are fully signed</li>
+<li><code>disableDustOutputs</code>: disable checking if there are no outputs that are dust amounts</li>
+<li><code>disableMoreOutputThanInput</code>: disable checking if the transaction spends more bitcoins than the sum of the input amounts  </li>
+</ul>
+<p><strong>Returns</strong>: <code>string</code><br><a name="Transaction#checkedSerialize"></a></p>
+<p>##transaction.checkedSerialize(opts)<br>Retrieve a hexa string that can be used with bitcoind’s CLI interface<br>(decoderawtransaction, sendrawtransaction)</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>opts <code>Object</code> - allows to skip certain tests. {@see Transaction#serialize}  </li>
+</ul>
+<p><strong>Returns</strong>: <code>string</code><br><a name="Transaction#getSerializationError"></a></p>
+<p>##transaction.getSerializationError(opts)<br>Retrieve a possible error that could appear when trying to serialize and<br>broadcast this transaction.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>opts <code>Object</code> - allows to skip certain tests. {@see Transaction#serialize}  </li>
+</ul>
+<p><strong>Returns</strong>: <code>bitcore.Error</code><br><a name="Transaction#lockUntilDate"></a></p>
+<p>##transaction.lockUntilDate(time)<br>Sets nLockTime so that transaction is not valid until the desired date(a<br>timestamp in seconds since UNIX epoch is also accepted)</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>time <code>Date</code> | <code>Number</code>  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a> - this<br><a name="Transaction#lockUntilBlockHeight"></a></p>
+<p>##transaction.lockUntilBlockHeight(height)<br>Sets nLockTime so that transaction is not valid until the desired block<br>height.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>height <code>Number</code>  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a> - this<br><a name="Transaction#getLockTime"></a></p>
+<p>##transaction.getLockTime()<br>Returns a semantic version of the transaction’s nLockTime.</p>
+<p><strong>Returns</strong>: <code>Number</code> | <code>Date</code> - If nLockTime is 0, it returns null,<br> if it is &lt; 500000000, it returns a block height (number)<br> else it returns a Date object.<br><a name="Transaction#from"></a></p>
+<p>##transaction.from(utxo, [pubkeys], [threshold])<br>Add an input to this transaction. This is a high level interface<br>to add an input, for more control, use @{link Transaction#addInput}.</p>
+<p>Can receive, as output information, the output of bitcoind’s <code>listunspent</code> command,<br>and a slightly fancier format recognized by bitcore:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="rules">{</span></div><div class="line"> <span class="rule"><span class="attribute">address</span>:<span class="value"> <span class="string">'mszYqVnqKoQx4jcTdJXxwKAissE3Jbrrc1'</span>,</span></span></div><div class="line"> txId: <span class="string">'a477af6b2667c29670467e4e0728b685ee07b240235771862318e29ddbe58458'</span>,</div><div class="line"> outputIndex: <span class="number">0</span>,</div><div class="line"> script: Script.<span class="function">empty</span>(),</div><div class="line"> satoshis: <span class="number">1020000</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>Where <code>address</code> can be either a string or a bitcore Address object. The<br>same is true for <code>script</code>, which can be a string or a bitcore Script.</p>
+<p>Beware that this resets all the signatures for inputs (in further versions,<br>SIGHASH_SINGLE or SIGHASH_NONE signatures will not be reset).</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>utxo <code>Object</code>  </li>
+<li>[pubkeys] <code>Array</code>  </li>
+<li>[threshold] <code>number</code>  </li>
+</ul>
+<p><strong>Example</strong>  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> transaction = <span class="keyword">new</span> Transaction();</div><div class="line"></div><div class="line"><span class="comment">// From a pay to public key hash output from bitcoind's listunspent</span></div><div class="line">transaction.from({<span class="string">'txid'</span>: <span class="string">'0000...'</span>, vout: <span class="number">0</span>, amount: <span class="number">0.1</span>, scriptPubKey: <span class="string">'OP_DUP ...'</span>});</div><div class="line"></div><div class="line"><span class="comment">// From a pay to public key hash output</span></div><div class="line">transaction.from({<span class="string">'txId'</span>: <span class="string">'0000...'</span>, outputIndex: <span class="number">0</span>, satoshis: <span class="number">1000</span>, script: <span class="string">'OP_DUP ...'</span>});</div><div class="line"></div><div class="line"><span class="comment">// From a multisig P2SH output</span></div><div class="line">transaction.from({<span class="string">'txId'</span>: <span class="string">'0000...'</span>, inputIndex: <span class="number">0</span>, satoshis: <span class="number">1000</span>, script: <span class="string">'... OP_HASH'</span>},</div><div class="line">                 [<span class="string">'03000...'</span>, <span class="string">'02000...'</span>], <span class="number">2</span>);</div></pre></td></tr></table></figure>
+
+<p><a name="Transaction#addInput"></a></p>
+<p>##transaction.addInput(input, outputScript, satoshis)<br>Add an input to this transaction. The input must be an instance of the <code>Input</code> class.<br>It should have information about the Output that it’s spending, but if it’s not already<br>set, two additional parameters, <code>outputScript</code> and <code>satoshis</code> can be provided.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>input <code>Input</code>  </li>
+<li>outputScript <code>String</code> | <code>Script</code>  </li>
+<li>satoshis <code>number</code>  </li>
+</ul>
+<p><strong>Returns</strong>:  - Transaction this, for chaining<br><a name="Transaction#uncheckedAddInput"></a></p>
+<p>##transaction.uncheckedAddInput(input)<br>Add an input to this transaction, without checking that the input has information about<br>the output that it’s spending.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>input <code>Input</code>  </li>
+</ul>
+<p><strong>Returns</strong>:  - Transaction this, for chaining<br><a name="Transaction#hasAllUtxoInfo"></a></p>
+<p>##transaction.hasAllUtxoInfo()<br>Returns true if the transaction has enough info on all inputs to be correctly validated</p>
+<p><strong>Returns</strong>: <code>boolean</code><br><a name="Transaction#fee"></a></p>
+<p>##transaction.fee(amount)<br>Manually set the fee for this transaction. Beware that this resets all the signatures<br>for inputs (in further versions, SIGHASH_SINGLE or SIGHASH_NONE signatures will not<br>be reset).</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>amount <code>number</code> - satoshis to be sent  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a> - this, for chaining<br><a name="Transaction#feePerKb"></a></p>
+<p>##transaction.feePerKb(amount)<br>Manually set the fee per KB for this transaction. Beware that this resets all the signatures<br>for inputs (in further versions, SIGHASH_SINGLE or SIGHASH_NONE signatures will not<br>be reset).</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>amount <code>number</code> - satoshis per KB to be sent  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a> - this, for chaining<br><a name="Transaction#change"></a></p>
+<p>##transaction.change(address)<br>Set the change address for this transaction</p>
+<p>Beware that this resets all the signatures for inputs (in further versions,<br>SIGHASH_SINGLE or SIGHASH_NONE signatures will not be reset).</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>address <code>Address</code> - An address for change to be sent to.  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a> - this, for chaining<br><a name="Transaction#getChangeOutput"></a></p>
+<p>##transaction.getChangeOutput()<br><strong>Returns</strong>: <code>Output</code> - change output, if it exists<br><a name="Transaction#to"></a></p>
+<p>##transaction.to(address, amount)<br>Add an output to the transaction.</p>
+<p>Beware that this resets all the signatures for inputs (in further versions,<br>SIGHASH_SINGLE or SIGHASH_NONE signatures will not be reset).</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>address <code>string</code> | <code>Address</code>  </li>
+<li>amount <code>number</code> - in satoshis  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a> - this, for chaining<br><a name="Transaction#addData"></a></p>
+<p>##transaction.addData(value)<br>Add an OP_RETURN output to the transaction.</p>
+<p>Beware that this resets all the signatures for inputs (in further versions,<br>SIGHASH_SINGLE or SIGHASH_NONE signatures will not be reset).</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>value <code>Buffer</code> | <code>string</code> - the data to be stored in the OP_RETURN output.<br> In case of a string, the UTF-8 representation will be stored  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a> - this, for chaining<br><a name="Transaction#addOutput"></a></p>
+<p>##transaction.addOutput(output)<br>Add an output to the transaction.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>output <code>Output</code> - the output to add.  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a> - this, for chaining<br><a name="Transaction#clearOutputs"></a></p>
+<p>##transaction.clearOutputs()<br>Remove all outputs from the transaction.</p>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a> - this, for chaining<br><a name="Transaction#_getOutputAmount"></a></p>
+<p>##transaction._getOutputAmount()<br>Calculates or gets the total output amount in satoshis</p>
+<p><strong>Returns</strong>: <code>Number</code> - the transaction total output amount<br><a name="Transaction#_getInputAmount"></a></p>
+<p>##transaction._getInputAmount()<br>Calculates or gets the total input amount in satoshis</p>
+<p><strong>Returns</strong>: <code>Number</code> - the transaction total input amount<br><a name="Transaction#getFee"></a></p>
+<p>##transaction.getFee()<br>Calculates the fee of the transaction.</p>
+<p>If there’s a fixed fee set, return that.</p>
+<p>If there is no change output set, the fee is the<br>total value of the outputs minus inputs. Note that<br>a serialized transaction only specifies the value<br>of its outputs. (The value of inputs are recorded<br>in the previous transaction outputs being spent.)<br>This method therefore raises a “MissingPreviousOutput”<br>error when called on a serialized transaction.</p>
+<p>If there’s no fee set and no change address,<br>estimate the fee based on size.</p>
+<p><strong>Returns</strong>: <code>Number</code> - fee of this transaction in satoshis<br><a name="Transaction#_estimateFee"></a></p>
+<p>##transaction._estimateFee()<br>Estimates fee from serialized transaction size in bytes.</p>
+<p><a name="Transaction#shuffleOutputs"></a></p>
+<p>##transaction.shuffleOutputs()<br>Randomize this transaction’s outputs ordering. The shuffling algorithm is a<br>version of the Fisher-Yates shuffle, provided by lodash’s _.shuffle().</p>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a> - this<br><a name="Transaction#sortOutputs"></a></p>
+<p>##transaction.sortOutputs(sortingFunction)<br>Sort this transaction’s outputs, according to a given sorting function that<br>takes an array as argument and returns a new array, with the same elements<br>but with a different order. The argument function MUST NOT modify the order<br>of the original array</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>sortingFunction <code>function</code>  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a> - this<br><a name="Transaction#sign"></a></p>
+<p>##transaction.sign(privateKey, sigtype)<br>Sign the transaction using one or more private keys.</p>
+<p>It tries to sign each input, verifying that the signature will be valid<br>(matches a public key).</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>privateKey <code>Array</code> | <code>String</code> | <code>PrivateKey</code>  </li>
+<li>sigtype <code>number</code>  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a> - this, for chaining<br><a name="Transaction#applySignature"></a></p>
+<p>##transaction.applySignature(signature)<br>Add a signature to the transaction</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>signature <code>Object</code>  <ul>
+<li>inputIndex <code>number</code>  </li>
+<li>sigtype <code>number</code>  </li>
+<li>publicKey <code>PublicKey</code>  </li>
+<li>signature <code>Signature</code>  </li>
+</ul>
+</li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Transaction">Transaction</a> - this, for chaining<br><a name="Transaction#verifySignature"></a></p>
+<p>##transaction.verifySignature()<br><strong>Returns</strong>: <code>bool</code> - whether the signature is valid for this transaction input<br><a name="Transaction#verify"></a></p>
+<p>##transaction.verify()<br>Check that a transaction passes basic sanity tests. If not, return a string<br>describing the error. This function contains the same logic as<br>CheckTransaction in bitcoin core.</p>
+<p><a name="Transaction#isCoinbase"></a></p>
+<p>##transaction.isCoinbase()<br>Analagous to bitcoind’s IsCoinBase function in transaction.h</p>
+
+      </div>
+      <footer id="page-footer">
+        <time id="page-footer-updated" datetime="2015-08-19T18:21:35.897Z" itemprop="dateModified">Last updated: Aug 19 2015</time>
+        <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
+      </footer>
+      
+    </div>
+    <aside id="sidebar">
+
+  
+
+  
+    <strong class="sidebar-title">Bitcore</strong>
+    
+      <a href="/api/address.html" class="sidebar-link">Address</a>
+    
+      <a href="/api/block.html" class="sidebar-link">Block</a>
+    
+      <a href="/api/blockheader.html" class="sidebar-link">BlockHeader</a>
+    
+      <a href="/api/hdprivatekey.html" class="sidebar-link">HDPrivateKey</a>
+    
+      <a href="/api/hdpublickey.html" class="sidebar-link">HDPublicKey</a>
+    
+      <a href="/api/networks.html" class="sidebar-link">Networks</a>
+    
+      <a href="/api/privatekey.html" class="sidebar-link">PrivateKey</a>
+    
+      <a href="/api/publickey.html" class="sidebar-link">PublicKey</a>
+    
+      <a href="/api/unit.html" class="sidebar-link">Unit</a>
+    
+      <a href="/api/uri.html" class="sidebar-link">Uri</a>
+    
+      <a href="/api/crypto/point.html" class="sidebar-link">Crypto/Point</a>
+    
+      <a href="/api/script/script.html" class="sidebar-link">Script</a>
+    
+      <a href="/api/transaction/transaction.html" class="sidebar-link current">Transaction</a>
+    
+      <a href="/api/transaction/unspentoutput.html" class="sidebar-link">Transaction/UnspentOutput</a>
+    
+      <a href="/api/transaction/sighash.html" class="sidebar-link">Transaction/Signing</a>
+    
+  
+    <strong class="sidebar-title">Peer-to-Peer</strong>
+    
+      <a href="/api/module/p2p/inventory.html" class="sidebar-link">Inventory</a>
+    
+      <a href="/api/module/p2p/messages/index.html" class="sidebar-link">Messages</a>
+    
+      <a href="/api/module/p2p/peer.html" class="sidebar-link">Peer</a>
+    
+      <a href="/api/module/p2p/pool.html" class="sidebar-link">Pool</a>
+    
+  
+    <strong class="sidebar-title">Message Signing and Verification</strong>
+    
+      <a href="/api/module/message/message.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Mnemonic</strong>
+    
+      <a href="/api/module/mnemonic/mnemonic.html" class="sidebar-link">Mnemonic</a>
+    
+  
+    <strong class="sidebar-title">Channel</strong>
+    
+      <a href="/api/module/channel/consumer.html" class="sidebar-link">Consumer</a>
+    
+      <a href="/api/module/channel/provider.html" class="sidebar-link">Provider</a>
+    
+      <a href="/api/module/channel/transactions/commitment.html" class="sidebar-link">Transactions/Commitment</a>
+    
+      <a href="/api/module/channel/transactions/payment.html" class="sidebar-link">Transactions/Payment</a>
+    
+      <a href="/api/module/channel/transactions/refund.html" class="sidebar-link">Transactions/Refund</a>
+    
+  
+    <strong class="sidebar-title">Explorers</strong>
+    
+      <a href="/api/module/explorers/insight.html" class="sidebar-link">Insight</a>
+    
+  
+
+
+
+
+</aside>
+  </div>
+</article>
+
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">
+        <p>bitcore™ &copy; 2013-2015 BitPay, Inc. bitcore is released under the MIT license.</p>
+      </div>
+      <div id="footer-links">
+        <a href="https://twitter.com/bitpay" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
+        <a href="https://github.com/bitpay/bitcore" id="footer-link-github" class="footer-link" target="_blank"><span>GitHub</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/retina.min.js" type="text/javascript"></script>
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+<!-- Google+ -->
+<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Bitcore &mdash; A pure and powerful JavaScript Bitcoin library.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="http://bitcore.io/guide/examples.html">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <link href="/css/animations.css" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu:light,regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu%20Mono:regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
+
+  <meta property="og:image" content="/css/images/lava-ball-social.png" />
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball-social.png">
+
+  <meta name="description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bitcore">
+<meta property="og:url" content="http://bitcore.io/guide/examples.html">
+<meta property="og:site_name" content="Bitcore">
+<meta property="og:description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bitcore">
+<meta name="twitter:description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta name="twitter:site" content="@bitpay">
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24163874-2', 'bitcore.io');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+
+<body>
+  <header id="header"  class="invert" >
+  <div class="outer">
+    <div class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Bitcore</a>
+        <a id="main-nav-toggle"></a>
+      </h1>
+      <nav id="main-nav">
+        <ul id="main-nav-list">
+          
+            
+              <li class="main-nav-item">
+                <a href="/api/" class="main-nav-link api">API</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="/guide/" class="main-nav-link docs">Docs</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="https://github.com/bitpay/bitcore" class="main-nav-link github">Github</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://labs.bitpay.com/" class="main-nav-link forum">Forum</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://bitcore.io/playground" class="main-nav-link playground">Playground</a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <article class="page" itemscope itemtype="http://schema.org/Article">
+  <header id="page-banner">
+    <div class="outer">
+      <div id="page-banner-inner" class="inner">
+        
+        <h1 id="page-title" class="docs" itemprop="name">Documentation</h1>
+        
+          <a href="https://github.com/bitpay/bitcore/blob/master/docs/examples.md" title="Improve this doc" id="page-edit-link"></a>
+        
+      </div>
+    </div>
+  </header>
+  <div class="outer">
+    <div id="mobile-menu-wrap"></div>
+    <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Bitcore_examples"><span class="toc-number">1.</span> <span class="toc-text">Bitcore examples</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Generate_a_random_address"><span class="toc-number">1.1.</span> <span class="toc-text">Generate a random address</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Generate_a_address_from_a_SHA256_hash"><span class="toc-number">1.2.</span> <span class="toc-text">Generate a address from a SHA256 hash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Import_an_address_via_WIF"><span class="toc-number">1.3.</span> <span class="toc-text">Import an address via WIF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_a_Transaction"><span class="toc-number">1.4.</span> <span class="toc-text">Create a Transaction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sign_a_Bitcoin_message"><span class="toc-number">1.5.</span> <span class="toc-text">Sign a Bitcoin message</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Verify_a_Bitcoin_message"><span class="toc-number">1.6.</span> <span class="toc-text">Verify a Bitcoin message</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_an_OP_RETURN_transaction"><span class="toc-number">1.7.</span> <span class="toc-text">Create an OP RETURN transaction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_a_2-of-3_multisig_P2SH_address"><span class="toc-number">1.8.</span> <span class="toc-text">Create a 2-of-3 multisig P2SH address</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spend_from_a_2-of-2_multisig_P2SH_address"><span class="toc-number">1.9.</span> <span class="toc-text">Spend from a 2-of-2 multisig P2SH address</span></a></li></ol></li></ol>
+      </div>
+      <div class="page-entry" itemprop="articleBody">
+        <h1 id="Bitcore_examples">Bitcore examples</h1>
+<h2 id="Generate_a_random_address">Generate a random address</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> privateKey = <span class="keyword">new</span> bitcore.PrivateKey();</div><div class="line"></div><div class="line"><span class="keyword">var</span> address = privateKey.toAddress();</div></pre></td></tr></table></figure>
+
+<h2 id="Generate_a_address_from_a_SHA256_hash">Generate a address from a SHA256 hash</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> value = <span class="keyword">new</span> Buffer(<span class="string">'correct horse battery staple'</span>);</div><div class="line"><span class="keyword">var</span> hash = bitcore.crypto.Hash.sha256(value);</div><div class="line"><span class="keyword">var</span> bn = bitcore.crypto.BN.fromBuffer(hash);</div><div class="line"></div><div class="line"><span class="keyword">var</span> address = <span class="keyword">new</span> bitcore.PrivateKey(bn).toAddress();</div></pre></td></tr></table></figure>
+
+<h2 id="Import_an_address_via_WIF">Import an address via WIF</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> wif = <span class="string">'Kxr9tQED9H44gCmp6HAdmemAzU3n84H3dGkuWTKvE23JgHMW8gct'</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> address = <span class="keyword">new</span> bitcore.PrivateKey(wif).toAddress();</div></pre></td></tr></table></figure>
+
+<h2 id="Create_a_Transaction">Create a Transaction</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> privateKey = <span class="keyword">new</span> bitcore.PrivateKey(<span class="string">'L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy'</span>);</div><div class="line"><span class="keyword">var</span> utxo = {</div><div class="line">  <span class="string">"txId"</span> : <span class="string">"115e8f72f39fad874cfab0deed11a80f24f967a84079fb56ddf53ea02e308986"</span>,</div><div class="line">  <span class="string">"outputIndex"</span> : <span class="number">0</span>,</div><div class="line">  <span class="string">"address"</span> : <span class="string">"17XBj6iFEsf8kzDMGQk5ghZipxX49VXuaV"</span>,</div><div class="line">  <span class="string">"script"</span> : <span class="string">"76a91447862fe165e6121af80d5dde1ecb478ed170565b88ac"</span>,</div><div class="line">  <span class="string">"satoshis"</span> : <span class="number">50000</span></div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">var</span> transaction = <span class="keyword">new</span> bitcore.Transaction()</div><div class="line">  .from(utxo)</div><div class="line">  .to(<span class="string">'1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK'</span>, <span class="number">15000</span>)</div><div class="line">  .sign(privateKey);</div></pre></td></tr></table></figure>
+
+<h2 id="Sign_a_Bitcoin_message">Sign a Bitcoin message</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Message = <span class="built_in">require</span>(<span class="string">'bitcore-message'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> privateKey = <span class="keyword">new</span> bitcore.PrivateKey(<span class="string">'L23PpjkBQqpAF4vbMHNfTZAb3KFPBSawQ7KinFTzz7dxq6TZX8UA'</span>);</div><div class="line"><span class="keyword">var</span> message = <span class="keyword">new</span> Message(<span class="string">'This is an example of a signed message.'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> signature = message.sign(privateKey);</div></pre></td></tr></table></figure>
+
+<h2 id="Verify_a_Bitcoin_message">Verify a Bitcoin message</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Message = <span class="built_in">require</span>(<span class="string">'bitcore-message'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> address = <span class="string">'13Js7D3q4KvfSqgKN8LpNq57gcahrVc5JZ'</span>;</div><div class="line"><span class="keyword">var</span> signature = <span class="string">'IBOvIfsAs/da1e36W8kw1cQOPqPVXCW5zJgNQ5kI8m57FycZXdeFmeyoIqJSREzE4W7vfDmdmPk0HokuJPvgPPE='</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> verified = <span class="keyword">new</span> Message(<span class="string">'This is an example of a signed message.'</span>).verify(address, signature);</div></pre></td></tr></table></figure>
+
+<h2 id="Create_an_OP_RETURN_transaction">Create an OP RETURN transaction</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> privateKey = <span class="keyword">new</span> bitcore.PrivateKey(<span class="string">'L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy'</span>);</div><div class="line"><span class="keyword">var</span> utxo = {</div><div class="line">  <span class="string">"txId"</span> : <span class="string">"115e8f72f39fad874cfab0deed11a80f24f967a84079fb56ddf53ea02e308986"</span>,</div><div class="line">  <span class="string">"outputIndex"</span> : <span class="number">0</span>,</div><div class="line">  <span class="string">"address"</span> : <span class="string">"17XBj6iFEsf8kzDMGQk5ghZipxX49VXuaV"</span>,</div><div class="line">  <span class="string">"script"</span> : <span class="string">"76a91447862fe165e6121af80d5dde1ecb478ed170565b88ac"</span>,</div><div class="line">  <span class="string">"satoshis"</span> : <span class="number">50000</span></div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">var</span> transaction = <span class="keyword">new</span> bitcore.Transaction()</div><div class="line">    .from(utxo)</div><div class="line">    .addData(<span class="string">'bitcore rocks'</span>) <span class="comment">// Add OP_RETURN data</span></div><div class="line">    .sign(privateKey);</div></pre></td></tr></table></figure>
+
+<h2 id="Create_a_2-of-3_multisig_P2SH_address">Create a 2-of-3 multisig P2SH address</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> publicKeys = [</div><div class="line">  <span class="string">'026477115981fe981a6918a6297d9803c4dc04f328f22041bedff886bbc2962e01'</span>,</div><div class="line">  <span class="string">'02c96db2302d19b43d4c69368babace7854cc84eb9e061cde51cfa77ca4a22b8b9'</span>,</div><div class="line">  <span class="string">'03c6103b3b83e4a24a0e33a4df246ef11772f9992663db0c35759a5e2ebf68d8e9'</span></div><div class="line">];</div><div class="line"><span class="keyword">var</span> requiredSignatures = <span class="number">2</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> address = <span class="keyword">new</span> bitcore.Address(publicKeys, requiredSignatures);</div></pre></td></tr></table></figure>
+
+<h2 id="Spend_from_a_2-of-2_multisig_P2SH_address">Spend from a 2-of-2 multisig P2SH address</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> privateKeys = [</div><div class="line">  <span class="keyword">new</span> bitcore.PrivateKey(<span class="string">'91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgwmaKkrx'</span>),</div><div class="line">  <span class="keyword">new</span> bitcore.PrivateKey(<span class="string">'91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgww7vXtT'</span>)</div><div class="line">];</div><div class="line"><span class="keyword">var</span> publicKeys = privateKeys.map(bitcore.PublicKey);</div><div class="line"><span class="keyword">var</span> address = <span class="keyword">new</span> bitcore.Address(publicKeys, <span class="number">2</span>); <span class="comment">// 2 of 2</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> utxo = {</div><div class="line">  <span class="string">"txId"</span> : <span class="string">"153068cdd81b73ec9d8dcce27f2c77ddda12dee3db424bff5cafdbe9f01c1756"</span>,</div><div class="line">  <span class="string">"outputIndex"</span> : <span class="number">0</span>,</div><div class="line">  <span class="string">"address"</span> : address.toString(),</div><div class="line">  <span class="string">"script"</span> : <span class="keyword">new</span> bitcore.Script(address).toHex(),</div><div class="line">  <span class="string">"satoshis"</span> : <span class="number">20000</span></div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">var</span> transaction = <span class="keyword">new</span> bitcore.Transaction()</div><div class="line">    .from(utxo, publicKeys, <span class="number">2</span>)</div><div class="line">    .to(<span class="string">'mtoKs9V381UAhUia3d7Vb9GNak8Qvmcsme'</span>, <span class="number">20000</span>)</div><div class="line">    .sign(privateKeys);</div></pre></td></tr></table></figure>
+
+
+      </div>
+      <footer id="page-footer">
+        <time id="page-footer-updated" datetime="2015-08-19T18:21:29.989Z" itemprop="dateModified">Last updated: Aug 19 2015</time>
+        <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
+      </footer>
+      
+    </div>
+    <aside id="sidebar">
+
+  
+
+  
+    <strong class="sidebar-title">Home</strong>
+    
+      <a href="/guide/index.html" class="sidebar-link">Get Started</a>
+    
+      <a href="/guide/contributing.html" class="sidebar-link">Contributing</a>
+    
+  
+    <strong class="sidebar-title">Bitcore</strong>
+    
+      <a href="/guide/address.html" class="sidebar-link">Address</a>
+    
+      <a href="/guide/block.html" class="sidebar-link">Block</a>
+    
+      <a href="/guide/browser.html" class="sidebar-link">Browser</a>
+    
+      <a href="/guide/crypto.html" class="sidebar-link">Crypto</a>
+    
+      <a href="/guide/encoding.html" class="sidebar-link">Encoding</a>
+    
+      <a href="/guide/hierarchical.html" class="sidebar-link">HD Keys</a>
+    
+      <a href="/guide/networks.html" class="sidebar-link">Networks</a>
+    
+      <a href="/guide/privatekey.html" class="sidebar-link">Private Key</a>
+    
+      <a href="/guide/publickey.html" class="sidebar-link">Public Key</a>
+    
+      <a href="/guide/script.html" class="sidebar-link">Script</a>
+    
+      <a href="/guide/transaction.html" class="sidebar-link">Transaction</a>
+    
+      <a href="/guide/unit.html" class="sidebar-link">Unit</a>
+    
+      <a href="/guide/unspentoutput.html" class="sidebar-link">Unspent Output</a>
+    
+      <a href="/guide/uri.html" class="sidebar-link">URI</a>
+    
+  
+    <strong class="sidebar-title">Payment Protocol</strong>
+    
+      <a href="/guide/module/payment-protocol/index.html" class="sidebar-link">Usage</a>
+    
+  
+    <strong class="sidebar-title">Peer-to-Peer</strong>
+    
+      <a href="/guide/module/p2p/index.html" class="sidebar-link">Overview</a>
+    
+      <a href="/guide/module/p2p/messages.html" class="sidebar-link">Messages</a>
+    
+      <a href="/guide/module/p2p/peer.html" class="sidebar-link">Peer</a>
+    
+      <a href="/guide/module/p2p/pool.html" class="sidebar-link">Pool</a>
+    
+  
+    <strong class="sidebar-title">Message Signing and Verification</strong>
+    
+      <a href="/guide/module/message/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Mnemonic</strong>
+    
+      <a href="/guide/module/mnemonic/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">ECIES</strong>
+    
+      <a href="/guide/module/ecies/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Channel</strong>
+    
+      <a href="/guide/module/channel/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Explorers</strong>
+    
+      <a href="/guide/module/explorers/index.html" class="sidebar-link">Overview</a>
+    
+  
+
+
+
+
+</aside>
+  </div>
+</article>
+
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">
+        <p>bitcore™ &copy; 2013-2015 BitPay, Inc. bitcore is released under the MIT license.</p>
+      </div>
+      <div id="footer-links">
+        <a href="https://twitter.com/bitpay" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
+        <a href="https://github.com/bitpay/bitcore" id="footer-link-github" class="footer-link" target="_blank"><span>GitHub</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/retina.min.js" type="text/javascript"></script>
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+<!-- Google+ -->
+<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</body>
+</html>

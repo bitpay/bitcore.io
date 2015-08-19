@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Bitcore &mdash; A pure and powerful JavaScript Bitcoin library.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="http://bitcore.io/api/privatekey.html">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <link href="/css/animations.css" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu:light,regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu%20Mono:regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
+
+  <meta property="og:image" content="/css/images/lava-ball-social.png" />
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball-social.png">
+
+  <meta name="description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bitcore">
+<meta property="og:url" content="http://bitcore.io/api/privatekey.html">
+<meta property="og:site_name" content="Bitcore">
+<meta property="og:description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bitcore">
+<meta name="twitter:description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta name="twitter:site" content="@bitpay">
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24163874-2', 'bitcore.io');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+
+<body>
+  <header id="header"  class="invert" >
+  <div class="outer">
+    <div class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Bitcore</a>
+        <a id="main-nav-toggle"></a>
+      </h1>
+      <nav id="main-nav">
+        <ul id="main-nav-list">
+          
+            
+              <li class="main-nav-item">
+                <a href="/api/" class="main-nav-link api">API</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="/guide/" class="main-nav-link docs">Docs</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="https://github.com/bitpay/bitcore" class="main-nav-link github">Github</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://labs.bitpay.com/" class="main-nav-link forum">Forum</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://bitcore.io/playground" class="main-nav-link playground">Playground</a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <article class="page" itemscope itemtype="http://schema.org/Article">
+  <header id="page-banner">
+    <div class="outer">
+      <div id="page-banner-inner" class="inner">
+        
+        <h1 id="page-title" class="api" itemprop="name">API Reference</h1>
+        
+          <a href="https://github.com/bitpay/bitcore/blob/master/lib/privatekey.js" title="Improve this doc" id="page-edit-link"></a>
+        
+      </div>
+    </div>
+  </header>
+  <div class="outer">
+    <div id="mobile-menu-wrap"></div>
+    <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        
+      </div>
+      <div class="page-entry" itemprop="articleBody">
+        <p><a name="PrivateKey"></a></p>
+<p>#class: PrivateKey<br><strong>Members</strong></p>
+<ul>
+<li><a href="#PrivateKey">class: PrivateKey</a><ul>
+<li><a href="#new_PrivateKey">new PrivateKey(data, network)</a></li>
+<li><a href="#PrivateKey.fromString">PrivateKey.fromString</a></li>
+<li><a href="#PrivateKey#toObject">privateKey.toObject</a></li>
+<li><a href="#PrivateKey#_classifyArguments">privateKey._classifyArguments(data, network)</a></li>
+<li><a href="#PrivateKey.fromBuffer">PrivateKey.fromBuffer(arg, network)</a></li>
+<li><a href="#PrivateKey.fromObject">PrivateKey.fromObject(obj)</a></li>
+<li><a href="#PrivateKey.fromRandom">PrivateKey.fromRandom([network])</a></li>
+<li><a href="#PrivateKey.getValidationError">PrivateKey.getValidationError(data, [network])</a></li>
+<li><a href="#PrivateKey.isValid">PrivateKey.isValid(data, [network])</a></li>
+<li><a href="#PrivateKey#toString">privateKey.toString()</a></li>
+<li><a href="#PrivateKey#toWIF">privateKey.toWIF()</a></li>
+<li><a href="#PrivateKey#toBigNumber">privateKey.toBigNumber()</a></li>
+<li><a href="#PrivateKey#toBuffer">privateKey.toBuffer()</a></li>
+<li><a href="#PrivateKey#toPublicKey">privateKey.toPublicKey()</a></li>
+<li><a href="#PrivateKey#toAddress">privateKey.toAddress([network])</a></li>
+<li><a href="#PrivateKey#inspect">privateKey.inspect()</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="new_PrivateKey"></a></p>
+<p>##new PrivateKey(data, network)<br>Instantiate a PrivateKey from a BN, Buffer and WIF.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>data <code>string</code> - The encoded data in various formats  </li>
+<li>network <code>Network</code> | <code>string</code> - a <code>Network</code> object, or a string with the network name  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#PrivateKey">PrivateKey</a> - A new valid instance of an PrivateKey<br><strong>Example</strong>  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// generate a new random key</span></div><div class="line"><span class="keyword">var</span> key = PrivateKey();</div><div class="line"></div><div class="line"><span class="comment">// get the associated address</span></div><div class="line"><span class="keyword">var</span> address = key.toAddress();</div><div class="line"></div><div class="line"><span class="comment">// encode into wallet export format</span></div><div class="line"><span class="keyword">var</span> exported = key.toWIF();</div><div class="line"></div><div class="line"><span class="comment">// instantiate from the exported (and saved) private key</span></div><div class="line"><span class="keyword">var</span> imported = PrivateKey.fromWIF(exported);</div></pre></td></tr></table></figure>
+
+<p><a name="PrivateKey.fromString"></a></p>
+<p>##PrivateKey.fromString<br>Instantiate a PrivateKey from a WIF string</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>str <code>string</code> - The WIF encoded private key string  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#PrivateKey">PrivateKey</a> - A new valid instance of PrivateKey<br><a name="PrivateKey#toObject"></a></p>
+<p>##privateKey.toObject<br><strong>Returns</strong>: <code>Object</code> - A plain object representation<br><a name="PrivateKey#_classifyArguments"></a></p>
+<p>##privateKey._classifyArguments(data, network)<br>Internal helper to instantiate PrivateKey internal <code>info</code> object from<br>different kinds of arguments passed to the constructor.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>data <code>*</code>  </li>
+<li>network <code>Network</code> | <code>string</code> - a <code>Network</code> object, or a string with the network name  </li>
+</ul>
+<p><strong>Returns</strong>: <code>Object</code><br><a name="PrivateKey.fromBuffer"></a></p>
+<p>##PrivateKey.fromBuffer(arg, network)<br>Instantiate a PrivateKey from a Buffer with the DER or WIF representation</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>arg <code>Buffer</code>  </li>
+<li>network <code>Network</code>  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#PrivateKey">PrivateKey</a><br><a name="PrivateKey.fromObject"></a></p>
+<p>##PrivateKey.fromObject(obj)<br>Instantiate a PrivateKey from a plain JavaScript object</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>obj <code>Object</code> - The output from privateKey.toObject()  </li>
+</ul>
+<p><a name="PrivateKey.fromRandom"></a></p>
+<p>##PrivateKey.fromRandom([network])<br>Instantiate a PrivateKey from random bytes</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>[network] <code>string</code> - Either “livenet” or “testnet”  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#PrivateKey">PrivateKey</a> - A new valid instance of PrivateKey<br><a name="PrivateKey.getValidationError"></a></p>
+<p>##PrivateKey.getValidationError(data, [network])<br>Check if there would be any errors when initializing a PrivateKey</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>data <code>string</code> - The encoded data in various formats  </li>
+<li>[network] <code>string</code> - Either “livenet” or “testnet”  </li>
+</ul>
+<p><strong>Returns</strong>: <code>null</code> | <code>Error</code> - An error if exists<br><a name="PrivateKey.isValid"></a></p>
+<p>##PrivateKey.isValid(data, [network])<br>Check if the parameters are valid</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>data <code>string</code> - The encoded data in various formats  </li>
+<li>[network] <code>string</code> - Either “livenet” or “testnet”  </li>
+</ul>
+<p><strong>Returns</strong>: <code>Boolean</code> - If the private key is would be valid<br><a name="PrivateKey#toString"></a></p>
+<p>##privateKey.toString()<br>Will output the PrivateKey encoded as hex string</p>
+<p><strong>Returns</strong>: <code>string</code><br><a name="PrivateKey#toWIF"></a></p>
+<p>##privateKey.toWIF()<br>Will output the PrivateKey to a WIF string</p>
+<p><strong>Returns</strong>: <code>string</code> - A WIP representation of the private key<br><a name="PrivateKey#toBigNumber"></a></p>
+<p>##privateKey.toBigNumber()<br>Will return the private key as a BN instance</p>
+<p><strong>Returns</strong>: <code>BN</code> - A BN instance of the private key<br><a name="PrivateKey#toBuffer"></a></p>
+<p>##privateKey.toBuffer()<br>Will return the private key as a BN buffer</p>
+<p><strong>Returns</strong>: <code>Buffer</code> - A buffer of the private key<br><a name="PrivateKey#toPublicKey"></a></p>
+<p>##privateKey.toPublicKey()<br>Will return the corresponding public key</p>
+<p><strong>Returns</strong>: <code>PublicKey</code> - A public key generated from the private key<br><a name="PrivateKey#toAddress"></a></p>
+<p>##privateKey.toAddress([network])<br>Will return an address for the private key</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>[network] <code>Network</code> - optional parameter specifying<br>the desired network for the address  </li>
+</ul>
+<p><strong>Returns</strong>: <code>Address</code> - An address generated from the private key<br><a name="PrivateKey#inspect"></a></p>
+<p>##privateKey.inspect()<br>Will return a string formatted for the console</p>
+<p><strong>Returns</strong>: <code>string</code> - Private key  </p>
+
+      </div>
+      <footer id="page-footer">
+        <time id="page-footer-updated" datetime="2015-08-19T18:21:33.573Z" itemprop="dateModified">Last updated: Aug 19 2015</time>
+        <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
+      </footer>
+      
+    </div>
+    <aside id="sidebar">
+
+  
+
+  
+    <strong class="sidebar-title">Bitcore</strong>
+    
+      <a href="/api/address.html" class="sidebar-link">Address</a>
+    
+      <a href="/api/block.html" class="sidebar-link">Block</a>
+    
+      <a href="/api/blockheader.html" class="sidebar-link">BlockHeader</a>
+    
+      <a href="/api/hdprivatekey.html" class="sidebar-link">HDPrivateKey</a>
+    
+      <a href="/api/hdpublickey.html" class="sidebar-link">HDPublicKey</a>
+    
+      <a href="/api/networks.html" class="sidebar-link">Networks</a>
+    
+      <a href="/api/privatekey.html" class="sidebar-link current">PrivateKey</a>
+    
+      <a href="/api/publickey.html" class="sidebar-link">PublicKey</a>
+    
+      <a href="/api/unit.html" class="sidebar-link">Unit</a>
+    
+      <a href="/api/uri.html" class="sidebar-link">Uri</a>
+    
+      <a href="/api/crypto/point.html" class="sidebar-link">Crypto/Point</a>
+    
+      <a href="/api/script/script.html" class="sidebar-link">Script</a>
+    
+      <a href="/api/transaction/transaction.html" class="sidebar-link">Transaction</a>
+    
+      <a href="/api/transaction/unspentoutput.html" class="sidebar-link">Transaction/UnspentOutput</a>
+    
+      <a href="/api/transaction/sighash.html" class="sidebar-link">Transaction/Signing</a>
+    
+  
+    <strong class="sidebar-title">Peer-to-Peer</strong>
+    
+      <a href="/api/module/p2p/inventory.html" class="sidebar-link">Inventory</a>
+    
+      <a href="/api/module/p2p/messages/index.html" class="sidebar-link">Messages</a>
+    
+      <a href="/api/module/p2p/peer.html" class="sidebar-link">Peer</a>
+    
+      <a href="/api/module/p2p/pool.html" class="sidebar-link">Pool</a>
+    
+  
+    <strong class="sidebar-title">Message Signing and Verification</strong>
+    
+      <a href="/api/module/message/message.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Mnemonic</strong>
+    
+      <a href="/api/module/mnemonic/mnemonic.html" class="sidebar-link">Mnemonic</a>
+    
+  
+    <strong class="sidebar-title">Channel</strong>
+    
+      <a href="/api/module/channel/consumer.html" class="sidebar-link">Consumer</a>
+    
+      <a href="/api/module/channel/provider.html" class="sidebar-link">Provider</a>
+    
+      <a href="/api/module/channel/transactions/commitment.html" class="sidebar-link">Transactions/Commitment</a>
+    
+      <a href="/api/module/channel/transactions/payment.html" class="sidebar-link">Transactions/Payment</a>
+    
+      <a href="/api/module/channel/transactions/refund.html" class="sidebar-link">Transactions/Refund</a>
+    
+  
+    <strong class="sidebar-title">Explorers</strong>
+    
+      <a href="/api/module/explorers/insight.html" class="sidebar-link">Insight</a>
+    
+  
+
+
+
+
+</aside>
+  </div>
+</article>
+
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">
+        <p>bitcore™ &copy; 2013-2015 BitPay, Inc. bitcore is released under the MIT license.</p>
+      </div>
+      <div id="footer-links">
+        <a href="https://twitter.com/bitpay" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
+        <a href="https://github.com/bitpay/bitcore" id="footer-link-github" class="footer-link" target="_blank"><span>GitHub</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/retina.min.js" type="text/javascript"></script>
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+<!-- Google+ -->
+<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</body>
+</html>

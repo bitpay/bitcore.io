@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Bitcore &mdash; A pure and powerful JavaScript Bitcoin library.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="http://bitcore.io/api/address.html">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <link href="/css/animations.css" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu:light,regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu%20Mono:regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
+
+  <meta property="og:image" content="/css/images/lava-ball-social.png" />
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball-social.png">
+
+  <meta name="description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bitcore">
+<meta property="og:url" content="http://bitcore.io/api/address.html">
+<meta property="og:site_name" content="Bitcore">
+<meta property="og:description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bitcore">
+<meta name="twitter:description" content="A pure and powerful JavaScript Bitcoin library.">
+<meta name="twitter:site" content="@bitpay">
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24163874-2', 'bitcore.io');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+
+<body>
+  <header id="header"  class="invert" >
+  <div class="outer">
+    <div class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Bitcore</a>
+        <a id="main-nav-toggle"></a>
+      </h1>
+      <nav id="main-nav">
+        <ul id="main-nav-list">
+          
+            
+              <li class="main-nav-item">
+                <a href="/api/" class="main-nav-link api">API</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="/guide/" class="main-nav-link docs">Docs</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="https://github.com/bitpay/bitcore" class="main-nav-link github">Github</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://labs.bitpay.com/" class="main-nav-link forum">Forum</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://bitcore.io/playground" class="main-nav-link playground">Playground</a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <article class="page" itemscope itemtype="http://schema.org/Article">
+  <header id="page-banner">
+    <div class="outer">
+      <div id="page-banner-inner" class="inner">
+        
+        <h1 id="page-title" class="api" itemprop="name">API Reference</h1>
+        
+          <a href="https://github.com/bitpay/bitcore/blob/master/lib/address.js" title="Improve this doc" id="page-edit-link"></a>
+        
+      </div>
+    </div>
+  </header>
+  <div class="outer">
+    <div id="mobile-menu-wrap"></div>
+    <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        
+      </div>
+      <div class="page-entry" itemprop="articleBody">
+        <p><a name="Address"></a></p>
+<p>#class: Address<br><strong>Members</strong></p>
+<ul>
+<li><a href="#Address">class: Address</a><ul>
+<li><a href="#new_Address">new Address(data, network, [type])</a></li>
+<li><a href="#Address.PayToPublicKeyHash">Address.PayToPublicKeyHash</a></li>
+<li><a href="#Address.PayToScriptHash">Address.PayToScriptHash</a></li>
+<li><a href="#Address#toObject">address.toObject</a></li>
+<li><a href="#Address#_classifyArguments">address._classifyArguments(data, network, [type])</a></li>
+<li><a href="#Address._transformObject">Address._transformObject(data)</a></li>
+<li><a href="#Address.createMultisig">Address.createMultisig(publicKeys, threshold, network)</a></li>
+<li><a href="#Address.fromPublicKey">Address.fromPublicKey(data, network)</a></li>
+<li><a href="#Address.fromPublicKeyHash">Address.fromPublicKeyHash(hash, network)</a></li>
+<li><a href="#Address.fromScriptHash">Address.fromScriptHash(hash, network)</a></li>
+<li><a href="#Address.payingTo">Address.payingTo(script, network)</a></li>
+<li><a href="#Address.fromScript">Address.fromScript(script, network)</a></li>
+<li><a href="#Address.fromBuffer">Address.fromBuffer(buffer, network, [type])</a></li>
+<li><a href="#Address.fromString">Address.fromString(str, network, [type])</a></li>
+<li><a href="#Address.fromObject">Address.fromObject(json)</a></li>
+<li><a href="#Address.getValidationError">Address.getValidationError(data, network, type)</a></li>
+<li><a href="#Address.isValid">Address.isValid(data, network, type)</a></li>
+<li><a href="#Address#isPayToPublicKeyHash">address.isPayToPublicKeyHash()</a></li>
+<li><a href="#Address#isPayToScriptHash">address.isPayToScriptHash()</a></li>
+<li><a href="#Address#toBuffer">address.toBuffer()</a></li>
+<li><a href="#Address#toString">address.toString()</a></li>
+<li><a href="#Address#inspect">address.inspect()</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="new_Address"></a></p>
+<p>##new Address(data, network, [type])<br>Instantiate an address from an address String or Buffer, a public key or script hash Buffer,<br>or an instance of <code>PublicKey</code> or <code>Script</code>.</p>
+<p>This is an immutable class, and if the first parameter provided to this constructor is an<br><code>Address</code> instance, the same argument will be returned.</p>
+<p>An address has two key properties: <code>network</code> and <code>type</code>. The type is either<br><code>Address.PayToPublicKeyHash</code> (value is the <code>&#39;pubkeyhash&#39;</code> string)<br>or <code>Address.PayToScriptHash</code> (the string <code>&#39;scripthash&#39;</code>). The network is an instance of <code>Network</code>.<br>You can quickly check whether an address is of a given kind by using the methods<br><code>isPayToPublicKeyHash</code> and <code>isPayToScriptHash</code></p>
+<p><strong>Params</strong></p>
+<ul>
+<li>data <code>*</code> - The encoded data in various formats  </li>
+<li>network <code>Network</code> | <code>String</code> | <code>number</code> - The network: ‘livenet’ or ‘testnet’  </li>
+<li>[type] <code>string</code> - The type of address: ‘script’ or ‘pubkey’  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Address">Address</a> - A new valid and frozen instance of an Address<br><strong>Example</strong>  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// validate that an input field is valid</span></div><div class="line"><span class="keyword">var</span> error = Address.getValidationError(input, <span class="string">'testnet'</span>);</div><div class="line"><span class="keyword">if</span> (!error) {</div><div class="line">  <span class="keyword">var</span> address = Address(input, <span class="string">'testnet'</span>);</div><div class="line">} <span class="keyword">else</span> {</div><div class="line">  <span class="comment">// invalid network or checksum (typo?)</span></div><div class="line">  <span class="keyword">var</span> message = error.messsage;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// get an address from a public key</span></div><div class="line"><span class="keyword">var</span> address = Address(publicKey, <span class="string">'testnet'</span>).toString();</div></pre></td></tr></table></figure>
+
+<p><a name="Address.PayToPublicKeyHash"></a></p>
+<p>##Address.PayToPublicKeyHash<br><a name="Address.PayToScriptHash"></a></p>
+<p>##Address.PayToScriptHash<br><a name="Address#toObject"></a></p>
+<p>##address.toObject<br><strong>Returns</strong>: <code>Object</code> - A plain object with the address information<br><a name="Address#_classifyArguments"></a></p>
+<p>##address._classifyArguments(data, network, [type])<br>Internal function used to split different kinds of arguments of the constructor</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>data <code>*</code> - The encoded data in various formats  </li>
+<li>network <code>Network</code> | <code>String</code> | <code>number</code> - The network: ‘livenet’ or ‘testnet’  </li>
+<li>[type] <code>string</code> - The type of address: ‘script’ or ‘pubkey’  </li>
+</ul>
+<p><strong>Returns</strong>: <code>Object</code> - An “info” object with “type”, “network”, and “hashBuffer”<br><a name="Address._transformObject"></a></p>
+<p>##Address._transformObject(data)<br>Deserializes an address serialized through <code>Address#toObject()</code></p>
+<p><strong>Params</strong></p>
+<ul>
+<li>data <code>Object</code>  <ul>
+<li>hash <code>string</code> - the hash that this address encodes  </li>
+<li>type <code>string</code> - either ‘pubkeyhash’ or ‘scripthash’  </li>
+<li>[network] <code>Network</code> - the name of the network associated  </li>
+</ul>
+</li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Address">Address</a><br><a name="Address.createMultisig"></a></p>
+<p>##Address.createMultisig(publicKeys, threshold, network)<br>Creates a P2SH address from a set of public keys and a threshold.</p>
+<p>The addresses will be sorted lexicographically, as that is the trend in bitcoin.<br>To create an address from unsorted public keys, use the <code>Script#buildMultisigOut</code><br>interface.</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>publicKeys <code>Array</code> - a set of public keys to create an address  </li>
+<li>threshold <code>number</code> - the number of signatures needed to release the funds  </li>
+<li>network <code>String</code> | <code>Network</code> - either a Network instance, ‘livenet’, or ‘testnet’  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Address">Address</a><br><a name="Address.fromPublicKey"></a></p>
+<p>##Address.fromPublicKey(data, network)<br>Instantiate an address from a PublicKey instance</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>data <code>PublicKey</code>  </li>
+<li>network <code>String</code> | <code>Network</code> - either a Network instance, ‘livenet’, or ‘testnet’  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Address">Address</a> - A new valid and frozen instance of an Address<br><a name="Address.fromPublicKeyHash"></a></p>
+<p>##Address.fromPublicKeyHash(hash, network)<br>Instantiate an address from a ripemd160 public key hash</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>hash <code>Buffer</code> - An instance of buffer of the hash  </li>
+<li>network <code>String</code> | <code>Network</code> - either a Network instance, ‘livenet’, or ‘testnet’  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Address">Address</a> - A new valid and frozen instance of an Address<br><a name="Address.fromScriptHash"></a></p>
+<p>##Address.fromScriptHash(hash, network)<br>Instantiate an address from a ripemd160 script hash</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>hash <code>Buffer</code> - An instance of buffer of the hash  </li>
+<li>network <code>String</code> | <code>Network</code> - either a Network instance, ‘livenet’, or ‘testnet’  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Address">Address</a> - A new valid and frozen instance of an Address<br><a name="Address.payingTo"></a></p>
+<p>##Address.payingTo(script, network)<br>Builds a p2sh address paying to script. This will hash the script and<br>use that to create the address.<br>If you want to extract an address associated with a script instead,<br>see </p>
+<p><strong>Params</strong></p>
+<ul>
+<li>script <code>Script</code> - An instance of Script  </li>
+<li>network <code>String</code> | <code>Network</code> - either a Network instance, ‘livenet’, or ‘testnet’  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Address">Address</a> - A new valid and frozen instance of an Address<br><a name="Address.fromScript"></a></p>
+<p>##Address.fromScript(script, network)<br>Extract address from a Script. The script must be of one<br>of the following types: p2pkh input, p2pkh output, p2sh input<br>or p2sh output.<br>This will analyze the script and extract address information from it.<br>If you want to transform any script to a p2sh Address paying<br>to that script’s hash instead, use </p>
+<p><strong>Params</strong></p>
+<ul>
+<li>script <code>Script</code> - An instance of Script  </li>
+<li>network <code>String</code> | <code>Network</code> - either a Network instance, ‘livenet’, or ‘testnet’  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Address">Address</a> - A new valid and frozen instance of an Address<br><a name="Address.fromBuffer"></a></p>
+<p>##Address.fromBuffer(buffer, network, [type])<br>Instantiate an address from a buffer of the address</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>buffer <code>Buffer</code> - An instance of buffer of the address  </li>
+<li>network <code>String</code> | <code>Network</code> - either a Network instance, ‘livenet’, or ‘testnet’  </li>
+<li>[type] <code>string</code> - The type of address: ‘script’ or ‘pubkey’  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Address">Address</a> - A new valid and frozen instance of an Address<br><a name="Address.fromString"></a></p>
+<p>##Address.fromString(str, network, [type])<br>Instantiate an address from an address string</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>str <code>string</code> - An string of the bitcoin address  </li>
+<li>network <code>String</code> | <code>Network</code> - either a Network instance, ‘livenet’, or ‘testnet’  </li>
+<li>[type] <code>string</code> - The type of address: ‘script’ or ‘pubkey’  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Address">Address</a> - A new valid and frozen instance of an Address<br><a name="Address.fromObject"></a></p>
+<p>##Address.fromObject(json)<br>Instantiate an address from an Object</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>json <code>string</code> - An JSON string or Object with keys: hash, network and type  </li>
+</ul>
+<p><strong>Returns</strong>: <a href="#Address">Address</a> - A new valid instance of an Address<br><a name="Address.getValidationError"></a></p>
+<p>##Address.getValidationError(data, network, type)<br>Will return a validation error if exists</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>data <code>string</code> - The encoded data  </li>
+<li>network <code>String</code> | <code>Network</code> - either a Network instance, ‘livenet’, or ‘testnet’  </li>
+<li>type <code>string</code> - The type of address: ‘script’ or ‘pubkey’  </li>
+</ul>
+<p><strong>Returns</strong>: <code>null</code> | <code>Error</code> - The corresponding error message<br><strong>Example</strong>  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// a network mismatch error</span></div><div class="line"><span class="keyword">var</span> error = Address.getValidationError(<span class="string">'15vkcKf7gB23wLAnZLmbVuMiiVDc1Nm4a2'</span>, <span class="string">'testnet'</span>);</div></pre></td></tr></table></figure>
+
+<p><a name="Address.isValid"></a></p>
+<p>##Address.isValid(data, network, type)<br>Will return a boolean if an address is valid</p>
+<p><strong>Params</strong></p>
+<ul>
+<li>data <code>string</code> - The encoded data  </li>
+<li>network <code>String</code> | <code>Network</code> - either a Network instance, ‘livenet’, or ‘testnet’  </li>
+<li>type <code>string</code> - The type of address: ‘script’ or ‘pubkey’  </li>
+</ul>
+<p><strong>Returns</strong>: <code>boolean</code> - The corresponding error message<br><strong>Example</strong>  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">assert(Address.isValid(<span class="string">'15vkcKf7gB23wLAnZLmbVuMiiVDc1Nm4a2'</span>, <span class="string">'livenet'</span>));</div></pre></td></tr></table></figure>
+
+<p><a name="Address#isPayToPublicKeyHash"></a></p>
+<p>##address.isPayToPublicKeyHash()<br>Returns true if an address is of pay to public key hash type</p>
+<p><strong>Returns</strong>:  - boolean<br><a name="Address#isPayToScriptHash"></a></p>
+<p>##address.isPayToScriptHash()<br>Returns true if an address is of pay to script hash type</p>
+<p><strong>Returns</strong>:  - boolean<br><a name="Address#toBuffer"></a></p>
+<p>##address.toBuffer()<br>Will return a buffer representation of the address</p>
+<p><strong>Returns</strong>: <code>Buffer</code> - Bitcoin address buffer<br><a name="Address#toString"></a></p>
+<p>##address.toString()<br>Will return a the string representation of the address</p>
+<p><strong>Returns</strong>: <code>string</code> - Bitcoin address<br><a name="Address#inspect"></a></p>
+<p>##address.inspect()<br>Will return a string formatted for the console</p>
+<p><strong>Returns</strong>: <code>string</code> - Bitcoin address  </p>
+
+      </div>
+      <footer id="page-footer">
+        <time id="page-footer-updated" datetime="2015-08-19T18:21:33.249Z" itemprop="dateModified">Last updated: Aug 19 2015</time>
+        <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
+      </footer>
+      
+    </div>
+    <aside id="sidebar">
+
+  
+
+  
+    <strong class="sidebar-title">Bitcore</strong>
+    
+      <a href="/api/address.html" class="sidebar-link current">Address</a>
+    
+      <a href="/api/block.html" class="sidebar-link">Block</a>
+    
+      <a href="/api/blockheader.html" class="sidebar-link">BlockHeader</a>
+    
+      <a href="/api/hdprivatekey.html" class="sidebar-link">HDPrivateKey</a>
+    
+      <a href="/api/hdpublickey.html" class="sidebar-link">HDPublicKey</a>
+    
+      <a href="/api/networks.html" class="sidebar-link">Networks</a>
+    
+      <a href="/api/privatekey.html" class="sidebar-link">PrivateKey</a>
+    
+      <a href="/api/publickey.html" class="sidebar-link">PublicKey</a>
+    
+      <a href="/api/unit.html" class="sidebar-link">Unit</a>
+    
+      <a href="/api/uri.html" class="sidebar-link">Uri</a>
+    
+      <a href="/api/crypto/point.html" class="sidebar-link">Crypto/Point</a>
+    
+      <a href="/api/script/script.html" class="sidebar-link">Script</a>
+    
+      <a href="/api/transaction/transaction.html" class="sidebar-link">Transaction</a>
+    
+      <a href="/api/transaction/unspentoutput.html" class="sidebar-link">Transaction/UnspentOutput</a>
+    
+      <a href="/api/transaction/sighash.html" class="sidebar-link">Transaction/Signing</a>
+    
+  
+    <strong class="sidebar-title">Peer-to-Peer</strong>
+    
+      <a href="/api/module/p2p/inventory.html" class="sidebar-link">Inventory</a>
+    
+      <a href="/api/module/p2p/messages/index.html" class="sidebar-link">Messages</a>
+    
+      <a href="/api/module/p2p/peer.html" class="sidebar-link">Peer</a>
+    
+      <a href="/api/module/p2p/pool.html" class="sidebar-link">Pool</a>
+    
+  
+    <strong class="sidebar-title">Message Signing and Verification</strong>
+    
+      <a href="/api/module/message/message.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Mnemonic</strong>
+    
+      <a href="/api/module/mnemonic/mnemonic.html" class="sidebar-link">Mnemonic</a>
+    
+  
+    <strong class="sidebar-title">Channel</strong>
+    
+      <a href="/api/module/channel/consumer.html" class="sidebar-link">Consumer</a>
+    
+      <a href="/api/module/channel/provider.html" class="sidebar-link">Provider</a>
+    
+      <a href="/api/module/channel/transactions/commitment.html" class="sidebar-link">Transactions/Commitment</a>
+    
+      <a href="/api/module/channel/transactions/payment.html" class="sidebar-link">Transactions/Payment</a>
+    
+      <a href="/api/module/channel/transactions/refund.html" class="sidebar-link">Transactions/Refund</a>
+    
+  
+    <strong class="sidebar-title">Explorers</strong>
+    
+      <a href="/api/module/explorers/insight.html" class="sidebar-link">Insight</a>
+    
+  
+
+
+
+
+</aside>
+  </div>
+</article>
+
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">
+        <p>bitcore™ &copy; 2013-2015 BitPay, Inc. bitcore is released under the MIT license.</p>
+      </div>
+      <div id="footer-links">
+        <a href="https://twitter.com/bitpay" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
+        <a href="https://github.com/bitpay/bitcore" id="footer-link-github" class="footer-link" target="_blank"><span>GitHub</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/retina.min.js" type="text/javascript"></script>
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+<!-- Google+ -->
+<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</body>
+</html>

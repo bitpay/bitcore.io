@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="57px" viewBox="0 0 18 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>forum-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="forum-icon" sketch:type="MSLayerGroup">
+            <g id="Group" fill="#6B6B6A" sketch:type="MSShapeGroup">
+                <path d="M9.6,22.5 L6.7,17.9 L0.1,17.9 L0.1,0.2 L17.7,0.2 L17.7,17.9 L12.4,17.9 L9.6,22.5 L9.6,22.5 Z M2.2,15.8 L7.9,15.8 L9.7,18.6 L11.5,15.8 L15.9,15.8 L15.9,2.2 L2.4,2.2 L2.4,15.8 L2.2,15.8 Z" id="Shape"></path>
+                <path d="M4.9,4.5 L12.9,4.5 L12.9,6.6 L4.9,6.6 L4.9,4.5 L4.9,4.5 Z" id="Fill-2_3_"></path>
+                <path d="M4.9,7.9 L12.9,7.9 L12.9,10 L4.9,10 L4.9,7.9 L4.9,7.9 Z" id="Fill-3_3_"></path>
+                <path d="M4.9,11.2 L10.4,11.2 L10.4,13.3 L4.9,13.3 L4.9,11.2 L4.9,11.2 Z" id="Fill-4_3_"></path>
+            </g>
+            <g id="Group" transform="translate(0.000000, 34.000000)" fill="#A39F9A" sketch:type="MSShapeGroup">
+                <path d="M9.7,22.5 L6.8,17.9 L0.2,17.9 L0.2,0.2 L17.8,0.2 L17.8,17.9 L12.5,17.9 L9.7,22.5 L9.7,22.5 Z M2.2,15.8 L7.9,15.8 L9.7,18.6 L11.5,15.8 L15.9,15.8 L15.9,2.2 L2.4,2.2 L2.4,15.8 L2.2,15.8 Z" id="Shape"></path>
+                <path d="M5,4.6 L13,4.6 L13,6.7 L5,6.7 L5,4.6 L5,4.6 Z" id="Fill-2_4_"></path>
+                <path d="M5,7.9 L13,7.9 L13,10 L5,10 L5,7.9 L5,7.9 Z" id="Fill-3_4_"></path>
+                <path d="M5,11.3 L10.5,11.3 L10.5,13.4 L5,13.4 L5,11.3 L5,11.3 Z" id="Fill-4_4_"></path>
+            </g>
+        </g>
+    </g>
+</svg>

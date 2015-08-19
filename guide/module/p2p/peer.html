@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Peer | Bitcore &mdash; A pure and powerful JavaScript Bitcoin library.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="http://bitcore.io/guide/module/p2p/peer.html">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <link href="/css/animations.css" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu:light,regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu%20Mono:regular,bold&subset=Latin" rel="stylesheet" type="text/css">
+  <link rel="alternative" href="/atom.xml" title="Bitcore" type="application/atom+xml">
+
+  <meta property="og:image" content="/css/images/lava-ball-social.png" />
+  <meta name="twitter:image" content="http://bitcore.io/css/images/lava-ball-social.png">
+
+  <meta name="description" content="The Peer class provides a simple interface for connecting to a node in the bitcoin network.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Peer">
+<meta property="og:url" content="http://bitcore.io/guide/module/p2p/peer.html">
+<meta property="og:site_name" content="Bitcore">
+<meta property="og:description" content="The Peer class provides a simple interface for connecting to a node in the bitcoin network.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Peer">
+<meta name="twitter:description" content="The Peer class provides a simple interface for connecting to a node in the bitcoin network.">
+<meta name="twitter:site" content="@bitpay">
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24163874-2', 'bitcore.io');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+
+<body>
+  <header id="header"  class="invert" >
+  <div class="outer">
+    <div class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Bitcore</a>
+        <a id="main-nav-toggle"></a>
+      </h1>
+      <nav id="main-nav">
+        <ul id="main-nav-list">
+          
+            
+              <li class="main-nav-item">
+                <a href="/api/" class="main-nav-link api">API</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="/guide/" class="main-nav-link docs">Docs</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="https://github.com/bitpay/bitcore" class="main-nav-link github">Github</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://labs.bitpay.com/" class="main-nav-link forum">Forum</a>
+              </li>
+            
+          
+            
+              <li class="main-nav-item">
+                <a href="http://bitcore.io/playground" class="main-nav-link playground">Playground</a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <article class="page" itemscope itemtype="http://schema.org/Article">
+  <header id="page-banner">
+    <div class="outer">
+      <div id="page-banner-inner" class="inner">
+        
+        <h1 id="page-title" class="docs" itemprop="name">Documentation</h1>
+        
+          
+          <a href="https://github.com/bitpay/bitcore-p2p/blob/master/docs/peer.md" title="Improve this doc" id="page-edit-link"></a>
+        
+      </div>
+    </div>
+  </header>
+  <div class="outer">
+    <div id="mobile-menu-wrap"></div>
+    <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Peer"><span class="toc-number">1.</span> <span class="toc-text">Peer</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Creating_a_peer"><span class="toc-number">1.2.</span> <span class="toc-text">Creating a peer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#States"><span class="toc-number">1.3.</span> <span class="toc-text">States</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Handle_messages"><span class="toc-number">1.4.</span> <span class="toc-text">Handle messages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sending_messages"><span class="toc-number">1.5.</span> <span class="toc-text">Sending messages</span></a></li></ol></li></ol>
+      </div>
+      <div class="page-entry" itemprop="articleBody">
+        <h1 id="Peer">Peer</h1>
+<h2 id="Description">Description</h2>
+<p>Represents a node from the p2p bitcoin network. The Peer class supports connecting directly to other nodes or through a socks5 proxy like Tor.</p>
+<h2 id="Creating_a_peer">Creating a peer</h2>
+<p>The code to create a new peer looks like this:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Peer = <span class="built_in">require</span>(<span class="string">'bitcore-p2p'</span>).Peer;</div><div class="line"></div><div class="line"><span class="comment">// default port</span></div><div class="line"><span class="keyword">var</span> livenetPeer = <span class="keyword">new</span> Peer({host: <span class="string">'5.9.85.34'</span>});</div><div class="line"><span class="keyword">var</span> testnetPeer = <span class="keyword">new</span> Peer({host: <span class="string">'5.9.85.34'</span>, network: Networks.testnet});</div><div class="line"></div><div class="line"><span class="comment">// custom port</span></div><div class="line"><span class="keyword">var</span> livenetPeer = <span class="keyword">new</span> Peer({host: <span class="string">'5.9.85.34'</span>, port: <span class="number">8334</span>});</div><div class="line"><span class="keyword">var</span> testnetPeer = <span class="keyword">new</span> Peer({host: <span class="string">'5.9.85.34'</span>, port: <span class="number">18334</span>, network: Networks.testnet});</div><div class="line"></div><div class="line"><span class="comment">// use sock5 proxy (Tor)</span></div><div class="line"><span class="keyword">var</span> peer = <span class="keyword">new</span> Peer({host: <span class="string">'5.9.85.34'</span>}).setProxy(<span class="string">'localhost'</span>, <span class="number">9050</span>);</div></pre></td></tr></table></figure>
+
+<h2 id="States">States</h2>
+<p>A peer instance is always in one of the following states:</p>
+<ul>
+<li><code>disconnected</code>: No connection with the remote node.</li>
+<li><code>connecting</code>: While establishing the connection.</li>
+<li><code>connected</code>: Exchanging version packages.</li>
+<li><code>ready</code>: Connection ready for sending and receiving messages.</li>
+</ul>
+<p>You can subscribe to the change of those states as follows:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Peer = <span class="built_in">require</span>(<span class="string">'bitcore-p2p'</span>).Peer;</div><div class="line"></div><div class="line"><span class="keyword">var</span> peer = <span class="keyword">new</span> Peer({host: <span class="string">'5.9.85.34'</span>});</div><div class="line"></div><div class="line">peer.on(<span class="string">'ready'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  <span class="comment">// peer info</span></div><div class="line">  <span class="built_in">console</span>.log(peer.version, peer.subversion, peer.bestHeight);</div><div class="line">});</div><div class="line"></div><div class="line">peer.on(<span class="string">'disconnect'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'connection closed'</span>);</div><div class="line">});</div><div class="line"></div><div class="line">peer.connect();</div></pre></td></tr></table></figure>
+
+<h2 id="Handle_messages">Handle messages</h2>
+<p>Once connected, a peer instance can send and receive messages. Every time a message arrives it’s emitted as a new event. Let’s see an example of this:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Peer = <span class="built_in">require</span>(<span class="string">'bitcore-p2p'</span>).Peer;</div><div class="line"><span class="keyword">var</span> peer = <span class="keyword">new</span> Peer({host: <span class="string">'5.9.85.34'</span>});</div><div class="line"></div><div class="line"><span class="comment">// handle events</span></div><div class="line">peer.on(<span class="string">'inv'</span>, <span class="function"><span class="keyword">function</span><span class="params">(message)</span> </span>{</div><div class="line">  <span class="comment">// message.inventory[]</span></div><div class="line">});</div><div class="line"></div><div class="line">peer.on(<span class="string">'tx'</span>, <span class="function"><span class="keyword">function</span><span class="params">(message)</span> </span>{</div><div class="line">  <span class="comment">// message.transaction</span></div><div class="line">});</div><div class="line"></div><div class="line">peer.on(<span class="string">'addr'</span>, <span class="function"><span class="keyword">function</span><span class="params">(message)</span> </span>{</div><div class="line">  <span class="comment">// message.addresses[]</span></div><div class="line">});</div><div class="line"></div><div class="line">peer.connect();</div></pre></td></tr></table></figure>
+
+<h2 id="Sending_messages">Sending messages</h2>
+<p>In order to send messages the Peer class offers the <code>sendMessage(message)</code> method, which receives an instance of a message. All supported messages can be found in the <code>Messages</code> module. For more information about messages refer to the <a href="https://en.bitcoin.it/wiki/Protocol_specification" target="_blank" rel="external">protocol specification</a>.</p>
+<p>An example for requesting other connected nodes to a peers looks like this:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> p2p = <span class="built_in">require</span>(<span class="string">'bitcore-p2p'</span>)</div><div class="line"><span class="keyword">var</span> Peer = p2p.Peer;</div><div class="line"><span class="keyword">var</span> Messages = p2p.Messages;</div><div class="line"><span class="keyword">var</span> peer = <span class="keyword">new</span> Peer({host: <span class="string">'5.9.85.34'</span>});</div><div class="line"></div><div class="line">peer.on(<span class="string">'ready'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  <span class="keyword">var</span> message = <span class="keyword">new</span> Messages.GetAddresses();</div><div class="line">  peer.sendMessage(message);</div><div class="line">});</div><div class="line"></div><div class="line">peer.on(<span class="string">'addr'</span>, <span class="function"><span class="keyword">function</span><span class="params">(message)</span> </span>{</div><div class="line">  message.addresses.forEach(<span class="function"><span class="keyword">function</span><span class="params">(address)</span> </span>{</div><div class="line">    <span class="comment">// do something</span></div><div class="line">  });</div><div class="line">});</div><div class="line"></div><div class="line">peer.connect();</div></pre></td></tr></table></figure>
+
+
+      </div>
+      <footer id="page-footer">
+        <time id="page-footer-updated" datetime="2015-08-19T18:21:29.893Z" itemprop="dateModified">Last updated: Aug 19 2015</time>
+        <a href="index.html" id="page-footer-next" title="Get Started">Next</a>
+      </footer>
+      
+    </div>
+    <aside id="sidebar">
+
+  
+
+  
+    <strong class="sidebar-title">Home</strong>
+    
+      <a href="/guide/index.html" class="sidebar-link">Get Started</a>
+    
+      <a href="/guide/contributing.html" class="sidebar-link">Contributing</a>
+    
+  
+    <strong class="sidebar-title">Bitcore</strong>
+    
+      <a href="/guide/address.html" class="sidebar-link">Address</a>
+    
+      <a href="/guide/block.html" class="sidebar-link">Block</a>
+    
+      <a href="/guide/browser.html" class="sidebar-link">Browser</a>
+    
+      <a href="/guide/crypto.html" class="sidebar-link">Crypto</a>
+    
+      <a href="/guide/encoding.html" class="sidebar-link">Encoding</a>
+    
+      <a href="/guide/hierarchical.html" class="sidebar-link">HD Keys</a>
+    
+      <a href="/guide/networks.html" class="sidebar-link">Networks</a>
+    
+      <a href="/guide/privatekey.html" class="sidebar-link">Private Key</a>
+    
+      <a href="/guide/publickey.html" class="sidebar-link">Public Key</a>
+    
+      <a href="/guide/script.html" class="sidebar-link">Script</a>
+    
+      <a href="/guide/transaction.html" class="sidebar-link">Transaction</a>
+    
+      <a href="/guide/unit.html" class="sidebar-link">Unit</a>
+    
+      <a href="/guide/unspentoutput.html" class="sidebar-link">Unspent Output</a>
+    
+      <a href="/guide/uri.html" class="sidebar-link">URI</a>
+    
+  
+    <strong class="sidebar-title">Payment Protocol</strong>
+    
+      <a href="/guide/module/payment-protocol/index.html" class="sidebar-link">Usage</a>
+    
+  
+    <strong class="sidebar-title">Peer-to-Peer</strong>
+    
+      <a href="/guide/module/p2p/index.html" class="sidebar-link">Overview</a>
+    
+      <a href="/guide/module/p2p/messages.html" class="sidebar-link">Messages</a>
+    
+      <a href="/guide/module/p2p/peer.html" class="sidebar-link current">Peer</a>
+    
+      <a href="/guide/module/p2p/pool.html" class="sidebar-link">Pool</a>
+    
+  
+    <strong class="sidebar-title">Message Signing and Verification</strong>
+    
+      <a href="/guide/module/message/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Mnemonic</strong>
+    
+      <a href="/guide/module/mnemonic/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">ECIES</strong>
+    
+      <a href="/guide/module/ecies/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Channel</strong>
+    
+      <a href="/guide/module/channel/index.html" class="sidebar-link">Overview</a>
+    
+  
+    <strong class="sidebar-title">Explorers</strong>
+    
+      <a href="/guide/module/explorers/index.html" class="sidebar-link">Overview</a>
+    
+  
+
+
+
+
+</aside>
+  </div>
+</article>
+
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">
+        <p>bitcore™ &copy; 2013-2015 BitPay, Inc. bitcore is released under the MIT license.</p>
+      </div>
+      <div id="footer-links">
+        <a href="https://twitter.com/bitpay" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
+        <a href="https://github.com/bitpay/bitcore" id="footer-link-github" class="footer-link" target="_blank"><span>GitHub</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/retina.min.js" type="text/javascript"></script>
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+<!-- Google+ -->
+<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</body>
+</html>

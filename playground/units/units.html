@@ -1,0 +1,127 @@
+<div class="row collapse">
+  <div class="large-9 small-12 columns content-title">
+    <h1>Bitcoin Units</h1>
+  </div>
+
+</div>
+<div class="row collapse pb20">
+  <div class="small-12 columns">
+    <p>Convert between the most frequent bitcoin units and fiat currencies.</p>
+  </div>
+</div>
+
+<div class="row bg-color-white white-box radius p20">
+  <!--White box starts-->
+  <div class="">
+
+    <!--Bitcoin box starts-->
+    <div class="small-12 large-6 columns vertical-sep p20">
+      <h2 class="text-center">Bitcoin</h2>
+
+      <div class="row collapse">
+        <div class="small-12 columns">
+          <div class="row collapse mb5">
+            <div class="large-3 large-2 columns">
+              <label class="prefix prefix-clean fnt1">BTC</label>
+            </div>
+            <div class="large-9 columns">
+              <input type="number" ng-model="unit.BTC" ng-change="updateUnit(unit.BTC, 'BTC')" class="radius" auto-select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row collapse">
+        <div class="large-12 columns">
+          <div class="row collapse mb5">
+            <div class="large-3 columns">
+              <label class="prefix prefix-clean fnt1">mBTC</label>
+            </div>
+            <div class="large-9 columns">
+              <input type="number" ng-model="unit.mBTC" ng-change="updateUnit(unit.mBTC, 'mBTC')" class="radius" auto-select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row collapse">
+        <div class="large-12 columns">
+          <div class="row mb5 collapse ">
+            <div class="large-3 columns">
+              <label class="prefix prefix-clean fnt1">bits</label>
+            </div>
+            <div class="large-9 columns">
+              <input type="number" ng-model="unit.bits" ng-change="updateUnit(unit.bits, 'bits')" class="radius" auto-select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row collapse">
+        <div class="large-12 columns">
+          <div class="row mb5 collapse ">
+            <div class="large-3 columns">
+              <label class="prefix prefix-clean fnt1">satoshis</label>
+            </div>
+            <div class="large-9 columns">
+              <input type="number" ng-model="unit.satoshis" ng-change="updateUnit(unit.satoshis, 'satoshis')" class="radius" auto-select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!--Bitcoin box ends-->
+
+    <!--Fiat box starts-->
+    <div class="small-12 large-6 columns p20">
+      <h2 class="text-center">Fiat</h2>
+
+      <div class="row collapse">
+        <div class="large-12 columns">
+          <div class="row collapse ">
+            <div class="large-3 columns">
+              <label class="prefix prefix-clean fnt1">Amount</label>
+            </div>
+            <div class="large-9 columns">
+              <input type="number" ng-model="unit.fiat"
+                ng-change="updateFiat(unit.fiat, currency)" class="radius mb5" auto-select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row collapse ">
+        <div class="large-12 columns">
+          <div class="row collapse ">
+            <div class="large-3 columns">
+              <label class="prefix prefix-clean fnt1">Currency</label>
+            </div>
+            <div class="large-9 columns ">
+              <select
+                ng-model="currency"
+                ng-options="opt as opt.name for opt in currencies"
+                ng-change="updateFiat(unit.fiat, currency)" class="radius medium mb5"></select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row collapse">
+        <div class="mt20 text-center">
+          <p>
+            <span class="ubuntu-bold uppercase">1 BTC = {{currency.rate.toFixed(2)}} {{currency.code}}</span>
+            <br/>
+            <span class="fnt07 uppercase">Exchange rates from</span><span class="fnt08"> <a href="https://bitpay.com/api/rates">bitpay.com/api/rates</a></span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--Fiat box ends-->
+  </div>
+</div>
+<!--White box ends-->
+
+
+<ng-include src="'components/explanation.html'"></ng-include>

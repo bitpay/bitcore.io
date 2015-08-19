@@ -1,0 +1,142 @@
+<div class="row collapse">
+  <div class="large-9 small-12 columns content-title">
+    <h1>Hierarchical Deterministic Keys</h1>
+  </div>
+  <ng-include src="'components/network.html'"/>
+
+</div>
+<div class="row collapse pb20">
+  <div class="small-12 columns">
+    <p>Derive HD keys from a private or public extended key and a path.</p>
+  </div>
+</div>
+
+<!--White box starts--> 
+<div class="row collapse bg-color-white white-box radius p20">
+    <div class="row collapse">
+      <div class="small-12 columns">
+        <h2 class="text-center">Master Keys</h2>
+      </div>
+    </div>
+    <div class="row collapse">
+      <div class="small-12 large-3 columns input-title mb5">
+        <span class="prefix prefix-clean fnt1"><span class="icon-private-key fnt14 center-text"></span> Root HD Private Key</span>
+      </div>
+      <div class="small-10 large-8 columns">
+        <input type="text" ng-model="xpriv" ng-change="updatePrivate(xpriv)" xprivate-key auto-select>
+      </div>
+      <div class="small-2 large-1 columns">
+        <div class="row collapse">
+          <div class="small-11 small-offset-1 columns">
+            <button type="button" ng-click="newKey()" class="postfix radius button1 fnt12"> <i class="fi-die-five fnt12"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <div class="row collapse">
+      <div class="small-12 large-3 columns input-title">
+        <span class="prefix prefix-clean fnt1"><span class="icon-public-key fnt14 center-text"></span> Root HD Public Key</span>
+      </div>
+      <div class="small-12 large-9 columns">
+        <input type="text" ng-model="xpub" ng-change="updatePublic(xpub)" xpublic-key auto-select>
+      </div>
+    </div>
+
+
+
+ 
+</div>
+<!--White box ends--> 
+
+<!--White box starts--> 
+<div class="row collapse bg-color-white white-box radius p20">
+  <div class="row collapse">
+      <div class="small-12 columns">
+        <h2 class="text-center">Derived Keys</h2>
+      </div>
+  </div>
+  <div class="row collapse">
+
+    <div class="small-12 columns">
+      <div class="row collapse">
+        <div class="small-3 large-2 columns input-title">
+          <span class="fnt1 prefix-clean prefix">Path</span>
+        </div>
+        <div class="small-7 large-10 columns">
+          <input type="text" ng-model="path" ng-show="xpriv" ng-change="updatePath(path)" private-hdpath placeholder="m/44'/0'/0'/0/1337">
+          <input type="text" ng-model="path" ng-hide="xpriv" ng-change="updatePath(path)" public-hdpath placeholder="m/0/1337">
+        </div>
+      </div>
+
+      <div class="row" ng-repeat="node in keys">
+
+        <div class="row capsule-inside radius p5 mt5"> <!-- Repeat key -->
+          <div ng-click="node.visible = !node.visible">
+            <div class="small-7 columns">
+              <span class="fnt09"><b>Path:</b> <span class="fnt09 fntgrey1"><b>{{node.path}}</b></span>
+            </div>
+            <div class="small-5 columns text-right">
+              <div class="more-info fnt0">
+                <a ng-hide="node.visible" class="fnt06"><span class="icon-arrow-down fnt16 center-text"></span> More Info</a>
+              </div>
+              <div class="less-info">
+                <a ng-show="node.visible" class="fnt06"><span class="icon-arrow-up fnt16 center-text"></span> Less Info</a>
+              </div>
+            </div>
+
+          </div>
+        <div class="row p20tb" ng-show="node.visible">
+          <div class="small-12 columns">
+            <div class="row collapse pt10" ng-show="node.xpriv">
+              <div class="small-12 large-2 columns">
+                <div class="data-more-info prefix-clean prefix"><span class="icon-private-key fnt13 center-text"></span> HD Private Key</div>
+              </div>
+              <div class="small-12 large-10 columns">
+                <input type="text" value="{{node.xpriv.toString()}}" readonly auto-select/>
+              </div>  
+            </div>
+            <div class="row collapse pt10" ng-show="node.xpriv">
+              <div class="small-12 large-2 columns">
+                <div class="data-more-info prefix-clean prefix"><span class="icon-private-key fnt13 center-text"></span>  Private Key</div> 
+              </div>
+              <div class="small-12 large-10 columns">
+                <input type="text" value="{{node.xpriv.privateKey.toString()}}" readonly auto-select/>
+              </div>
+            </div> 
+            <div class="row collapse pt10">
+              <div class="small-12 large-2 columns">
+                <div class="data-more-info prefix-clean prefix"><span class="icon-public-key fnt13 center-text"></span> HD Public Key</div>
+              </div>
+              <div class="small-12 large-10 columns">
+                <input type="text" value="{{node.xpub.toString()}}" readonly auto-select/>
+              </div>
+            </div> 
+            <div class="row collapse pt10">            
+              <div class="small-12 large-2 columns"> 
+                <div class="prefix-clean prefix data-more-info"><span class="icon-public-key fnt13 center-text"></span> Public Key</div>
+              </div> 
+              <div class="small-12 large-10 columns">
+                <input type="text" value="{{node.xpub.publicKey.toString()}}" readonly auto-select/>
+              </div> 
+            </div> 
+            <div class="row collapse pt10">  
+              <div class="small-12 large-2 columns"> 
+                <div class="data-more-info prefix-clean prefix">Address</div>
+              </div>     
+              <div class="small-12 large-10 columns">
+                <input type="text" value="{{node.xpub.publicKey.toAddress().toString()}}" readonly auto-select/>
+              </div>  
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+
+<ng-include src="'components/explanation.html'"></ng-include>

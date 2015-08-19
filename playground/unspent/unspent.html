@@ -1,0 +1,70 @@
+<div class="row collapse" require-modal>
+  <div class="large-9 small-12 columns content-title">
+    <h1>Unspent Transaction Outputs</h1>
+  </div>
+  <ng-include src="'components/network.html'"/>
+
+</div>
+<div class="row collapse pb20">
+  <div class="small-12 columns">
+    <p>Retrieve all the UTXOs associated with a bitcoin address.</p>
+  </div>
+</div>
+<div class="preloader"></div>
+<div class="row bg-color-white p20">
+  <div class="row collapse">
+    <div class="columns large-10 small-8">
+      <input type="text" ng-model="utxoAddress" placeholder="enter an address" class="radius" address auto-select ng-change="addressUpdated(utxoAddress)">
+    </div>
+    <div class="columns large-2 small-4">
+      <div class="row collapse">
+        <div class="small-11 small-offset-1">
+          <button type="button" ng-click="fetchUTXO(utxoAddress)" class="button expand tiny radius button1">
+            <span ng-hide="loading">Fetch</span>
+            <div class="loading-container">
+              <ng-include ng-show="loading" src="'components/loader.html'"></ng-include>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row collapse" ng-show="currentAddress">
+    <div class="columns small-12 content-title small-centered">
+      <div class="fnt09 mt2 pt20 pb20"><span class="item-title">Outputs for Address:</span> <span class="item-data fntgrey1">{{currentAddress}}</span></div>
+    </div>
+  </div>
+
+  <div class="row collapse" ng-show="notFound">
+    <div class="columns small-12 small-centered">
+      <div class="fnt09 mt2 pt20 pb20"><span class="item-title">No unspent transaction outputs found in address.</span></div>
+    </div>
+  </div>
+
+  <div class="row collapse" ng-repeat="utxo in utxos" ng-show="utxos">
+    <div class="small-12 columns capsule-inside mt10 plr10 p10 rdt3">
+      <div class="coin-in-box">
+        <div class="icon-coin v-align fnt20 pr5"></div>
+      </div>
+      <h1 class="amount ml10 fnt1">{{utxo.satoshis|btc}}<span class="btc"> BTC</span></h1>
+      <div class="fnt09 mt2 row collapse">
+        <span class="item-title large-1 small-3 columns center">TX ID:</span>
+        <span class="item-data large-11 small-9 columns fntgrey1">{{utxo.txId}}</span>
+      </div>
+      <div class="fnt09 mt2 row collapse">
+        <span class="item-title large-1 small-3 columns center">OUT #:</span>
+        <span class="item-data large-11 small-9 columns fntgrey1">{{utxo.outputIndex}}</span>
+      </div>
+      <div class="fnt09 mt2 row collapse">
+        <span class="item-title large-1 small-3 columns center">Script:</span>
+        <span class="item-data large-11 small-9 columns fntgrey1">{{utxo.script.toString()}}</span>
+      </div>
+      <div class="border-top pt10 mt10 text-center">
+        <a ng-href="{{utxo.url}}" target="_blank" class="p5 radius3 button4">See transaction</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-include src="'components/explanation.html'"></ng-include>

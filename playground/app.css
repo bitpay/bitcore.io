@@ -1,0 +1,985 @@
+  /* reset foundation */
+  /*body{max-width:1000px !important;}*/
+  body {
+    font-family: 'Ubuntu';
+  }
+  label.inline {
+    margin: 0 0 0 0;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  input[type="color"],
+  textarea {
+    margin: 0 0 0 0
+  }
+  input[type="file"],
+  input[type="checkbox"],
+  input[type="radio"],
+  select {
+    margin: 0 0 0.5rem 0;
+  }
+  a {
+    color: #BD1900;
+  }
+  a:hover {
+    color: #E7280A;
+  }
+  .link1 {
+    color: #AAAAAA;
+  }
+  .link1:hover {
+    color: #BD1900;
+  }
+  button,
+  .button {
+    margin: 0px 0px 0rem;
+  }
+  input.ng-invalid {
+    background-color: pink !important;
+    border: 1px dashed red;
+  }
+  input.ng-pristine {
+    background-color: inherit !important;
+    border-color: #cccccc;
+    border-style: solid;
+  }
+  .row {
+    max-width: 100% !important;
+  }
+}
+.ng-cloak {
+  display: none !important;
+}
+/* reset hljs */
+
+.hljs {
+  padding: 30px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.rad2 {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+code {
+  border-width: 0px;
+}
+/* bg colors */
+
+.bg-color-black2 {
+  background-color: #3A3A3A;
+}
+.bg-color-red1 {
+  background-color: #BD1900;
+}
+.bg-color-gray1 {
+  background-color: #F6F6F6;
+}
+.bg-color-gray2 {
+  background-color: #F1EFEF;
+}
+.bg-color-white {
+  background-color: #FFFFFF;
+}
+.red-test {
+  background-color: #D0021B;
+}
+.green-test {
+  background-color: green;
+}
+/* fonts */
+
+@font-face {
+  font-family:'Ubuntu-Light';
+  font-style:normal;
+  font-weight:300;
+  src:local('Ubuntu Light'),
+  local('Ubuntu-Light'),
+  url(fonts/ubuntu-light.woff) format('woff');
+}
+@font-face {
+  font-family:'Ubuntu';
+  font-style:normal;
+  font-weight:400;
+  src:local('Ubuntu'),
+  url(fonts/ubuntu.woff) format('woff');
+}
+@font-face {
+  font-family:'Ubuntu-Bold';
+  font-style:normal;
+  font-weight:700;
+  src:local('Ubuntu Bold'),
+  local('Ubuntu-Bold'),
+  url(fonts/ubuntu-bold.woff) format('woff');
+}
+@font-face {
+  font-family:'Ubuntu-BoldItalic';
+  font-style:italic;
+  font-weight:700;
+  src:local('Ubuntu Bold Italic'),
+  local('Ubuntu-BoldItalic'),
+  url(fonts/ubuntu-bold-italic.woff) format('woff');
+}
+.unspentitem {
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border: #333 1px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+input.nlocktime {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.loading-container {
+  padding-top: 2px;
+}
+/* Paddings and margins */
+
+.p0 {
+  padding: 0rem 0rem 0rem;
+}
+.p5 {
+  padding: 5px;
+}
+.p10 {
+  padding: 10px;
+}
+.p20 {
+  padding: 20px;
+}
+.p30 {
+  padding: 30px;
+}
+.p4060 {
+  padding: 40px 60px;
+}
+.p4060s {
+  padding: 15px 20px;
+}
+.p60 {
+  padding: 60px;
+}
+.pt5 {
+  padding-top: 5px
+}
+.pt6 {
+  padding-top: 6px
+}
+.pt10 {
+  padding-top: 10px
+}
+.pt20 {
+  padding-top: 20px
+}
+.pt30 {
+  padding-top: 30px
+}
+.pr5 {
+  padding-right: 5px
+}
+.pl10 {
+  padding-left: 10px
+}
+.pl20 {
+  padding-left: 20px !important;
+}
+.pl30 {
+  padding-left: 30px !important;
+}
+.pr10 {
+  padding-right: 10px
+}
+.plr10 {
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+}
+.plr20 {
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+}
+.pb10 {
+  padding-bottom: 10px
+}
+.pb20 {
+  padding-bottom: 20px
+}
+.p3tb {
+  padding: 3px 0px;
+}
+.p10tb {
+  padding: 10px 0px;
+}
+.p60tb {
+  padding: 60px 0px;
+}
+.p60rf {
+  padding: 0 60px;
+}
+.pt10 {
+  padding-top: 10px;
+}
+.plr25por {
+  padding: 2% 5%;
+}
+.plr2por {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.no-pr {
+  padding-right: 0 !important;
+}
+.no-p {
+  padding: 0 !important;
+}
+.m0 {
+  margin: 0px 0px 0rem;
+}
+.m2 {
+  margin: 2px;
+}
+.m5 {
+  margin: 5px;
+}
+.mt2 {
+  margin-top: 2px;
+}
+.mt5 {
+  margin-top: 5px !important;
+}
+.mt7 {
+  margin-top: 7px !important;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mt12 {
+  margin-top: 12px;
+}
+.mlr2 {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.ml10 {
+  margin-left: 10px;
+}
+.ml20 {
+  margin-left: 20px;
+}
+.mb5 {
+  margin-bottom: 5px !important;
+}
+.mt20 {
+  margin-top: 20px !important;
+}
+.mt27 {
+  margin-top: 27px !important;
+}
+.mb10 {
+  margin-bottom: 10px !important;
+}
+.mb20 {
+  margin-bottom: 20px !important;
+}
+.ml20 {
+  margin-left: 20px !important;
+}
+.ml10por {
+  margin-left: 10%;
+}
+.mr10por {
+  margin-right: 10%;
+}
+.m50 {
+  margin: 50px;
+}
+.center {
+  text-align: center;
+}
+.100pr {
+  display: block;
+  width: 100% !important;
+}
+/* Font Size */
+
+.fnt04 {
+  font-size: 0.4em
+}
+.fnt05 {
+  font-size: 0.5em
+}
+.fnt06 {
+  font-size: 0.6em
+}
+.fnt07 {
+  font-size: 0.7em
+}
+.fnt08 {
+  font-size: 0.8em
+}
+.fnt09 {
+  font-size: 0.9em
+}
+.fnt1 {
+  font-size: 1em
+}
+.fnt12 {
+  font-size: 1.2em
+}
+.fnt13 {
+  font-size: 1.3em
+}
+.fnt14 {
+  font-size: 1.4em
+}
+.fnt16 {
+  font-size: 1.6em
+}
+.fnt18 {
+  font-size: 2em
+}
+.fnt20 {
+  font-size: 2em
+}
+.fnt21 {
+  font-size: 2.1em
+}
+.fnt24 {
+  font-size: 2.4em
+}
+/* Font Color */
+
+.fntwhite {
+  color: #FFFFFF;
+}
+.fntgrey1 {
+  color: #999999;
+}
+.border-top {
+  border-top: 1px solid #F1EFEF;
+}
+.border-bottom {
+  border-bottom: 1px solid #F1EFEF;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+/* Radius corners */
+
+.rdt3 {
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.radius3 {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.radius10 {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+/* Main Layout */
+
+.main-sidebar {
+  width: 220px;
+}
+.main-content {
+  margin-left: 220px;
+}
+.examples {
+  min-height: 600px;
+}
+/* Header */
+
+#header {
+  font-family: "Ubuntu-Light"!important;
+  padding: 14px 0 14px 0;
+}
+.v-align {
+  vertical-align: middle;
+}
+.playground-logo {
+  font-family: "Ubuntu-Light"!important;
+  font-style: italic;
+  color: #A0A1A0;
+  margin: 5px 0 0 2px;
+  vertical-align: middle;
+}
+.playground-logo img {
+  vertical-align: -4px;
+}
+#nav-hd {
+  margin-bottom: 0;
+}
+#nav-hd li,
+#nav-ft li {
+  display: inline-block;
+}
+#nav-hd li {
+  margin: 10px 20px;
+}
+#nav-ft li {
+  margin: 8px 16px;
+}
+#nav-hd li a,
+#nav-ft li a {
+  color: #6B6B6A;
+}
+#nav-hd li a:hover,
+#nav-ft li a:hover {
+  color: #A39F9A;
+}
+.docs a,
+.docs a:hover,
+.api a,
+.api a:hover,
+.github a,
+.github a:hover {
+  background-repeat: no-repeat;
+}
+.docs a {
+  background-image: url("img/doc-icon.svg");
+  background-position: top left;
+  padding: 4px 0 4px 25px;
+}
+.docs a:hover {
+  background-image: url("img/doc-icon.svg");
+  background-position: bottom left;
+}
+.api a {
+  background-image: url("img/api-icon.svg");
+  background-position: top left;
+  padding: 4px 0 4px 25px;
+}
+.api a:hover {
+  background-image: url("img/api-icon.svg");
+  background-position: 2px left;
+}
+.github a {
+  background-image: url("img/githubcat-icon.svg");
+  background-position: top left;
+  padding: 4px 0 4px 35px;
+}
+.github a:hover {
+  background-image: url("img/githubcat-icon.svg");
+  background-position: bottom left;
+}
+/* Sidebar menu */
+
+.switch-opt {} .switch-txt-opt {
+  font-family: "Ubuntu-Light"!important;
+  padding: 0 5px 15px 5px !important;
+  vertical-align: middle;
+}
+.menu {
+  font-family: "Ubuntu";
+  margin-left: 0;
+}
+ul.menu {} .menu li {
+  list-style-type: none;
+  margin: 0;
+}
+.dropdown-menu li a {
+  color: #000000;
+}
+.dropdown-menu li a:hover {
+  color: #BD1900;
+}
+.menu li a:hover,
+.menu li:hover a {
+  color: #BD1900;
+}
+.menu li:hover {
+  background-color: #F6F6F6;
+}
+.menu li a {
+  color: #000000;
+  display: block;
+  width: 100%;
+  padding: 15px 0 15px 25px;
+  cursor: pointer;
+}
+.sidebar {
+  padding: 30px 0 0 0;
+}
+.menu li.current {
+  background-color: #F6F6F6;
+}
+/* Buttons */
+
+.button1 {
+  border-style: none;
+  font-weight: bold;
+  background-color: #bd1900;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding: 0rem 0rem 0rem;
+  -webkit-transition: 0.15s ease-out;
+  -moz-transition: 0.15s ease-out;
+  -o-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+  -webkit-transition: 0.15s ease-out;
+  -moz-transition: 0.15s ease-out;
+  -o-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+}
+.button1:hover {
+  background-color: #A31600 !important;
+  color: #FFFFFF !important;
+  border-style: none;
+  -webkit-transition: background-color 300ms linear;
+  -moz-transition: background-color 300ms linear;
+  -o-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
+}
+.button1:focus {
+  background-color: initial;
+  background-color: #A31600 !important;
+  color: #FFFFFF !important;
+  border-style: none;
+}
+.button1-blue {
+  border: 1px solid #4A90E2;
+  background-color: #4A90E2;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding: 0rem 0rem 0rem;
+}
+.button1-blue:hover {
+  border: 1px solid #225DA3;
+  background-color: #225DA3;
+}
+.button2 {
+  border: 1px solid #979797;
+  background-color: #FFFFFF;
+  color: #979797;
+  text-transform: uppercase;
+  padding: 0.4rem 0.6rem 0.4rem;
+  background-image: url("img/arrow-right-small-single.svg");
+  background-position: right 5px center;
+  background-repeat: no-repeat;
+}
+.button2:hover {
+  border: 1px solid #000000;
+  color: #000000;
+  background-color: #F8F7F7;
+}
+.button3 {
+  border: none;
+  background-color: #ABABAB;
+  color: #FFFFFE;
+  text-transform: uppercase;
+  padding: 0rem 0rem 0rem;
+}
+.button3:hover {
+  background-color: #838282 !important;
+  color: #FFFFFE !important;
+}
+.button4 {
+  border: 1px solid #979797;
+  background-color: #FFFFFF;
+  color: #979797;
+  text-transform: uppercase;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.6em;
+}
+.button4:hover {
+  border: 1px solid #000000;
+  color: #000000;
+  background-color: #F8F7F7;
+}
+.random-button {
+  background-color: #FFFFFF;
+  border: solid 1px;
+  border-color: #E2DFDF;
+}
+.random-button:hover {
+  border: solid 1px;
+  background-color: #F5F4F4;
+  border-color: #979797;
+}
+.remove-button {
+  background-image: url("img/remove-icon.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: transparent;
+  display: block;
+  height: 10px;
+  width: 10px;
+}
+.remove-button:hover {
+  background-color: transparent;
+  background-position: bottom center;
+}
+.center-text {
+  vertical-align: middle;
+}
+button.disabled,
+button[disabled],
+.button.disabled,
+.button[disabled] {
+  background-color: #C5C4C4;
+}
+button.disabled:hover,
+button.disabled:focus,
+button[disabled]:hover,
+button[disabled]:focus,
+.button.disabled:hover,
+.button.disabled:focus,
+.button[disabled]:hover,
+.button[disabled]:focus {
+  background-color: #C5C4C4 !important;
+}
+/* Content menu */
+
+.section-title {} #content {} .ubuntu-bold {
+  font-family: "Ubuntu-Bold";
+}
+.content-title h1 {
+  font-size: 1.4em;
+  font-family: "Ubuntu-Bold";
+}
+.share-link {
+  margin-bottom: 30px;
+  font-family: "Ubuntu-Bold";
+}
+a.share-link {
+  color: ;
+}
+.white-box {} .white-box input {
+  font-size: 0.8em;
+}
+.white-box h2 {
+  text-transform: uppercase;
+  font-family: "Ubuntu-Bold";
+  font-size: 1em;
+  padding: 0 0 20px 0;
+}
+.vertical-sep {
+  border-right: 1px solid #F1EFEF;
+}
+.v-divider {
+  border-left: 1px solid red;
+}
+.key-title {
+  font-family: "Ubuntu-Bold";
+  font-size: 0.9em;
+  margin: 0;
+}
+.prefix-clean {
+  background-color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  text-align: left;
+}
+.input-title-priv,
+.input-title-pub span,
+.input-title-btcad span,
+.input-title {
+  background-repeat: no-repeat;
+  background-position: center left;
+  font-family: "Ubuntu-Bold";
+  font-size: 1em;
+  border: none;
+  background-color: #FFFFFF;
+}
+.input-title-pub span {
+  background-image: url("img/public-key-icon.svg");
+}
+.input-title-btcad span {
+  background-image: url("img/btc-icon-address.svg");
+}
+.input-title {} .code-spot {} .code-spot a {
+  display: block;
+  height: 23px;
+  width: 22px;
+  background-image: url("img/code-spot.svg");
+  margin: 0 auto;
+  text-align: center;
+}
+.code-spot a:hover {
+  background-image: url("img/code-spot.svg");
+  background-position: bottom center;
+}
+.capsule-inside {
+  border: 1px solid #ECECEF;
+  position: relative;
+}
+.capsule-inside-blue {
+  border: 1px solid #4A90E2;
+  position: relative;
+}
+.more-info,
+.less-info {
+  text-transform: uppercase;
+}
+.row .row .more-info-data {
+  margin-left: 0px;
+}
+.more-info a,
+.less-info a,
+.close a {
+  color: #979797;
+}
+.more-info a {} .less-info a {} .more-info a:hover,
+.less-info a:hover,
+.close a:hover {
+  color: #1A1B1A;
+}
+.data-more-info {
+  text-transform: uppercase;
+  font-family: "Ubuntu-Bold";
+  font-size: 0.7em;
+}
+.more-info-content ul {
+  list-style: none;
+}
+.inline {
+  display: inline-block;
+}
+.inline {
+  display: inline-block;
+}
+.explanation {
+  margin: 20px 0px 20px 0px;
+  padding: 20px 0;
+  border-top: 1px solid #EDEEF1;
+}
+.console-title,
+.learn-more-title {
+  background-repeat: no-repeat;
+  background-position: center left;
+  font-family: "Ubuntu-Bold";
+  text-transform: uppercase;
+}
+.console-title {
+  background-image: url("img/gear-icon-title.svg");
+  padding: 20px 0 20px 40px;
+}
+.learn-more-title {
+  background-image: url("img/learn-title.svg");
+  padding: 8px 0 8px 40px;
+}
+.explanation h4 {
+  font-family: "Ubuntu-Bold";
+  text-transform: uppercase;
+  padding: 20px 0 20px 40px;
+}
+.explanation p {
+  font-size: 0.9em
+}
+.item-title,
+.amount {
+  font-family: "Ubuntu-Bold" !important;
+}
+.item-data {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.item-data,
+.btc {
+  font-family: "Ubuntu-Light" !important;
+}
+.check {
+  color: #7ED321 !important;
+}
+.blue-elements {
+  color: #4A90E2;
+}
+.insight {
+  font-family: 'Ubuntu-BoldItalic';
+  text-transform: capitalize;
+}
+.coin-in-box {
+  position: absolute;
+  top: 8px;
+  left: -16px;
+  background-color: #FFFFFF;
+}
+/* Terminal */
+
+/* The console container element */
+
+#console {
+  width: 100%;
+  height: 250px;
+  overflow-y: scroll;
+  background-color: #3A3A3A;
+  font-size: 1.2em;
+}
+#console::-webkit-scrollbar {
+  display: none;
+}
+#console div div {
+  position: relative !important;
+}
+#console div:first-child {
+  position: inherit !important;
+  word-wrap: break-word;
+}
+/* The inner console element. */
+
+.jqconsole {
+  padding: 10px;
+}
+/* The cursor. */
+
+.jqconsole-cursor {
+  background-color: #AAA;
+}
+/* The cursor color when the console looses focus. */
+
+.jqconsole-blurred .jqconsole-cursor {
+  background-color: #666;
+}
+.jqconsole-blurred .jqconsole-cursor.blink {
+  background-color: #AAA;
+}
+/* The current prompt text color */
+
+.jqconsole-prompt {
+  color: #0d0;
+}
+/* The command history */
+
+.jqconsole-old-prompt {
+  color: #0b0;
+  font-weight: normal;
+}
+/* The text color when in input mode. */
+
+.jqconsole-input {
+  color: #dd0;
+}
+/* Previously entered input. */
+
+.jqconsole-old-input {
+  color: #bb0;
+  font-weight: normal;
+}
+/* The text color of the output. */
+
+.jqconsole-output {
+  color: white;
+}
+.jqconsole-undefined {
+  color: gray;
+}
+.jqconsole-error {
+  color: red;
+}
+#terminaltab,
+#terminaltab-sticky {
+  display: block;
+  width: 80px;
+  height: 50px;
+  background-image: url("img/terminal-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  float: left;
+  margin-top: -50px;
+}
+#terminaltab {
+  position: relative;
+}
+#terminaltab-sticky {
+  position: fixed;
+  bottom: 0;
+}
+#terminal-content {
+  font-family: Monaco, "Courier New", Courier, monospace !important;
+}
+.footer {
+  border-top: solid 1px #555;
+  padding-top: 22px;
+}
+.code-example {
+  position: relative;
+  margin-top: -40px;
+}
+.code-example .icon-terminal {
+  position: absolute;
+  right: 5px;
+  top: 45px;
+  padding: 10px;
+  background-color: #3A3A3A;
+  border-radius: 2px;
+  color: white;
+}
+.code-example .icon-terminal:hover {
+  background-color: #4A4A4A;
+  cursor: pointer;
+}
+.loader rect {
+  fill: #DDDDDD;
+}
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  background-color: initial;
+}
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  color: initial;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.switch input:checked + label {
+  background: #bd1900;
+}
+.animate-enter,
+.animate-leave {
+  -webkit-transition: 4200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -moz-transition: 4200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -ms-transition: 4200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -o-transition: 4200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  transition: 4200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  position: relative;
+  display: block;
+}
+.animate-enter.animate-enter-active,
+.animate-leave {
+  opacity: 1;
+  top: 0;
+  height: 30px;
+}
+.animate-leave.animate-leave-active,
+.animate-enter {
+  opacity: 0;
+  top: -50px;
+  height: 0px;
+}
