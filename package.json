@@ -20,7 +20,7 @@
     "gulp-util": "=3.0.1",
     "hexo": "=2.8.3",
     "hexo-generator-alias": "^0.1.0",
-    "hexo-gfm-links": "0.0.1",
+    "hexo-gfm-links": "bitpay/hexo-gfm-links",
     "hexo-renderer-ejs": "0.1.0",
     "hexo-renderer-marked": "0.1.0",
     "hexo-renderer-stylus": "0.1.0",

@@ -11,7 +11,7 @@ doc_sidebar:
     Contributing: contributing.html
 
   Node:
-    Overview: module/node/index.html
+    Get Started: module/node/index.html
     Build: module/node/build.html
     Bus: module/node/bus.html
     Errors: module/node/errors.html
