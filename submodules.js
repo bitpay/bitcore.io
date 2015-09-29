@@ -1,5 +1,6 @@
 
 var submodules = [
+  'node',
   'p2p',
   'rpc',
   'payment-protocol',
