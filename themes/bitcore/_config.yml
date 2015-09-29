@@ -1,16 +1,34 @@
 menu:
-  API: /api/
   Docs: /guide/
+  API: /api/
+
   Github: https://github.com/bitpay/bitcore
   Forum: http://labs.bitpay.com/
-  Playground: http://bitcore.io/playground
 
 doc_sidebar:
   Home:
     Get Started: index.html
     Contributing: contributing.html
 
+  Node:
+    Overview: module/node/index.html
+    Build: module/node/build.html
+    Bus: module/node/bus.html
+    Errors: module/node/errors.html
+    Node: module/node/node.html
+    Patch: module/node/patch.html
+    Release: module/node/release.html
+    Services: module/node/services.html
+    Development: module/node/testing.html
+
+  Node Services:
+    Bitcoind: module/node/services/bitcoind.html
+    Database: module/node/services/db.html
+    Address: module/node/services/address.html
+    Web: module/node/services/web.html
+
   Bitcore:
+    Get Started: index.html
     Address: address.html
     Block: block.html
     Browser: browser.html
@@ -29,6 +47,9 @@ doc_sidebar:
   Payment Protocol:
     Usage: module/payment-protocol/index.html
 
+  Mnemonic:
+    Overview: module/mnemonic/index.html
+
   Peer-to-Peer:
     Overview: module/p2p/index.html
     Messages: module/p2p/messages.html
@@ -37,9 +58,6 @@ doc_sidebar:
 
   Message Signing and Verification:
     Overview: module/message/index.html
-
-  Mnemonic:
-    Overview: module/mnemonic/index.html
 
   ECIES:
     Overview: module/ecies/index.html
@@ -52,22 +70,37 @@ doc_sidebar:
 
 api_sidebar:
 
+  Node:
+    Bus: module/node/bus.html
+    Node: module/node/node.html
+    Transaction: module/node/transaction.html
+
+  Node Services:
+    Bitcoind: module/node/services/bitcoind.html
+    Database: module/node/services/db.html
+    Address: module/node/services/address/index.html
+    Address/History: module/node/services/address/history.html
+    Web: module/node/services/web.html
+
   Bitcore:
     Address: address.html
-    Block: block.html
-    BlockHeader: blockheader.html
+    Block: block/block.html
+    BlockHeader: block/blockheader.html
     HDPrivateKey: hdprivatekey.html
     HDPublicKey: hdpublickey.html
     Networks: networks.html
     PrivateKey: privatekey.html
     PublicKey: publickey.html
     Unit: unit.html
-    Uri: uri.html
+    URI: uri.html
     Crypto/Point: crypto/point.html
     Script: script/script.html
     Transaction: transaction/transaction.html
     Transaction/UnspentOutput: transaction/unspentoutput.html
     Transaction/Signing: transaction/sighash.html
+
+  Mnemonic:
+    Mnemonic: module/mnemonic/mnemonic.html
 
   Peer-to-Peer:
     Inventory: module/p2p/inventory.html
@@ -77,9 +110,6 @@ api_sidebar:
 
   Message Signing and Verification:
     Overview: module/message/message.html
-
-  Mnemonic:
-    Mnemonic: module/mnemonic/mnemonic.html
 
   Channel:
     Consumer: module/channel/consumer.html

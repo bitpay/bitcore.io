@@ -9,6 +9,7 @@
     "bitcore-explorers": "bitpay/bitcore-explorers",
     "bitcore-message": "bitpay/bitcore-message",
     "bitcore-mnemonic": "bitpay/bitcore-mnemonic",
+    "bitcore-node": "latest",
     "bitcore-p2p": "bitpay/bitcore-p2p",
     "bitcore-payment-protocol": "bitpay/bitcore-payment-protocol",
     "bitcore-playground": "bitpay/bitcore-playground",
@@ -23,7 +24,7 @@
     "hexo-renderer-ejs": "0.1.0",
     "hexo-renderer-marked": "0.1.0",
     "hexo-renderer-stylus": "0.1.0",
-    "jsdoc-to-markdown": "=0.5.9",
+    "jsdoc-to-markdown": "^1.2.0",
     "more-fs": "=0.5.0",
     "run-sequence": "^1.0.2",
     "through2": "=0.6.3"
