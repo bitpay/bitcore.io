@@ -73,6 +73,7 @@ tutorials_sidebar:
   Tutorials:
     Full Node: fullnode.html
     Payment Processor: payments.html
+    Proof-Of-Existence: poe.html
 
 api_sidebar:
 
