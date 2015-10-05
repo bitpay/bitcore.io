@@ -107,7 +107,7 @@ function jsdocForModule(moduleName, moduleSlug) {
 
       destination += file.path.replace(file.base, '').replace(/\.js$/, '.md');
 
-      jsdoc2md.render(file.path, {})
+      jsdoc2md({src: file.path}, {})
         .on('error', function(err) {
           gutil.log(gutil.colors.red('jsdoc2md failed', err.message));
         })
