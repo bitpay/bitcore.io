@@ -79,6 +79,14 @@ gulp.task('copy-api-index', function() {
   }
 });
 
+gulp.task('copy-tutorials', function() {
+  gulp.src('./tutorials/**/*.md', {
+    base: './tutorials/'
+  })
+    .pipe(gulp.dest('./source/tutorials/'));
+
+});
+
 gulp.task('copy-contributing', function() {
   var readme = fs.readFileSync('./node_modules/bitcore/CONTRIBUTING.md');
   fs.writeFileSync('source/guide/contributing.md', readme);
@@ -107,7 +115,7 @@ function jsdocForModule(moduleName, moduleSlug) {
 
       destination += file.path.replace(file.base, '').replace(/\.js$/, '.md');
 
-      jsdoc2md.render(file.path, {})
+      jsdoc2md({src: file.path}, {})
         .on('error', function(err) {
           gutil.log(gutil.colors.red('jsdoc2md failed', err.message));
         })
@@ -165,6 +173,7 @@ gulp.task('generate', function(callback) {
   runSequence(['docs'],
               ['api'],
               ['copy-api-index'],
+              ['copy-tutorials'],
               ['copy-contributing'],
               ['generate-redirects'],
               ['generate-public'],

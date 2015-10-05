@@ -10,6 +10,9 @@
           } else if (is_current('api/', false)) {
             var title = 'API Reference';
             var titleClass = 'api'
+          } else if (is_current('tutorials/', false)) {
+            var title = 'Tutorials';
+            var titleClass = 'tutorials'
           }
         %>
         <h1 id="page-title" class="<%= titleClass %>" itemprop="name"><%= title %></h1>

@@ -8,5 +8,6 @@
     ["/api/transport/pool.html", "/api/module/p2p/pool.html"],
     ["/api/transport/rpc.html", "/api/index.html"],
     ["/api/transport/explorers/insight.html", "/api/module/explorers/index.html"],
-    ["/docs/index.html", "/guide/index.html"]
+    ["/docs/index.html", "/guide/index.html"],
+    ["/tutorials/index.html", "/tutorials/fullnode.html"]
 ]

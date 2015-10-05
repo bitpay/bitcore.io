@@ -1,6 +1,7 @@
 *.swp
 browser/
 build/
+source/docs/
 source/guide/
 source/api/
 public/

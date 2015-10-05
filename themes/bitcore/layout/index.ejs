@@ -1,132 +1,136 @@
-<div id="animation">
-  <div id="animation-inner">
-    <div id="shadow-ball" class="fadeIn"></div>
-    <div id="ball" class="slideDown"></div>  
-  </div>
-</div>
+
 
 <div id="banner">
-  <div class="outer">
-    <div class="inner">
-      <h2 id="banner-title">An open-source platform to build bitcoin and blockchain-based applications.</h2>
-    </div>
-  </div>
-  <div id="banner-footer">
-    <div id="volcano-hd"></div>
-    <div id="banner-getting-started">
-      <a href="<%- url_for('guide') %>"><span id="banner-getting-started-prefix">$</span>
-      <span id="banner-getting-started-input">npm install bitcore</span></a>
-      <a href="<%- url_for('guide') %>" id="banner-getting-started-btn"></a>
-    </div>
-  </div>
-</div>
 
-<div id="bitcores-new">
-  <div class="outer">
-    <h2>The Platform</h2>
-      <div id="bitcore-library" class="item-bitcores">
-        <div id="bitcore-library-logo-new"></div>
-        <p>A pure and powerful JavaScript Bitcoin library.</p>
-        <p class="github-link-bitcores"><a href="<%- url_for('https://github.com/bitpay/bitcore') %>" target="_blank"><b>Get it on GitHub</b></a></p>
-      </div>
-      <div id="bitcore-wallet" class="item-bitcores">
-        <div id="bitcore-wallet-logo-new"></div>
-        <p>Run a wallet server for your friends, family, and colleagues.</p>
-        <p class="github-link-bitcores"><a href="<%- url_for('https://github.com/bitpay/bitcore-wallet-service') %>" target="_blank"><b>Get it on GitHub</b></a></p>
-      </div>
-  </div>
-</div>
-
-<div id="features">
-  <div class="outer">
-    <h2>Main Features</h2>
-    <div class="list">
-      <div id="cross-platform" class="item">
-        <p class="headline">Cross Platform</p>
-        <p class="detail">Works in both <a href="<%- url_for('guide/index.html') %>">Node.js</a> and <a href="<%- url_for('guide/index.html') %>">Web Browsers</a></p>
-      </div>
-      <div id="functionality" class="item">
-        <p class="headline">All the Core Bitcoin Functionality</p>
-        <p class="detail"><a href="<%- url_for('guide/address.html') %>">Addresses</a>, <a href="<%- url_for('guide/transaction.html') %>">Transactions</a>, <a href="<%- url_for('guide/script.html') %>">Script</a> and <a href="<%- url_for('guide/module/p2p/index.html') %>">P2P Networking</a></p>
-      </div>
-      <div id="osource" class="item">
-        <p class="headline">Open Source</p>
-        <p class="detail">Over 97% Test Coverage, Publicly Audited and available on <a href="https://github.com/bitpay/bitcore">Github</a></p>
-      </div>
-      <div id="paymentprotocol" class="item">
-        <p class="headline">Payment Protocol Support</p>
-        <p class="detail"><a href="<%- url_for('guide/module/payment-protocol/index.html') %>">Secure Messages</a> between Merchants and Customers</p>
-      </div>
-      <div id="keys" class="item">
-        <p class="headline">Private and <br/>Public Key Management</p>
-        <p class="detail"><a href="<%- url_for('guide/privatekey.html') %>">Basic</a> and <a href="<%- url_for('guide/hierarchical.html') %>">Hierarchically Derived</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="getting-started">
-
-  <div class="outer">
-    <h2>Getting Started</h2>
-
-    <div id="getting-started-main">
-      <ul id="terminal">
-        <li class="nodejs-icon">npm install bitcore</li>
-        <li class="browser-icon">bower install bitcore</li>
-      </ul>
-    </div>
-
-    <div id="getting-started-secondary">
-
-      <div id="read-docs-wrapper">
-        <a href="<%- url_for('guide') %>"><div id="read-docs"></div></a>
-        <p class="getting-started">Read the <a href="<%- url_for('guide') %>" class="links-over-red" target="_blank">docs</a></p>
-        <p class="getting-started">or visit our <a href="http://bitpaylabs.com/c/bitcore" class="links-over-red" target="_blank">community forum</a></p>
-       </div>
-
-      <div id="read-api-wrapper">
-        <a href="<%- url_for('playground') %>"><div id="play-ground"></div></a>
-        <p class="getting-started">Learn the fundamentals of Bitcoin</p>
-        <p class="getting-started">Check the <a href="<%- url_for('playground') %>" class="links-over-red">Bitcore playground</a></p>
-      </div>
-
-    </div>
+  <div class="background-element">
 
   </div>
 
+
+  <div class="row padding-vertical">
+    <div class="column">
+
+      <h2 class="center white">Build your application on bitcore</h2>
+      <h4 class="center white">An open-source platform to build bitcoin and blockchain-based applications</h4>
+      <div class="center">
+        <div class="button primary">Get Started</div>
+        <div class="button secondary">Documentation</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div id="projects">
   <div class="outer">
-    <h2>Projects Using Bitcore</h2>
-
-     <ul class="using-bitcore">
-       <a href="https://bitpay.com/" target="_blank"><li id="bitpay-link" class="link"></li></a>
-       <a href="https://copay.io" target="_blank"><li id="copay-link" class="link"></li></a>
-       <a href="https://insight.is/" target="_blank"><li id="insight-link" class="link"></li></a>
-       <a href="https://github.com/bitpay/bitcore-wallet" target="_blank"><li id="bircore-wallet-link" class="link"></li></a>
-     </ul>
-
-     <ul class="using-bitcore">
-       <a href="https://enbitcoins.com" target="_blank"><li id="enbitcoins-link" class="link"></li></a>
-       <a href="https://github.com/streamium/paystream" target="_blank"><li id="streamium-link" class="link"></li></a>
-       <a href="https://github.com/dmerrill6/BitBox" target="_blank"><li id="bitbox-link" class="link"></li></a>
-       <a href="https://maraoz.github.io/multipaper/" target="_blank"><li id="paper-wallet-link" class="link"></li></a>
-     </ul>
-
-      <ul class="using-bitcore">
-       <a href="http://counterparty.io/" target="_blank"><li id="counterparty-link-complete" class="link"></li></a>
-       <a href="https://www.blocktrail.com/" target="_blank"><li id="blocktrail-link" class="link"></li></a>
-       <a href="http://pheeva.com/" target="_blank"><li id="pheeva-link" class="link"></li></a>
-       <a href="https://sericatrading.com" target="_blank"><li id="serica-link" class="link"></li></a>
-     </ul>    
-
-      <ul class="using-bitcore">
-       <a href="http://wetipcoins.com/" target="_blank"><li id="wetipcoins-link" class="link"></li></a>
-     </ul>  
-
+     <a href="http://counterparty.io/" target="_blank"><li id="counterparty-link-complete" class="link"></li></a>
+     <a href="https://bitpay.com/" target="_blank"><li id="bitpay-link" class="link"></li></a>
+     <a href="https://copay.io" target="_blank"><li id="copay-link" class="link"></li></a>
+     <a href="https://www.blocktrail.com/" target="_blank"><li id="blocktrail-link" class="link"></li></a>
+     <a href="http://pheeva.com/" target="_blank"><li id="pheeva-link" class="link"></li></a>
+     <a href="https://github.com/streamium/paystream" target="_blank"><li id="streamium-link" class="link"></li></a>
   </div>
 </div>
+
+<div class="section-gray">
+
+  <div class="row">
+    <h4 class="section-title">Getting Started</h4>
+  </div>
+
+  <div class="row">
+    <div class="column medium-6">
+      <h3>Spin up a full node</h3>
+      <p>If you have an free afternoon and internet connection you can set up a full bitcoin node. In this tutorial we teach you how to launch a node with insight to have your own clue into the bitcoin network.</p>
+      <div class="button-secondary">Get Started</div>
+    </div>
+    <div class="column medium-6">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column medium-6">
+    </div>
+    <div class="column medium-6">
+      <h3>Satoshi fire alarm</h3>
+      <p>Learn  how to use bitcore to watch an address and do certain things whenever those initial conditions are met. In this case we hook up a rasberry Pi  to automatically shoot a text message if Satoshi’s coins are moved.</p>
+      <div class="button-secondary">Get Started</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column medium-6">
+      <h3>Build a Payment Processor</h3>
+      <p>Learn how to generate a QR code as well as bring your own payments to your specific address. We will explore the address, p2p, as well as txs.</p>
+      <div class="button-secondary">Get Started</div>
+    </div>
+    <div class="column medium-6">
+    </div>
+  </div>
+
+  <div class="row">
+    <h4 class="section-title">Want to learn more?</h4>
+    <p>Have something that you want to learn or share? View all the tutorials here.</p>
+  </div>
+
+</div>
+
+
+<div class="secton">
+
+  <div class="row">
+    <h4 class="section-title">Main Features</h4>
+    <p>Have something that you want to learn or share? View all the tutorials here.</p>
+  </div>
+
+  <div class="row">
+    <div class="column medium-4">
+      <h4>Cross Platform</h4>
+      <p>Have something that you want to learn or share? View all the tutorials here.</p>
+    </div>
+    <div class="column medium-4">
+      <h4>Core Bitcoin</h4>
+      <p>Addresses, transactions, Scripts, and P2P Networking</p>
+    </div>
+    <div class="column medium-4">
+      <h4>Open Source</h4>
+      <p>Over 97% test coverage, Publically audited and availble on Github</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column medium-4">
+      <h4>Payment Protocol</h4>
+      <p>Secure messages between merchants and customers.</p>
+    </div>
+    <div class="column medium-4">
+      <h4>Key Management</h4>
+      <p>Have something that you want to learn or share? View all the tutorials here.</p>
+    </div>
+    <div class="column medium-4">
+      <h4>Cross Platform</h4>
+      <p>Have something that you want to learn or share? View all the tutorials here.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-gray">
+  <div class="row">
+    <div class="column medium-6">
+      <h4>Getting Started</h4>
+      <p>Learn how to get going with bitcore as we take you through the basics of working with the project.</p>
+    </div>
+    <div class="column medium-6">
+      <h4>Documentation</h4>
+      <p>Full documentation that tell syou everything that you need to know.</p>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
 
 <%- page.content %>
