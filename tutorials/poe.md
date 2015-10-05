@@ -30,7 +30,7 @@ $ mkdir -p lib/sidechain
 ### Symlink it into our node modules
 
 ```sh
-$ ln -s ./lib/poe node_modules/sidechain
+$ ln -s ./lib/sidechain node_modules/sidechain
 ```
 
 ### Add a reference to our config

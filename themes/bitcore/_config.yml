@@ -73,6 +73,7 @@ tutorials_sidebar:
   Tutorials:
     Full Node: fullnode.html
     Proof-Of-Existence: poe.html
+    Satoshi Fire Alarm: satoshi_fire_alarm.html
 
 api_sidebar:
 
