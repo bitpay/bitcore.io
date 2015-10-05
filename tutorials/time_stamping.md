@@ -1,6 +1,6 @@
-# Proof of Existence (Side chain)
+# Time Stamping
 
-How to build your own Proof-of-Existence web service
+How to build your own Time stamping web service
 
 ## Concepts
 
@@ -17,48 +17,49 @@ $ npm install -g bitcore-node@latest
 ### Create a node
 
 ```sh
-$ bitcore-node create sidechain
-$ cd !$
+$ bitcore-node create mynode
 ```
 
 ### Add a new service to our node
 
 ```sh
-$ mkdir -p lib/sidechain
+$ mkdir -p dataservice
 ```
 
 ### Symlink it into our node modules
 
 ```sh
-$ ln -s ./lib/poe node_modules/sidechain
+$ cd mynode/node_modules
+$ ln -s ../../dataservice
 ```
 
 ### Add a reference to our config
 
 ```sh
-$ nano bitcore-node.json #add sidechain as a service below db
+$ cd ../
+$ nano bitcore-node.json #add dataservice as a service below db
+$ nano package.json #add dataservice as dependency
 ```
 
 ### The code
 
-Add a new file within the directory, ./lib/sidechain called index.js
+Add a new file within the directory, dataservice called index.js
 
 ```js
-var index = require('../../node_modules/bitcore-node');
-var log = index.log;
 var util = require('util');
-var Service = require('../../node_modules/bitcore-node/lib/service');
+var EventEmitter = require('event').EventEmitter;
 
-function SideChain(options) {
-  Service.call(this, options);
+function DataService(options) {
+  EventEmitter.call(this);
+  this.node = options.node;
   this.operations = {};
 }
-SideChain.dependencies = ['bitcoind', 'db', 'web'];
-util.inherits(SideChain, Service);
+DataService.dependencies = ['bitcoind', 'db', 'web'];
+util.inherits(DataService, EventEmitter);
 
-SideChain.prototype.start = function(callback) {callback();}
-SideChain.prototype.stop = function(callback) {callback();}
-SideChain.prototype.blockHandler = function(block, addOutput, callback) {
+DataService.prototype.start = function(callback) {callback();}
+DataService.prototype.stop = function(callback) {callback();}
+DataService.prototype.blockHandler = function(block, addOutput, callback) {
   if (!addOutput) {
     setImmediate(function() {
       callback(null, []); //we send an empty array back to the db service because this will be in-memory only
@@ -80,12 +81,12 @@ SideChain.prototype.blockHandler = function(block, addOutput, callback) {
       var script = output.script;
 
       if(!script || !script.isDataOut()) {
-        log.debug('Invalid script');
+        this.node.log.debug('Invalid script');
         continue;
       }
 
       var scriptData = script.getData().toString('hex');
-      log.info( "scriptData added to in-memory index: ", scriptData);
+      this.node.log.info('scriptData added to in-memory index:', scriptData);
       this.operations[scriptData] = {
         blockHash: block.hash,
         height: height,
@@ -99,18 +100,22 @@ SideChain.prototype.blockHandler = function(block, addOutput, callback) {
   });
 }
 
-SideChain.prototype.setupRoutes = function(app) {
+DataService.prototype.getRoutePrefix = function() {
+  return 'dataservice';
+}
+
+DataService.prototype.setupRoutes = function(app) {
   app.get('/hash/:hash', this.lookupHash.bind(this));
 }
 
-SideChain.prototype.lookupHash = function(req, res, next) {
+DataService.prototype.lookupHash = function(req, res, next) {
   var hash = req.params.hash;
   res.send(this.operations[hash] || false);
 }
-module.exports = SideChain;
+module.exports = DataService;
 ```
 
-### Create a package.json for our service in ./lib/sidechain
+### Create a package.json for our service in dataservice
 
 ```json
 {
@@ -129,7 +134,7 @@ bitcore-node start
 
 Our new node may not be synced with the blockchain, but we might be able to see data being indexed by our in-memory data structure. Try opening a browser like Chrome or Firefox and putting this into the address. You might need to wait for some incoming transactions in order to see data.
 
-http://localhost:3001/sidechain/hash/<hash>
+http://localhost:3001/dataservice/hash/<hash>
 
 Where <hash> is the data you would like query the index about. You can get some data to insert into hash from the output of bitcore-node start. When new data goes into the index, the log will pipe this data out. When using this example for real, a client might hash some text to get the data and then ask your webservice about it.
 

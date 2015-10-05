@@ -73,7 +73,8 @@ tutorials_sidebar:
   Tutorials:
     Full Node: fullnode.html
     Payment Processor: payments.html
-    Proof-Of-Existence: poe.html
+    Time Stamping: time_stamping.html
+    Satoshi Fire Alarm: satoshi_fire_alarm.html
 
 api_sidebar:
 
