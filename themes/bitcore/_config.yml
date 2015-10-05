@@ -1,4 +1,5 @@
 menu:
+  Tutorials: /tutorials/
   Docs: /guide/
   API: /api/
 
@@ -67,6 +68,10 @@ doc_sidebar:
 
   Explorers:
     Overview: module/explorers/index.html
+
+tutorials_sidebar:
+  Tutorials:
+    Full Node: fullnode.html
 
 api_sidebar:
 
