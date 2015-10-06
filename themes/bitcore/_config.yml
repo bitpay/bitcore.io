@@ -71,7 +71,10 @@ doc_sidebar:
 
 tutorials_sidebar:
   Tutorials:
-    Full Node: fullnode.html
+    Running a Full Node: fullnode.html
+    Wallet Service: wallet-service.html
+
+  Service Development:
     Payment Processor: payments.html
     Time Stamping: time-stamping.html
     Satoshi Fire Alarm: satoshi-fire-alarm.html
