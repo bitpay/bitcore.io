@@ -1,18 +1,19 @@
 # Build a Payment Processor
 
-In this example, we'll build a payment processor by creating a Bitcore Node service.
+This tutorial will go over how to accept bitcoin payments via a web site directly to your wallet. We will interact with a Bitcore Node from a web browser to receive payment notifications. And we will generate new keys on the server side for each purchase.
+
+## Create a Service
 
 We begin with our basic service. We will need `bitcoind`, `db`, and `address` for our dependencies. Create a file called `payments/index.js`:
 
 ```js
 var inherits = require('util').inherits;
-var EventEmitter = require('./service');
+var EventEmitter = require('events').EventEmitter;
 
 function PaymentProcessor(options) {
   EventEmitter.call(this);
   this.node = options.node;
 }
-
 inherits(PaymentProcessor, EventEmitter);
 
 PaymentProcessor.dependencies = ['bitcoind', 'db', 'address'];
@@ -72,7 +73,7 @@ Create a `payments/static` and put an `index.html` in it:
 </html>
 ```
 
-You can access this page at http://localhost:3001/payments.
+You can access this page at `http://localhost:3001/payments`.
 
 ## Pay Invoice Page
 

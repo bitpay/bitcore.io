@@ -3,6 +3,7 @@ browser/
 build/
 source/docs/
 source/guide/
+source/tutorials/
 source/api/
 public/
 node_modules/

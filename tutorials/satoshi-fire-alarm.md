@@ -1,39 +1,23 @@
 # Satoshi Fire Alarm
 
-How to build a Satoshi Fire Alarn
-
-## Concepts
-
 In the beginning, when Bitcoin was only a few blocks high, Satoshi Nakamoto won some coinbases by solo mining. Those coins have never been spent. Some believe the private keys for those addresses are lost forever. The following tutorial shows how to listen for transactions associated with the aforementioned addresses.
 
-## Tutorial
-
-### Installation
+### Setup a Development Environment
 
 ```sh
 $ npm install -g bitcore-node@latest
-```
-
-### Create a Node
-
-```sh
 $ bitcore-node create mynode
 ```
 
-### Add a New Service to Our Node
+This will create a directory `mynode` with your node configuration files.
 
 ```sh
 $ mkdir -p satoshifirealarm
-```
-
-### Symlink It Into Our Node Modules
-
-```sh
 $ cd mynode/node_modules
 $ ln -s ../../satoshifirealarm
 ```
 
-### Add a Reference to Our Config
+Symlinking will will provide us a way to develop the service as if it has been published while working on it locally.
 
 ```sh
 $ cd ../
@@ -43,11 +27,12 @@ $ nano package.json #add satoshifirealarm
 
 ### The Code
 
-Add a new file within the directory, satoshifirealarm called index.js
+Add a new file within the directory `satoshifirealarm` called `index.js`
 
 ```js
 var util = require('util');
-var Transaction = require('../../node_modules/bitcore-node/lib/transaction');
+var bitcore = require('bitcore');
+var Transaction = bitcore.Transaction;
 var EventEmitter = require('event').EventEmitter;
 var spawn = require('child_process').spawn;
 
@@ -62,20 +47,12 @@ function SatoshiFireAlarm(options) {
   ];
   this.node.services.bitcoind.on('tx', this.transactionHandler.bind(this));
 }
-
-SatoshiFireAlarm.dependencies = ['bitcoind', 'db', 'address'];
 util.inherits(SatoshiFireAlarm, EventEmitter);
 
-SatoshiFireAlarm.prototype.start = function(callback) {
-  callback();
-}
-
-SatoshiFireAlarm.prototype.stop = function(callback) {
-  callback();
-}
+SatoshiFireAlarm.dependencies = ['bitcoind', 'db', 'address'];
 
 SatoshiFireAlarm.prototype.transactionHandler = function(txinfo) {
-  var tx = bitcore.Transaction().fromBuffer(txInfo.buffer);
+  var tx = Transaction().fromBuffer(txInfo.buffer);
   var messages = {};
   var inputsLength = tx.inputs.length;
   for (var i = 0; i < inputsLength; i++) {
@@ -106,10 +83,18 @@ SatoshiFireAlarm.prototype.resetAlarm = function() {
   this.alarmActivated = false;
 }
 
+SatoshiFireAlarm.prototype.start = function(callback) {
+  setImmediate(callback);
+}
+
+SatoshiFireAlarm.prototype.stop = function(callback) {
+  setImmediate(callback);
+}
+
 module.exports = SatoshiFireAlarm;
 ```
 
-### Create a Package.json for Our Service in Satoshifirealarm
+Create a `package.json` for our service in `satoshifirealarm`:
 
 ```json
 {
