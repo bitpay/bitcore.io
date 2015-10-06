@@ -919,6 +919,10 @@ backgound-color: green
 
 // Bitcore node additions
 
+.sub-header
+  margin: 1em 0
+
+
 
 .button-primary
   display: inline-block
@@ -932,19 +936,17 @@ backgound-color: green
   color: #fff
   border: 1px solid rgba(255,255,255,0.66)
 
+// section
+
+
+.section
+  padding: 4em 0
+
 .section-gray
   background-image: linear-gradient(33deg, #F6F6F6 0%, #FAFAFA 100%)
   border-bottom: 1px #DBDBDB solid
+  font-family: 'Ubuntu'!important
 
-.section-title
-  text-align: center
-  padding: 2em 0
-  text-transform: uppercase
-  letter-spacing: 2px
-  font-size: 22px
-  color: #3A3A3A
-  letter-spacing: 1.94px
-  line-height: 27px
 
 // Utillity
 
@@ -953,6 +955,57 @@ backgound-color: green
 
 .white
   color: #fff
+
+.margin-10
+  margin: 10px!important
+
+.footer-padding-right
+  padding-right: 4em!important
+
+.footer-padding-left
+  padding-left: 4em!important
+  @media mq-mobile
+    padding-left: 1em!important
+
+.arrow-after:after
+  content: "\f061"
+
+.border-top-gray
+  border-top: 1px #DBDBDB solid
+
+.border-right-gray
+  border-right: 1px #DBDBDB solid
+
+.margin-top
+  margin: 2em 0em
+
+.text-shadow
+  text-shadow: 1px 2px 0 rgba(0,0,0,.5)
+
+
+// headers
+.section-title
+  text-align: center
+  padding: 2em 0
+  text-transform: uppercase
+  letter-spacing: 2px
+  font-size: 18px
+  color: #3A3A3A
+  letter-spacing: 1.94px
+  line-height: 27px
+  font-family: 'Ubuntu'
+
+.subsection
+  padding: 2em 0
+
+.subsection-title
+  font-family: 'Ubuntu'
+  margin-bottom: 1em
+  color: #3A3A3A
+
+.subsection-description
+  font-weight: 100
+  color: #3A3A3A
 
 .background-element
   background-image: url("images/icosahedron_spheres.png")
@@ -963,10 +1016,25 @@ backgound-color: green
   display: block
   left: 0
   right: 0
-  height: 446px
+  height: 430px
   background-position: center bottom
   background-repeat: no-repeat
   background-size: contain
 
-.padding-vertical
-  padding: 9em 0
+.banner-padding
+  padding: 7em 0
+  @media mq-mobile
+    padding: 1em!important
+
+.round
+  border-radius: 50px!imporant
+
+.primary
+  background: #F7F7F7!important
+  color: #3A3A3A!important
+
+
+.secondary
+  background: #3A3A3A!important
+  border: 1px solid rgba(255,255,255,0.66)!important
+  color: #fff!important
