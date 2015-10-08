@@ -2,32 +2,13 @@
 
 In the beginning, when Bitcoin was only a few blocks high, Satoshi Nakamoto won some coinbases by solo mining. Those coins have never been spent. Some believe the private keys for those addresses are lost forever. The following tutorial shows how to listen for transactions associated with the aforementioned addresses.
 
-### Setup a Development Environment
+## Create a Service
 
-```sh
-$ npm install -g bitcore-node@latest
-$ bitcore-node create mynode
-```
-
-This will create a directory `mynode` with your node configuration files.
-
-```sh
-$ mkdir -p satoshifirealarm
-$ cd mynode/node_modules
-$ ln -s ../../satoshifirealarm
-```
-
-Symlinking will will provide us a way to develop the service as if it has been published while working on it locally.
-
-```sh
-$ cd ../
-$ nano bitcore-node.json #add satoshifirealarm as a service below db
-$ nano package.json #add satoshifirealarm
-```
+Please refer to the [service development document](service-development.html).
 
 ### The Code
 
-Add a new file within the directory `satoshifirealarm` called `index.js`
+Add a new file within the service directory `satoshifirealarm` called `index.js`
 
 ```js
 var util = require('util');

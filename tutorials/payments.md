@@ -4,42 +4,11 @@ This tutorial will go over how to accept bitcoin payments via a web site directl
 
 ## Create a Service
 
-We begin with our basic service. We will need `bitcoind`, `db`, and `address` for our dependencies. Create a file called `payments/index.js`:
-
-```js
-var inherits = require('util').inherits;
-var EventEmitter = require('events').EventEmitter;
-
-function PaymentProcessor(options) {
-  EventEmitter.call(this);
-  this.node = options.node;
-}
-inherits(PaymentProcessor, EventEmitter);
-
-PaymentProcessor.dependencies = ['bitcoind', 'db', 'address'];
-
-PaymentProcessor.prototype.start = function(callback) {
-  setImmediate(callback);
-};
-
-PaymentProcessor.prototype.stop = function(callback) {
-  setImmediate(callback);
-};
-
-PaymentProcessor.prototype.getAPIMethods = function() {
-  return [];
-};
-
-PaymentProcessor.prototype.getPublishEvents = function() {
-  return [];
-};
-
-module.exports = PaymentProcessor;
-```
-
-For our simple application, we're going to have two pages. One page to generate an invoice, and another page to display and pay the invoice.
+Please refer to the [service development document](service-development.html).
 
 ## Generate Invoice Page
+
+For our simple application, we're going to have two pages. One page to generate an invoice, and another page to display and pay the invoice.
 
 Let's start with generating an invoice. We'll need a route:
 

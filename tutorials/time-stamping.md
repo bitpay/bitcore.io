@@ -2,33 +2,13 @@
 
 This tutorial will go over how to build your own time stamping web service. Bitcoin allows data to be placed into each output script within each transaction. Anyone can use this feature to prove that data existed at some point in the blockchain. This tutorial implements a simple web service that can show its clients if any particular data is in its data set, which comes from incoming transactions.
 
-## Setup a Development Environment
+## Create a Service
 
-```sh
-$ npm install -g bitcore-node@latest
-$ bitcore-node create mynode
-```
-
-This will create a directory `mynode` with your node configuration files.
-
-```
-$ mkdir -p dataservice
-$ cd mynode/node_modules
-$ ln -s ../../dataservice
-```
-By symlinking the service into the node, we'll be able to easily make changes to the service, and have these reflected when running the node. We can then easily create a git repository of our service and publish it later to npm.
-
-```sh
-$ cd ../
-$ nano bitcore-node.json #add dataservice as a service below db
-$ nano package.json #add dataservice as dependency
-```
-
-Adding the service into `bitcore-node.json` will enable the service when the node starts. Adding the service to the `package.json` is most relevant after the service has been published. Where people will be able to run the command `bitcore-node add dataservice`.
+Please refer to the [service development document](service-development.html).
 
 ### The Code
 
-Add a new file within the directory `dataservice` called `index.js`:
+Add a new file within the service directory `dataservice` called `index.js`:
 
 ```js
 var util = require('util');
