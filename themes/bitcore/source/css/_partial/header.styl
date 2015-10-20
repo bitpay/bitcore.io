@@ -1,13 +1,13 @@
-logo-width = 140px
-logo-height = 41px
-logo-small-width = 107px
-logo-small-height = 32px
-logo-medium-width = 142px
-logo-medium-height = 41px
+logo-width = 90px
+logo-height = 26px
+logo-small-width = 90px
+logo-small-height = 26px
+logo-medium-width = 90px
+logo-medium-height = 26px
 
 #header.invert
   background: color-black2
-  border-bottom: 1px solid #464646
+  border-bottom: 0px solid #464646
 
 #header.invert #logo
   width: logo-width
@@ -37,6 +37,7 @@ logo-medium-height = 41px
 #logo-wrap
   text-align: center
   position: relative
+  margin-top: 7px;
   @media mq-normal
     float: left
 
@@ -113,54 +114,8 @@ logo-medium-height = 41px
 .main-nav-link.forum:hover
   background-position:0 -29px
 
-.main-nav-link.playground:hover
-  background-position:0 -26px
-
-
-.main-nav-link.playground
-  background-image: url('images/playground-icon.svg')
-  background-repeat:no-repeat
-  background-position:0 8px
-  padding-left:25px
-  @media mq-mobile
-    background-image:none
-
-
-
-.main-nav-link.forum
-  background-image: url('images/doc-icon1.svg')
-  background-repeat:no-repeat
-  background-position:0 5px
-  padding-left:25px
-  @media mq-mobile
-    background-image:none
-
-.main-nav-link.api
-  background-image: url('images/api-icon.svg')
-  background-repeat:no-repeat
-  background-position:0 7px
-  padding-left:25px
-  @media mq-mobile
-    background-image:none
-
 .main-nav-link.github:hover
   background-position:0 -21px
-
-.main-nav-link.github
-  background-image: url('images/githubcat-icon.svg')
-  background-repeat:no-repeat
-  background-position:0 7px
-  padding-left:31px
-  @media mq-mobile
-    background-image:none
-
-.main-nav-link.docs
-  background-image: url('images/doc-icon.svg')
-  background-repeat:no-repeat
-  background-position:0 5px
-  padding-left:25px
-  @media mq-mobile
-    background-image:none
 
 .main-nav-link
   display: block
