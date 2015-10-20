@@ -1,6 +1,6 @@
 # Running a Wallet Service
 
-The purpose of this tutorial is to show how to setup the Wallet Service. The Wallet Service is the backend for wallets such as BitPay's Copay Mutisignature wallet. The wallet service is very much like the backend for traditional SPV (Simplified Payment Verification) wallets except that the wallet service is much more feature-full.
+The purpose of this tutorial is to show how to setup the Wallet Service. The Wallet Service is the backend for wallets such as BitPay's [Copay Mutisignature Wallet](https://copay.io). The wallet service is very much like the backend for traditional SPV (Simplified Payment Verification) wallets except that the wallet service is much more feature-full.
 
 ## Installing Dependencies
 
@@ -28,6 +28,14 @@ This usually starts mongod for you after installation, but if it doesn't:
 
 ```bash
 $ mongod
+```
+
+### Installing Kerberos on Linux (Debian-based)
+
+You may need to install the following package to get the Wallet Service running (if errors about missing headers):
+
+```bash
+apt-get install libkrb5-dev
 ```
 
 ## Add the Wallet Service to Our Node
@@ -115,7 +123,31 @@ $ mywallet balance
 
 ## Adding SSL/TLS Support
 
-Edit your config.
+### Create a self-signed certificate
+
+These directions assume that you have openssl installed, please run:
+
+```bash
+$ openssl
+```
+
+You should see "OpenSSL>" prompt, then press Ctrl+D to exit. If you don't have OpenSSL, then install it [here](http://www.openssl.org)
+
+Next, you can run the following commands to generated a self-signed certificate:
+
+```bash
+$ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem
+```
+
+For ease of use, just type in a password that you can remember to encrypt the key (you have the option to remove it later), then feel free to fill out the form or just hit "enter" for every question. If you would like to remove the password from the key.pem that you just created, then follow the next step, otherwise skip it. If you leave the password encryption on your key, then you will need to type it in each time the Wallet Service starts up:
+
+```bash
+$ openssl rsa -in key.pem -out key.nopass.pem
+```
+
+Now, key.pem has the password you typed in upon certificate creation and key.nopass.pem does not have any password. It would be a good idea to store key.pem and cert.pem somewhere safe on your computer.
+
+### Edit Your Config.
 
 ```bash
 $ nano bitcore-node.json
@@ -130,8 +162,13 @@ Added https options. Example:
   "port": 3001,
   "https": true,
   "httpsOptions": {
-    "key": "/home/user/keyfile.pem",
-    "cert": "/home/user/certfile.crt"
+    "key": "some-place-safe/key.nopass.pem",
+    "cert": "some-place-safe/cert.pem"
+  },
+  "servicesConfig": {
+    "bitcore-wallet-service": {
+      "bwsPort": 3232
+    }
   },
   "services": [
     "address",
@@ -143,6 +180,8 @@ Added https options. Example:
   ]
 }
 ```
+
+Notice that you can also specify which port your Wallet Service will run on (default is 3232).
 
 ## Conclusion
 
