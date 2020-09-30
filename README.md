@@ -1,4 +1,5 @@
 Bitcore.io
+## An amazing website
 =======
 
 The Bitcore website, hosted via GitHub Pages. 
